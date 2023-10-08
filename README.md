@@ -4,13 +4,15 @@ Although loan management systems have come a long way since their introduction, 
 
 Essential modules in the loan management system:
 
-Client onboarding module
-Application scoring process
-Credit management module for LMS
-Loan servicing module
-Transaction processing tools
-Debt collection module for loan automation system
-Payment features
-Document workflow systems
-Compliance
-Automated decision-making
+1. Client onboarding module
+2. Application scoring process
+3. Credit management module for LMS
+4. Loan servicing module
+5. Transaction processing tools
+6. Debt collection module for loan automation system
+7. Payment features
+8. Document workflow systems
+9. Compliance
+10. Automated decision-making
+
+
