@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 /// Admin
+Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
 Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashobard');
@@ -46,6 +47,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
 
 
 /// Employee
+Route::get('/employee/login', [EmployeeController::class, 'EmployeeLogin'])->name('employee.login');
 
 Route::middleware(['auth','role:employee'])->group(function() {
     Route::get('/employee/dashboard', [EmployeeController::class, 'EmployeeDashboard'])->name('employee.dashobard');
@@ -56,7 +58,8 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::post('/employee/update/password', [EmployeeController::class, 'EmployeeUpdatePassword'])->name('uemployee.password');
 });
 
-/// Employee
+/// Customer
+Route::get('/customer/login', [CustomerController::class, 'CustomerLogin'])->name('customer.login');
 
 Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/dashboard', [CustomerController::class, 'CustomerDashboard'])->name('customer.dashobard');
