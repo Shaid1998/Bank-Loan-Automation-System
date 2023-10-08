@@ -9,33 +9,30 @@ use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
-    public function AdminDashboard(){
-        return view('admin.index');
+    public function CustomerDashboard(){
+        return view('customer.index');
     } // End Mehtod 
 
-    public function AdminLogin(){
-        return view('admin.admin_login');
+    public function CustomerLogin(){
+        return view('customer.customer_login');
     } // End Mehtod 
 
-    public function AdminDestroy(Request $request){
+    public function CustomerDestroy(Request $request){
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return redirect('/admin/login');
+        return redirect('/customer/login');
     } // End Mehtod 
 
-    public function AdminProfile(){
-
-        $id = Auth::user()->id;
-        $adminData = User::find($id);
-        return view('admin.admin_profile_view',compact('adminData'));
+    public function CustomerProfile(){
+        return view('customer.customer_profile_view');
 
     } // End Mehtod 
 
-    public function AdminProfileStore(Request $request){
+    public function CustomerProfileStore(Request $request){
 
         $id = Auth::user()->id;
         $data = User::find($id);
@@ -55,7 +52,7 @@ class CustomerController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Admin Profile Updated Successfully',
+            'message' => 'Customer Profile Updated Successfully',
             'alert-type' => 'success'
         );
 
@@ -63,11 +60,11 @@ class CustomerController extends Controller
 
     } // End Mehtod 
 
-    public function AdminChangePassword(){
-        return view('admin.admin_change_password');
+    public function CustomerChangePassword(){
+        return view('customer.customer_change_password');
     } // End Mehtod 
 
-    public function AdminUpdatePassword(Request $request){
+    public function CustomerUpdatePassword(Request $request){
         // Validation 
         $request->validate([
             'old_password' => 'required',

@@ -22,36 +22,6 @@
 					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">DASHBOARD</div>
 				</a>
 			</li>
-			<li style="padding-top: 1rem">
-				<a href="{{route ('all.user.information')}}">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">USER INFO</div>
-				</a>
-			</li>
-			<li style="padding-top: 1rem">
-				<a href="{{route ('all.worker.information')}}">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-user-check"></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">WORKER INFO</div>
-				</a>
-			</li>
-			<li style="padding-top: 1rem">
-				<a href="{{ route('all.incomeing.messages') }}">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-envelope"></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">MESSAGES</div>
-				</a>
-			</li>
-			<li style="padding-top: 1rem">
-				<a href="{{route('admin.notice.board')}}">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-bell"></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">NOTICE</div>
-				</a>
-			</li>
-			<li style="padding-top: 1rem">
-				<a href="{{route('admin.other.option')}}">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class="fas fa-bell"></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">OTHERS</div>
-				</a>
-			</li>
 		</ul>
 	</div>
 	<!--end navigation-->

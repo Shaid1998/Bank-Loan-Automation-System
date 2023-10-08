@@ -37,21 +37,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-	<title>Admin Dashboard</title>
+	<title>Customer Dashboard</title>
 </head>
 
 <body> 
 	<!--wrapper-->
 	<div class="wrapper">
 		<!--sidebar wrapper -->
-		@include('admin.body.sidebar')
+		@include('customer.body.customer_sidebar')
 		<!--end sidebar wrapper -->
 		<!--start header -->
-		@include('admin.body.header')
+		@include('customer.body.customer_header')
 		<!--end header -->
 		<!--start page wrapper -->
 		<div class="page-wrapper">
-			@yield('admin')
+			@yield('customer')
 		</div>
 		<!--end page wrapper -->
 
@@ -61,7 +61,7 @@
 		<!--end overlay-->
 		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
-		@include('admin.body.footer')
+		@include('customer.body.customer_footer')
 	</div>
 	<!--end wrapper-->
 	<!--start switcher-->

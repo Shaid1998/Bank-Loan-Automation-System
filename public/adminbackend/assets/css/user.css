@@ -1,0 +1,322 @@
+.MainCont{
+    background-image: linear-gradient(to bottom right, rgb(231, 103, 38), rgb(102, 64, 186));
+    text-align:center;
+}
+
+.PMainCont{
+    background-image: linear-gradient(to bottom right, rgb(186, 167, 47), rgb(241, 22, 219));
+    text-align:center;
+}
+
+.topName{
+    font-family: 'Times New Roman', Times, serif;
+    background-color:rgb(39, 12, 210);
+    font-size:55px;
+    height:80px;
+    width:100%;
+    text-align:center;
+    padding-top:5px;
+    color:aliceblue;
+}
+
+.showData{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 25px;
+    text-align: left;
+    color: rgb(240, 228, 47);
+}
+
+.showDataim{
+    height: 100px;
+    width: 100px;
+    align-items: center;
+}
+
+.TTitile{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 35px;
+    font-style: italic;
+    color: rgb(25, 0, 255);
+}
+
+.noteViewTitleCard{
+    background-color: black;
+    text-align: center;
+    width: 100%;
+    border: 0;
+    border-radius: 50px;
+}
+
+.noteViewTitleCard3{
+    background-color: black;
+    text-align: center;
+    width: 100%;
+    border: 0;
+    border-radius: 50px;
+    height: 70px;
+}
+
+.noteTitle{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:800;
+    font-size:50px;
+    font-style:italic;
+    color:rgb(233, 233, 240)
+}
+.TitleWord{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 45px;
+    font-style: italic;
+    color:aqua;
+    text-align: center;
+    text-decoration: underline;
+    padding: 1rem;
+}
+
+.NoteText{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 20px;
+    color: aliceblue;
+    padding: 1rem;
+}
+
+.btnColumn1{
+    width: 33%;
+    padding-top:1px;
+}
+
+.btnColumn2{
+    width: 33%;
+    padding-top:1px;
+}
+
+.btnColumn3{
+    width: 34%;
+    padding:1px;
+}
+
+.noteButton{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:bold;
+    font-size:20px;
+    cursor:pointer;
+    color:white;
+    border: 0;
+    border-radius: 25px;
+}
+
+.uPhR{
+    background-color: black;
+    margin-top:1rem
+    
+}
+
+.uPhC1{
+    height: 300px;
+    width:40%;
+    align-items:center
+}
+
+.uPhC2{
+    height: 300px;
+    width:60%;
+    text-align:center
+}
+
+.userPhotoG{
+    height: 250px;
+    width:250px;
+    padding-top:1rem;
+}
+
+.photoGTitle{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:35px;
+    padding:1rem;
+    color:aliceblue;
+}
+
+.taskPage{
+    background-image: linear-gradient(to right, rgb(119, 255, 0) , rgb(0, 8, 255))
+}
+
+.PT{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 60px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.homePage{
+    background-image: linear-gradient(to right, rgb(10, 10, 9) , rgb(0, 8, 255))
+}
+
+.taskLC{
+    background-color: black
+}
+
+.TC1{
+    width: 50%;
+    padding-top:1.5rem;
+}
+
+.TC2{
+    width: 50%;
+    padding-top:2rem;
+    padding-left:22rem;
+}
+
+.TaskListTitle{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:italic;
+    font-size:50px;
+    color:rgb(22, 249, 6);
+    text-align:center;
+    font-weight:900
+}
+
+.TaskAddButton{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:bold;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    border: 0;
+    border-radius: 25px;
+}
+
+.photoGText{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:25px;
+    padding:1rem;
+    color:aliceblue;
+}
+
+.MYphoto{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:70px;
+    text-align:center;
+    background-color:black;
+    color:rgb(14, 211, 242);
+    border: 0;
+    border-radius: 50px;
+}
+
+.MYphotoP{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:70px;
+    text-align:center;
+    color:rgb(14, 211, 242);
+    border: 0;
+    border-radius: 50px;
+    align-items: end;
+    background-image: linear-gradient(to bottom right, rgb(186, 167, 47), rgb(241, 22, 219));
+}
+
+.PhotoAddNewButton{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:bold;
+    font-size:20px;
+    cursor:pointer;
+    color:white;
+    border: 0;
+    border-radius: 25px;
+    align-items: end;
+    width: 20%;
+}
+
+.notePage{
+    background-image: linear-gradient(to right, rgb(119, 255, 0) , rgb(0, 8, 255))
+}
+
+.noteLC{
+    background-color: black
+}
+.noteC1{
+    width: 50%;
+    padding-top:1.5rem;
+}
+.noteC2{
+    width: 50%;
+    padding-top:2rem;
+    padding-left:22rem;
+}
+
+.noteListTitle{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:italic;
+    font-size:50px;
+    color:rgb(22, 249, 6);
+    text-align:center;
+    font-weight:900
+}
+
+.noteAddButton{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:bold;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    border: 0;
+    border-radius: 25px;
+}
+
+.noticeUView{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgb(69, 227, 34);
+}
+
+.NoticeVHEAD{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:20px;
+    text-align:center;
+    color: rgb(109, 109, 207);
+}
+
+.col11{
+    width: 100%;
+    padding-top:1.5rem;
+}
+
+.TitileUN{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:60px;
+    color:rgb(240, 241, 247);
+    text-align:center;
+    background-image: linear-gradient(to right, rgb(255, 68, 0) , rgb(255, 0, 247));
+}
+
+.PRIVATEMessage{
+    height: 70px;
+    background-image: linear-gradient(to right, rgb(255, 68, 0) , rgb(255, 0, 247));
+}
+
+.PMB{
+    font-family: 'Times New Roman', Times, serif;
+    font-style:bold;
+    font-size:20px;
+    cursor:pointer;
+    color:white;
+    width:20%;
+    background-image: linear-gradient(to right, rgb(255, 68, 0) , rgb(255, 0, 247));
+}

@@ -1,0 +1,55 @@
+.payment_btn{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: 25px;
+    font-style: italic;
+    color: aliceblue;
+    border: 0;
+    border-radius: 25px;
+}
+
+.payment_btn:hover{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: 25px;
+    font-style: italic;
+    color: aliceblue;
+    border: 0;
+    border-radius: 25px;
+    background-image: linear-gradient(to right, red , yellow);
+}
+.payment_text{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    color: aliceblue;
+}
+
+.pay_btn{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: 25px;
+    font-style: italic;
+    color: aliceblue;
+    border: 0;
+    border-radius: 25px;
+}
+
+.pay_btn:hover{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: 25px;
+    font-style: italic;
+    color: aliceblue;
+    border: 0;
+    border-radius: 25px;
+    background-image: linear-gradient(to right, rgb(0, 64, 255) , rgb(255, 0, 4));
+}
+.pay_text{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    color: aliceblue;
+}
