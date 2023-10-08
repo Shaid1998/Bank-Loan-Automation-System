@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class CustomerController extends Controller
 {
     public function CustomerDashboard(){
-        return view('customer.index');
+        return view('customer.customer_index');
     } // End Mehtod 
 
     public function CustomerLogin(){

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class EmployeeController extends Controller
 {
     public function EmployeeDashboard(){
-        return view('employee.index');
+        return view('employee.employee_index');
     } // End Mehtod 
 
     public function EmployeeLogin(){

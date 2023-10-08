@@ -95,7 +95,7 @@
 			<hr>
 			<div class="row">
 				<p class="payment_text">Here is User means all member payment information, who is in the hostel, and pay rent, food bill, internet ........ etc. </p>
-				<a class="btn payment_btn" href="{{route('admin.user.payment')}}">See Full List</a>
+				<a class="btn payment_btn" href="#">See Full List</a>
 			</div>
 		</div>
 	</div>
@@ -114,7 +114,7 @@
 			<hr>
 			<div class="row">
 				<p class="pay_text">Here is Worker means all member payment information, hostel have to pay, work for money, cleaner, manager ........ etc. </p>
-				<a class="btn pay_btn" href="{{ route('admin.worker.pay')}}">See Full List</a>
+				<a class="btn pay_btn" href="#">See Full List</a>
 			</div>
 		</div>
 	</div>
