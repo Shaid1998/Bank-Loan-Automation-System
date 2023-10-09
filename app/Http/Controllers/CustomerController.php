@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Image;
 
 class CustomerController extends Controller
 {
@@ -88,4 +91,9 @@ class CustomerController extends Controller
     public function CustomerRegisterForm(){
         return view('visitor.visitor_register');
     }//end method
+
+    
+
+    
+    
 }
