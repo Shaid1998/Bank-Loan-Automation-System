@@ -84,4 +84,8 @@ class CustomerController extends Controller
         return back()->with("status", " Password Changed Successfully");
 
     } // End Mehtod 
+
+    public function CustomerRegisterForm(){
+        return view('visitor.visitor_register');
+    }//end method
 }
