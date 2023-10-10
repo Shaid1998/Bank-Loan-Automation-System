@@ -34,7 +34,9 @@ class EmployeeController extends Controller
     } // End Mehtod 
 
     public function EmployeeProfile(){
-        return view('employee.employee_profile_view');
+        $id = Auth::user()->id;
+        $employeeData = User::find($id);
+        return view('employee.employee_profile_view',compact('employeeData'));
 
     } // End Mehtod 
 

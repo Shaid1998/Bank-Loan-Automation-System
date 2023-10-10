@@ -31,7 +31,9 @@ class CustomerController extends Controller
     } // End Mehtod 
 
     public function CustomerProfile(){
-        return view('customer.customer_profile_view');
+        $id = Auth::user()->id;
+        $customerData = User::find($id);
+        return view('customer.customer_profile_view',compact('customerData'));
 
     } // End Mehtod 
 
