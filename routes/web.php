@@ -57,7 +57,10 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::post('/employee/profile/store', [EmployeeController::class, 'EmployeeProfileStore'])->name('employee.profile.store');
     Route::get('/employee/change/password', [EmployeeController::class, 'EmployeeChangePassword'])->name('employee.change.password');
     Route::post('/employee/update/password', [EmployeeController::class, 'EmployeeUpdatePassword'])->name('employee.password');
-    Route::get('/employee/all/account/request', [EmployeeController::class, 'EmployeeAllAccountRequest'])->name('employee.all.account.requests');
+    Route::get('/employee/all/account/request/list', [EmployeeController::class, 'EmployeeAllAccountRequest'])->name('employee.all.account.requests');
+    Route::get('/employee/all/account/request/review/{id}', [EmployeeController::class, 'EmployeeAllAccountRequestReview'])->name('employee.account.request.review');
+    Route::post('/employee/accept/account', [EmployeeController::class, 'EmployeeAcceptAccount'])->name('employee.accept.account');
+    Route::get('/employee/all/account/request/delete/{id}', [EmployeeController::class, 'DeleteRequest'])->name('employee.account.request.delete');
 
 });
 

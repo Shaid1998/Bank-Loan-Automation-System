@@ -3,6 +3,7 @@
  
 
 <div class="page-content">
+    @include('sweetalert::alert')
 	<div class="card radius-10">
 		<div class="card-body">
 			<div class=" align-items-center">
@@ -32,7 +33,7 @@
 					@foreach ($accData as $accData)
 					<tbody>
 						<tr>
-							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:3%;">{{$accData->serial}}</td>
+							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:3%;">{{$accData->id}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:5%;"><img src="{{ asset($accData->req_photo)}}" height="70px" width="70px" /></td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:10%;">{{$accData->req_full_name}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:10%;">{{$accData->req_email}}</td>
@@ -43,8 +44,8 @@
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:8%;">{{$accData->req_user_id}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:8%;">{{$accData->created_at}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:33%;">
-								<a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="review" class="btn btn-primary" >REVIEW</a>
-								<a href='#'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
+								<a href='{{ route ('employee.account.request.review',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="review" class="btn btn-primary" >REVIEW</a>
+								<a href='{{ route ('employee.account.request.delete',$accData->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
 							</td>
 						</tr>
 					</tbody>

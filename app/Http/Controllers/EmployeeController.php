@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Image;
+use Alert;
 
 class EmployeeController extends Controller
 {
@@ -90,4 +92,46 @@ class EmployeeController extends Controller
         $accData = regreq::all();
         return view('employee.Accounts.all_account_request',compact('accData'));
     } // End Mehtod 
+
+    public function EmployeeAllAccountRequestReview($serial){
+        $accData = regreq::findOrFail($serial);
+        return view('employee.Accounts.account_request_review',compact('accData'));
+    } // End Mehtod 
+
+    public function EmployeeAcceptAccount(Request $request){
+
+        $user = new User();
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->photo = $request->photo;
+        $user->user_id = $request->user_id;
+        $user->password = $request->password;
+        $user->role = 'customer';
+        $user->status = 'active';
+        $user->save();
+
+        if ($request->roles) {
+            $user->assignRole($request->roles);
+        }
+
+        Alert::success('Congrats','New Customer Inserted Successfully.');
+
+
+
+        return redirect()->route('employee.all.account.requests');
+
+    }// End Mehtod 
+
+    public function DeleteRequest($id){
+
+        regreq::findOrFail($id)->delete();
+
+        Alert::success('Congrats','New Customer Inserted Successfully.');
+        
+        return redirect()->back(); 
+
+    }// End Method
 }
