@@ -11,7 +11,7 @@
                 <div class=" align-items-center">
                     <div class="row">
                         <div style="width: 50%;padding-top:.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">All Monthly Loan Plan</h5></div>
-                        <div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW</a></div>
+                        <div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='{{route('employee.loan.plan.add')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW</a></div>
                     </div>
                 </div>
             </div>
@@ -21,12 +21,15 @@
                     <thead class="table-light">
                         <tr>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Sl</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Photo</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Name</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Email</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Status</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">join Date</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Payment Information</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan ID</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan Type</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Branch Name</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan Duration</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan Description</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">EMI</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Interest Rate</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Added</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Updated</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
                         </tr>
                     </thead>
@@ -69,12 +72,15 @@
                     <thead class="table-light">
                         <tr>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Sl</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Photo</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Name</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Email</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Status</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">join Date</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Payment Information</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan ID</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan Type</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Branch Name</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan Duration</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan Description</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">EMI</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Interest Rate</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Added</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Updated</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
                         </tr>
                     </thead>
@@ -116,12 +122,15 @@
                         <thead class="table-light">
                             <tr>
                                 <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Sl</th>
-                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Photo</th>
-                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Name</th>
-                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Email</th>
-                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Status</th>
-                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">join Date</th>
-                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Payment Information</th>
+                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan ID</th>
+                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan Type</th>
+                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Branch Name</th>
+                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan Duration</th>
+                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Loan Description</th>
+                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">EMI</th>
+                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Interest Rate</th>
+                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Added</th>
+                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Updated</th>
                                 <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
                             </tr>
                         </thead>
