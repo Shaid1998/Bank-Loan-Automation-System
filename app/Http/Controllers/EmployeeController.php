@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Image;
 use Alert;
+use Illuminate\Support\Str;
 
 class EmployeeController extends Controller
 {
@@ -99,11 +100,13 @@ class EmployeeController extends Controller
     } // End Mehtod 
 
     public function EmployeeAcceptAccount(Request $request){
+        $remember = Str::random(9);
 
         $user = new User();
         $user->username = $request->username;
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->remember_token = $remember;
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->photo = $request->photo;
