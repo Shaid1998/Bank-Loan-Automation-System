@@ -49,7 +49,7 @@
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->updated_at}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:32%">
                                     <a href='{{ route ('employee.loan.plan.edit',$month->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >UPDATE</a>
-                                    <a href='#'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
+                                    <a href='{{ route ('employee.loan.plan.delete',$month->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -66,7 +66,7 @@
                 <div class=" align-items-center">
                     <div class="row">
                         <div style="width: 50%;padding-top:.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">All Yearly Loan Plan</h5></div>
-                        <div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW</a></div>
+                        <div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='{{route('employee.loan.plan.add')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW</a></div>
                     </div>
                 </div>
             </div>
@@ -88,19 +88,22 @@
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
                         </tr>
                     </thead>
-                        @foreach ($Year as $allworker)
+                        @foreach ($Year as $Year)
                         <tbody>
                             <tr>
-                                <td>{{$allworker->id}}</td>
-                                <td><img src="{{ asset($allworker->photo)}}" height="70px" width="70px" /></td>
-                                <td>{{$allworker->name}}</td>
-                                <td>{{$allworker->email}}</td>
-                                <td>{{$allworker->status}}</td>
-                                <td>{{$allworker->created_at}}</td>
-                                <td>{{$allworker->payment_info}}</td>
-                                <td>
-                                    <a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >UPDATE</a>
-                                    <a href='#'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$Year->id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$Year->Loan_id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:5%">{{$Year->Loan_type}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$Year->branch_name}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:5%">{{$Year->loan_duration}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:15%">{{$Year->loan_description}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:3%">{{$Year->emi}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$Year->interest_rate}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$Year->created_at}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$Year->updated_at}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:32%">
+                                    <a href='{{ route ('employee.loan.plan.edit',$Year->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >UPDATE</a>
+                                    <a href='{{ route ('employee.loan.plan.delete',$Year->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -116,7 +119,7 @@
                     <div class=" align-items-center">
                         <div class="row">
                             <div style="width: 50%;padding-top:.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">Multi-Yearly Loan Plan</h5></div>
-                            <div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW</a></div>
+                            <div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='{{route('employee.loan.plan.add')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW</a></div>
                         </div>
                     </div>
                 </div>
@@ -138,19 +141,22 @@
                                 <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
                             </tr>
                         </thead>
-                            @foreach ($multiYear as $allworker)
+                            @foreach ($multiYear as $multiYear)
                             <tbody>
                                 <tr>
-                                    <td>{{$allworker->id}}</td>
-                                    <td><img src="{{ asset($allworker->photo)}}" height="70px" width="70px" /></td>
-                                    <td>{{$allworker->name}}</td>
-                                    <td>{{$allworker->email}}</td>
-                                    <td>{{$allworker->status}}</td>
-                                    <td>{{$allworker->created_at}}</td>
-                                    <td>{{$allworker->payment_info}}</td>
-                                    <td>
-                                        <a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >UPDATE</a>
-                                        <a href='#'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$multiYear->id}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$multiYear->Loan_id}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:5%">{{$multiYear->Loan_type}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$multiYear->branch_name}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:5%">{{$multiYear->loan_duration}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:15%">{{$multiYear->loan_description}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:3%">{{$multiYear->emi}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$multiYear->interest_rate}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$multiYear->created_at}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$multiYear->updated_at}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:32%">
+                                        <a href='{{ route ('employee.loan.plan.edit',$multiYear->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >UPDATE</a>
+                                        <a href='{{ route ('employee.loan.plan.delete',$multiYear->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
                                     </td>
                                 </tr>
                             </tbody>

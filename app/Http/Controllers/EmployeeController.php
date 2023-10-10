@@ -134,7 +134,7 @@ class EmployeeController extends Controller
 
         regreq::findOrFail($id)->delete();
 
-        Alert::success('Congrats','New Customer Inserted Successfully.');
+        Alert::success('Danger','Request Deleted.');
         
         return redirect()->back(); 
 
@@ -190,4 +190,14 @@ class EmployeeController extends Controller
 
         return redirect()->route('employee.loan.plan');
     }//End Method
+
+    public function DeleteLoanPlan($id){
+
+        LoanPlan::findOrFail($id)->delete();
+
+        Alert::success('Congrats','Loan Plan Deleted Successfully.');
+        
+        return redirect()->back(); 
+
+    }// End Method
 }
