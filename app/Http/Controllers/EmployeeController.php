@@ -11,6 +11,7 @@ use Image;
 use Alert;
 use App\Models\LoanPlan;
 use Illuminate\Support\Str;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class EmployeeController extends Controller
 {
@@ -149,4 +150,44 @@ class EmployeeController extends Controller
     public function EmployeeLoanPlanAdd(){
         return view('employee.LoanPlan.add_loan_plan');
     }//end method
+
+    public function EmployeeLoanPlanStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'loan_plans','field'=>'Loan_id', 'length' => 10, 'prefix' => 'L']);
+        LoanPlan::insert([
+            'Loan_type' => $request->Loan_type,
+            'branch_name' => $request->branch_name,
+            'loan_duration' => $request->loan_duration,
+            'Loan_id' => $unid,
+            'loan_description' => $request->loan_description,
+            'emi' => $request->emi,
+            'interest_rate' => $request->interest_rate,
+        ]);
+
+        Alert::success('Congrats','New Loan Plan Inserted Successfully.');
+
+        return redirect()->route('employee.loan.plan');
+
+    }// End Mehtod 
+
+    public function EmployeeLoanPlanEdit($serial){
+        $loanData = LoanPlan::findOrFail($serial);
+        return view('employee.LoanPlan.edit_loan_plan',compact('loanData'));
+    } // End Mehtod 
+
+    public function EmployeeLoanPlanUpdate(Request $request){
+        $id = $request->id;
+
+        LoanPlan::findOrFail($id)->update([
+            'Loan_type' => $request->Loan_type,
+            'branch_name' => $request->branch_name,
+            'loan_duration' => $request->loan_duration,
+            'loan_description' => $request->loan_description,
+            'emi' => $request->emi,
+            'interest_rate' => $request->interest_rate,
+        ]);
+
+        Alert::success('Congrats','Loan Plan Updated Successfully.');
+
+        return redirect()->route('employee.loan.plan');
+    }//End Method
 }

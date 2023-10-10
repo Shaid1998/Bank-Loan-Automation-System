@@ -22,16 +22,16 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{route('employee.loan.plan.store')}}">
+                            <form id="myForm" method="post" action="{{route('employee.loan.plan.update')}}">
                                 @csrf
-                                <input type="hidden" name="id"  >
+                                <input type="hidden" name="id" value="{{$loanData->id}}" >
                                         
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Description</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <textarea type="text" name="loan_description" id="myForm" class="form-control" placeholder="loan Description...."></textarea>
+                                        <textarea type="text" name="loan_description" id="myForm" class="form-control" value="{{$loanData->loan_description}}"></textarea>
                                     </div>
                                 </div>
 
@@ -40,7 +40,7 @@
                                         <h6 class="mb-0">Loan Type</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <select name='Loan_type' required>
+                                        <select name='Loan_type' value="{{$loanData->Loan_type}}">
                                             <option value="">Select One</option>
                                             <option value="farm">Farm</option>
                                             <option value="business">Business</option>
@@ -55,7 +55,7 @@
                                         <h6 class="mb-0">Branch Name</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <select name='branch_name' required>
+                                        <select name='branch_name' value="{{$loanData->branch_name}}">
                                             <option value="">Select One</option>
                                             <option value="dhaka">Dhaka</option>
                                             <option value="rajshahi">Rajshahi</option>
@@ -70,7 +70,7 @@
                                         <h6 class="mb-0">Loan Duration</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <select name='loan_duration' required>
+                                        <select name='loan_duration' value="{{$loanData->loan_duration}}">
                                             <option value="">Select One</option>
                                             <option value="monthly">Monthly</option>
                                             <option value="yearly">Yearly</option>
@@ -84,7 +84,7 @@
                                         <h6 class="mb-0">EMI</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <select name='emi' required>
+                                        <select name='emi' value="{{$loanData->emi}}">
                                             <option value="">Select One</option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
@@ -97,14 +97,14 @@
                                         <h6 class="mb-0">Interest Rate</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="interest_rate" class="form-control" placeholder="Interest Rate .."/>
+                                        <input type="text" name="interest_rate" class="form-control" value="{{$loanData->interest_rate}}"/>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="submit" class="btn btn-primary px-4" value="ADD PLAN" />
+                                        <input type="submit" class="btn btn-primary px-4" value="UPDATE PLAN" />
                                     </div>
                                 </div>
                             </div>

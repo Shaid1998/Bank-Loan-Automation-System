@@ -63,6 +63,10 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::get('/employee/all/account/request/delete/{id}', [EmployeeController::class, 'DeleteRequest'])->name('employee.account.request.delete');
     Route::get('/employee/all/loan/plan/list', [EmployeeController::class, 'EmployeeAllLoanPlanList'])->name('employee.loan.plan');
     Route::get('/employee/loan/plan/add', [EmployeeController::class, 'EmployeeLoanPlanAdd'])->name('employee.loan.plan.add');
+    Route::post('/employee/loan/plan/store', [EmployeeController::class, 'EmployeeLoanPlanStore'])->name('employee.loan.plan.store');
+    Route::get('/employee/loan/plan/edit/{id}', [EmployeeController::class, 'EmployeeLoanPlanEdit'])->name('employee.loan.plan.edit');
+    Route::post('/employee/loan/plan/update', [EmployeeController::class, 'EmployeeLoanPlanUpdate'])->name('employee.loan.plan.update');
+
 
 });
 
