@@ -145,9 +145,4 @@ class EmployeeController extends Controller
         $month = LoanPlan::where('loan_duration','monthly')->latest()->get();
         return view('employee.LoanPlan.loanPlanList',compact('multiYear','Year','month'));
     } // End Mehtod 
-
-    public function MultiYearlyLoan(){
-        
-        return view('employee.LoanPlan.multiyearly_loan_plan');
-    }//end method
 }
