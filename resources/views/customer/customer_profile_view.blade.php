@@ -6,13 +6,11 @@
 <div class="page-content"> 
 	<!--breadcrumb-->
 	<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-		<div class="breadcrumb-title pe-3">Admin User Profile</div>
+		<div class="breadcrumb-title pe-3">CUSTOMER PROFILE EDIT</div>
 		<div class="ps-3">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb mb-0 p-0">
-					<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-					</li>
-					<li class="breadcrumb-item active" aria-current="page">Admin Profile</li>
+					<li class="breadcrumb-item active" aria-current="page">CUSTOMER</li>
 				</ol>
 			</nav>
 		</div>
@@ -25,10 +23,10 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="d-flex flex-column align-items-center text-center">
- 								<img src="{{ (!empty($adminData->photo)) ? url('upload/admin_images/'.$adminData->photo):url('upload/no_image.jpg') }}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+ 								<img src="{{ (!empty($customerData->photo)) ? url('upload/customer_images/'.$customerData->photo):url('upload/no_image.jpg') }}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
 								<div class="mt-3">
-									<h4>{{ $adminData->name }}</h4>
-									<p class="text-secondary mb-1">{{ $adminData->email }}</p>
+									<h4>{{ $customerData->name }}</h4>
+									<p class="text-secondary mb-1">{{ $customerData->email }}</p>
 								</div>
 							</div>
 							<hr class="my-4" />
@@ -48,7 +46,7 @@
 				<div class="col-lg-8">
 					<div class="card">
 						<div class="card-body">
-							<form method="post" action="{{ route('admin.profile.store') }}" enctype="multipart/form-data" >
+							<form method="post" action="{{ route('customer.profile.store') }}" enctype="multipart/form-data" >
 								@csrf
 							
 								<div class="row mb-3">
@@ -56,7 +54,7 @@
 										<h6 class="mb-0">User Name</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<input type="text" class="form-control" value="{{ $adminData->username }}" disabled />
+										<input type="text" class="form-control" value="{{ $customerData->username }}" disabled />
 									</div>
 								</div>
 								<div class="row mb-3">
@@ -64,7 +62,7 @@
 										<h6 class="mb-0">Full Name</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<input type="text" name="name" class="form-control" value="{{ $adminData->name }}" />
+										<input type="text" name="name" class="form-control" value="{{ $customerData->name }}" />
 									</div>
 								</div>
 								<div class="row mb-3">
@@ -72,7 +70,7 @@
 										<h6 class="mb-0">Email</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<input type="email" name="email" class="form-control" value="{{ $adminData->email }}" />
+										<input type="email" name="email" class="form-control" value="{{ $customerData->email }}" />
 									</div>
 								</div>
 								<div class="row mb-3">
@@ -80,7 +78,7 @@
 										<h6 class="mb-0">Phone </h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<input type="text" name="phone" class="form-control" value="{{ $adminData->phone }}" />
+										<input type="text" name="phone" class="form-control" value="{{ $customerData->phone }}" />
 									</div>
 								</div>
 
@@ -90,7 +88,7 @@
 										<h6 class="mb-0">Address</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<input type="text" name="address" class="form-control" value="{{ $adminData->address }}" />
+										<input type="text" name="address" class="form-control" value="{{ $customerData->address }}" />
 									</div>
 								</div>
 
@@ -110,7 +108,7 @@
 										<h6 class="mb-0"> </h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<img id="showImage" src="{{ (!empty($adminData->photo)) ? url('upload/admin_images/'.$adminData->photo):url('upload/no_image.jpg') }}" alt="Admin" style="width:100px; height: 100px;"  >
+										<img id="showImage" src="{{ (!empty($customerData->photo)) ? url('upload/customer_images/'.$customerData->photo):url('upload/no_image.jpg') }}" alt="Customer" style="width:100px; height: 100px;"  >
 									</div>
 								</div>
 
