@@ -56,7 +56,9 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::get('/employee/profile', [EmployeeController::class, 'EmployeeProfile'])->name('employee.profile');
     Route::post('/employee/profile/store', [EmployeeController::class, 'EmployeeProfileStore'])->name('employee.profile.store');
     Route::get('/employee/change/password', [EmployeeController::class, 'EmployeeChangePassword'])->name('employee.change.password');
-    Route::post('/employee/update/password', [EmployeeController::class, 'EmployeeUpdatePassword'])->name('uemployee.password');
+    Route::post('/employee/update/password', [EmployeeController::class, 'EmployeeUpdatePassword'])->name('employee.password');
+    Route::get('/employee/all/account/request', [EmployeeController::class, 'EmployeeAllAccountRequest'])->name('employee.all.account.requests');
+
 });
 
 /// Customer

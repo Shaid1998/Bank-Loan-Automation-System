@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\regreq;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -83,5 +84,10 @@ class EmployeeController extends Controller
         ]);
         return back()->with("status", " Password Changed Successfully");
 
+    } // End Mehtod 
+
+    public function EmployeeAllAccountRequest(){
+        $accData = regreq::all();
+        return view('employee.Accounts.all_account_request',compact('accData'));
     } // End Mehtod 
 }
