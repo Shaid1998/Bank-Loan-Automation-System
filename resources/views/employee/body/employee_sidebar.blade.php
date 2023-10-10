@@ -28,7 +28,12 @@
 					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">ACCOUNT REQUESTS</div>
 				</a>
 			</li>
-			
+			<li style="padding-top: 1rem">
+				<a href="{{ route('employee.loan.plan') }}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-hand-holding-usd'></i></div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">LOAN PLAN</div>
+				</a>
+			</li>
 		</ul>
 	</div>
 	<!--end navigation-->

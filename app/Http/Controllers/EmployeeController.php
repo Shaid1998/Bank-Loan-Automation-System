@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Image;
 use Alert;
+use App\Models\LoanPlan;
 use Illuminate\Support\Str;
 
 class EmployeeController extends Controller
@@ -137,4 +138,16 @@ class EmployeeController extends Controller
         return redirect()->back(); 
 
     }// End Method
+
+    public function EmployeeAllLoanPlanList(){
+        $multiYear = LoanPlan::where('loan_duration','multiyearly')->latest()->get();
+        $Year = LoanPlan::where('loan_duration','yearly')->latest()->get();
+        $month = LoanPlan::where('loan_duration','monthly')->latest()->get();
+        return view('employee.LoanPlan.loanPlanList',compact('multiYear','Year','month'));
+    } // End Mehtod 
+
+    public function MultiYearlyLoan(){
+        
+        return view('employee.LoanPlan.multiyearly_loan_plan');
+    }//end method
 }
