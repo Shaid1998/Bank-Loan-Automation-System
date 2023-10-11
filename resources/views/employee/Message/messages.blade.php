@@ -64,10 +64,11 @@
                     <thead class="table-light">
                         <tr>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sl</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Receiver</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:47%">Message</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sender</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:7%">Reason</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:45%">Message</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:7%">Date & Time</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:30%">Action</th> 
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:25%">Action</th> 
                         </tr>
                     </thead>
                         @foreach ($sendMessage as $sendMessage)
@@ -75,9 +76,10 @@
                             <tr>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$sendMessage->id}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$sendMessage->receiver_id}}</td>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:47%">{{$sendMessage->text}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$sendMessage->message_for}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:45%">{{$sendMessage->text}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$sendMessage->created_at}}</td>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%">
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:25%">
                                     <a href='{{route('employee.send.message',$sendMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
                                 </td>
                             </tr>
