@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LoanPlan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -86,5 +87,12 @@ class AdminController extends Controller
         ]);
         return back()->with("status", " Password Changed Successfully");
 
+    } // End Mehtod 
+
+    public function AdminLoanPlanVisit(){
+        $multiYear = LoanPlan::where('loan_duration','multiyearly')->latest()->get();
+        $Year = LoanPlan::where('loan_duration','yearly')->latest()->get();
+        $month = LoanPlan::where('loan_duration','monthly')->latest()->get();
+        return view('admin.SystemData.loan_plan',compact('multiYear','Year','month'));
     } // End Mehtod 
 }
