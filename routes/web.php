@@ -46,6 +46,8 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('update.password');
     Route::get('/admin/loan/plan/visit', [AdminController::class, 'AdminLoanPlanVisit'])->name('admin.loan.plan.visit');
     Route::get('/admin/messages', [AdminController::class, 'AdminMessages'])->name('admin.messages');
+    Route::get('/admin/send/messages/{id}', [AdminController::class, 'AdminSendMessage'])->name('admin.send.message');
+    Route::post('/admin/send/message/store', [AdminController::class, 'AdminSendMessageStore'])->name('admin.send.message.store');
 
 });
 

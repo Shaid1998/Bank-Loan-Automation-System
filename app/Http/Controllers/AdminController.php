@@ -6,7 +6,13 @@ use App\Models\LoanPlan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Image;
+use Alert;
+use App\Models\Message;
 
 class AdminController extends Controller
 {
@@ -97,9 +103,34 @@ class AdminController extends Controller
     } // End Mehtod 
 
     public function AdminMessages(){
-        $multiYear = LoanPlan::where('loan_duration','multiyearly')->latest()->get();
-        $Year = LoanPlan::where('loan_duration','yearly')->latest()->get();
-        $month = LoanPlan::where('loan_duration','monthly')->latest()->get();
-        return view('admin.Message.messages',compact('multiYear','Year','month'));
+        $user = Auth::user()->user_id;
+        $sendMessage = Message::where('sender_id',$user)->latest()->get();
+        $receiveMessage = Message::where('receiver_id',$user)->latest()->get();
+
+        return view('admin.Message.messages',compact('sendMessage','receiveMessage'));
     } // End Mehtod 
+
+    public function AdminSendMessage($id){
+        $message = DB::table('loan_plans')->where('id', $id)->first();
+
+        return view('admin.Message.new_message',compact('message'));
+    } // End Mehtod 
+
+    public function AdminSendMessageStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
+
+        $id = Auth::user()->user_id;
+
+        Message::insert([
+            'sender_id' => $id,
+            'receiver_id' => $request->receiver_id,
+            'text' => $request->text,
+            'message_id' => $unid,
+        ]);
+
+        Alert::success('Congrats','New Loan Plan Inserted Successfully.');
+
+        return redirect()->back();
+
+    }// End Mehtod 
 }
