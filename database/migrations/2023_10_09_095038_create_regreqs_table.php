@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('regreqs', function (Blueprint $table) {
-            $table->id('serial');
+            $table->id();
             $table->bigInteger('req_user_id');
             $table->string('req_full_name');
             $table->string('req_username')->unique();

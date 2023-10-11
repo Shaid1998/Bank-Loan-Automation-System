@@ -155,6 +155,9 @@ class EmployeeController extends Controller
 
     public function EmployeeLoanPlanStore(Request $request){
         $unid = IdGenerator::generate(['table' => 'loan_plans','field'=>'Loan_id', 'length' => 10, 'prefix' => 'L']);
+
+        $id = Auth::user()->user_id;
+
         LoanPlan::insert([
             'Loan_type' => $request->Loan_type,
             'branch_name' => $request->branch_name,
@@ -163,6 +166,7 @@ class EmployeeController extends Controller
             'loan_description' => $request->loan_description,
             'emi' => $request->emi,
             'interest_rate' => $request->interest_rate,
+            'uploader_id' => $id,
         ]);
 
         Alert::success('Congrats','New Loan Plan Inserted Successfully.');

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->enum('loan_duration',['monthly','yearly','multiyearly'])->default('yearly');
             $table->text('loan_description')->nullable();
             $table->enum('emi',['yes','no'])->default('no');
+            $table->string('interest_rate')->nullable();
+            $table->string('uploader_id')->nullable();
             $table->timestamps();
         });
     }

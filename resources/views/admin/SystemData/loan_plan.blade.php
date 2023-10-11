@@ -30,7 +30,8 @@
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:4%">Interest Rate</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Added</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Updated</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:32%">Action</th> 
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Uploader</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:24%">Action</th> 
                         </tr>
                     </thead>
                         @foreach ($month as $month)
@@ -46,7 +47,8 @@
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$month->interest_rate}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->created_at}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->updated_at}}</td>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:32%">
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->uploader_id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:24%">
                                     <a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >MESSAGE UPLOADER</a>
                                     
                                 </td>
@@ -83,6 +85,7 @@
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Interest Rate</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Added</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Updated</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Uploader</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
                         </tr>
                     </thead>
@@ -99,6 +102,7 @@
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$Year->interest_rate}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$Year->created_at}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$Year->updated_at}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$Year->uploader_id}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:32%">
                                     <a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >MESSAGE UPLOADER</a>
                                 </td>
@@ -134,6 +138,7 @@
                                 <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Interest Rate</th>
                                 <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Added</th>
                                 <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Updated</th>
+                                <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Uploader</th>
                                 <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;">Action</th> 
                             </tr>
                         </thead>
@@ -150,6 +155,7 @@
                                     <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$multiYear->interest_rate}}</td>
                                     <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$multiYear->created_at}}</td>
                                     <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$multiYear->updated_at}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$multiYear->uploader_id}}</td>
                                     <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:32%">
                                         <a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >MESSAGE UPLOADER</a>
                                     </td>
