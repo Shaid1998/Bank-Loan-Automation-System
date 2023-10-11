@@ -50,6 +50,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::post('/admin/send/message/store', [AdminController::class, 'AdminSendMessageStore'])->name('admin.send.message.store');
     Route::get('/admin/send/messages/reply/{id}', [AdminController::class, 'AdminSendMessageReply'])->name('admin.send.message.reply');
     Route::post('/admin/send/message/reply/store', [AdminController::class, 'AdminSendMessageReplyStore'])->name('admin.send.message.reply.store');
+    Route::get('/admin/send/messages/delete/{id}', [AdminController::class, 'AdminSendMessageDelete'])->name('admin.send.message.delete');
 
 });
 
@@ -79,6 +80,7 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::post('/employee/send/message/store', [EmployeeController::class, 'EmployeeSendMessageStore'])->name('employee.send.message.store');
     Route::get('/employee/send/messages/reply/{id}', [EmployeeController::class, 'EmployeeSendMessageReply'])->name('employee.send.message.reply');
     Route::post('/employee/send/message/reply/store', [EmployeeController::class, 'EmployeeSendMessageReplyStore'])->name('employee.send.message.reply.store');
+    Route::get('/employee/message/delete/{id}', [EmployeeController::class, 'EmployeeDeleteMessage'])->name('employee.message.delete');
 
 
 });

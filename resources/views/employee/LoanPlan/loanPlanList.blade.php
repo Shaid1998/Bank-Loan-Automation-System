@@ -37,7 +37,7 @@
                         @foreach ($month as $month)
                         <tbody>
                             <tr>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$month->id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$loop->iteration}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->Loan_id}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:5%">{{$month->Loan_type}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->branch_name}}</td>
@@ -91,7 +91,7 @@
                         @foreach ($Year as $Year)
                         <tbody>
                             <tr>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$Year->id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$loop->iteration}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$Year->Loan_id}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:5%">{{$Year->Loan_type}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$Year->branch_name}}</td>
@@ -144,7 +144,7 @@
                             @foreach ($multiYear as $multiYear)
                             <tbody>
                                 <tr>
-                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$multiYear->id}}</td>
+                                    <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%">{{$loop->iteration}}</td>
                                     <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$multiYear->Loan_id}}</td>
                                     <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:5%">{{$multiYear->Loan_type}}</td>
                                     <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$multiYear->branch_name}}</td>

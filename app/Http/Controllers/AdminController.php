@@ -160,4 +160,14 @@ class AdminController extends Controller
         return redirect()->back();
 
     }// End Mehtod
+
+    public function AdminSendMessageDelete($id){
+
+        Message::findOrFail($id)->delete();
+
+        Alert::success('Congrats','Message Deleted Successfully.');
+        
+        return redirect()->back(); 
+
+    }// End Method
 }

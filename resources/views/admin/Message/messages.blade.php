@@ -32,7 +32,7 @@
                         @foreach ($receiveMessage as $receiveMessage)
                         <tbody>
                             <tr>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receiveMessage->id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$loop->iteration}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receiveMessage->sender_id}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receiveMessage->message_for}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receiveMessage->parent_id}}</td>
@@ -40,7 +40,7 @@
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receiveMessage->created_at}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%">
                                     <a href='{{route('admin.send.message.reply',$receiveMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >REPLY</a>
-                                    <a href='{{route('admin.send.message',$receiveMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
+                                    <a href='{{route('admin.send.message.delete',$receiveMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -75,12 +75,12 @@
                         @foreach ($sendMessage as $sendMessage)
                         <tbody>
                             <tr>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$sendMessage->id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$loop->iteration}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$sendMessage->receiver_id}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:47%">{{$sendMessage->text}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$sendMessage->created_at}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%">
-                                    <a href='{{route('admin.send.message',$sendMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
+                                    <a href='{{route('admin.send.message.delete',$sendMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
                                 </td>
                             </tr>
                         </tbody>
