@@ -1,5 +1,5 @@
-@extends('admin.admin_dashboard')
-@section('admin')
+@extends('employee.employee_dashboard')
+@section('employee')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -7,11 +7,11 @@
     @include('sweetalert::alert') 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">NEW MESSAGES</div>
+        <div class="breadcrumb-title pe-3">Message</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item active" aria-current="page">NEW</li>
+                    <li class="breadcrumb-item active" aria-current="page">Type Here</li>
                 </ol>
             </nav>
         </div>
@@ -23,7 +23,7 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{route('admin.send.message.store')}}">
+                            <form id="myForm" method="post" action="{{route('employee.send.message.store')}}">
                                 @csrf
                                 <input type="hidden" name="id"  >
                                         

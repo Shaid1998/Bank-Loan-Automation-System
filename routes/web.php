@@ -72,7 +72,9 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::get('/employee/loan/plan/edit/{id}', [EmployeeController::class, 'EmployeeLoanPlanEdit'])->name('employee.loan.plan.edit');
     Route::post('/employee/loan/plan/update', [EmployeeController::class, 'EmployeeLoanPlanUpdate'])->name('employee.loan.plan.update');
     Route::get('/employee/loan/plan/delete/{id}', [EmployeeController::class, 'DeleteLoanPlan'])->name('employee.loan.plan.delete');
-
+    Route::get('/employee/messages', [EmployeeController::class, 'EmployeeMessages'])->name('employee.messages');
+    Route::get('/employee/send/messages/{id}', [EmployeeController::class, 'EmployeeSendMessage'])->name('employee.send.message');
+    Route::post('/employee/send/message/store', [EmployeeController::class, 'EmployeeSendMessageStore'])->name('employee.send.message.store');
 
 });
 

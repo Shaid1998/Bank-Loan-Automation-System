@@ -34,6 +34,12 @@
 					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">LOAN PLAN</div>
 				</a>
 			</li>
+			<li style="padding-top: 1rem">
+				<a href="{{ route('employee.messages') }}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-message'></i></div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">MESSAGES</div>
+				</a>
+			</li>
 		</ul>
 	</div>
 	<!--end navigation-->

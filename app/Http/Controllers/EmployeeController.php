@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\Hash;
 use Image;
 use Alert;
 use App\Models\LoanPlan;
+use App\Models\Message;
 use Illuminate\Support\Str;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
@@ -206,4 +208,37 @@ class EmployeeController extends Controller
         return redirect()->back(); 
 
     }// End Method
+
+    public function EmployeeMessages(){
+        $user = Auth::user()->user_id;
+        $sendMessage = Message::where('sender_id',$user)->latest()->get();
+        $receiveMessage = Message::where('receiver_id',$user)->latest()->get();
+
+        return view('employee.Message.messages',compact('sendMessage','receiveMessage'));
+    } // End Mehtod 
+
+    public function EmployeeSendMessage($id){
+        $message = DB::table('messages')->where('id', $id)->first();
+
+        return view('employee.Message.new_message',compact('message'));
+    } // End Mehtod 
+
+    public function EmployeeSendMessageStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
+
+        $id = Auth::user()->user_id;
+
+        Message::insert([
+            'sender_id' => $id,
+            'receiver_id' => $request->receiver_id,
+            'message_for' => $request->message_for,
+            'text' => $request->text,
+            'message_id' => $unid,
+        ]);
+
+        Alert::success('Congrats','New Loan Plan Inserted Successfully.');
+
+        return redirect()->back();
+
+    }// End Mehtod 
 }
