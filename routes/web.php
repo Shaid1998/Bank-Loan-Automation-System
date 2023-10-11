@@ -81,6 +81,7 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::get('/employee/send/messages/reply/{id}', [EmployeeController::class, 'EmployeeSendMessageReply'])->name('employee.send.message.reply');
     Route::post('/employee/send/message/reply/store', [EmployeeController::class, 'EmployeeSendMessageReplyStore'])->name('employee.send.message.reply.store');
     Route::get('/employee/message/delete/{id}', [EmployeeController::class, 'EmployeeDeleteMessage'])->name('employee.message.delete');
+    Route::get('/employee/customer/list', [EmployeeController::class, 'EmployeeCustomerList'])->name('employee.customer.list');
 
 
 });

@@ -96,7 +96,7 @@ class EmployeeController extends Controller
     } // End Mehtod 
 
     public function EmployeeAllAccountRequest(){
-        $accData = regreq::all();
+        $accData = regreq::paginate(15);
         return view('employee.Accounts.all_account_request',compact('accData'));
     } // End Mehtod 
 
@@ -145,9 +145,9 @@ class EmployeeController extends Controller
     }// End Method
 
     public function EmployeeAllLoanPlanList(){
-        $multiYear = LoanPlan::where('loan_duration','multiyearly')->latest()->get();
-        $Year = LoanPlan::where('loan_duration','yearly')->latest()->get();
-        $month = LoanPlan::where('loan_duration','monthly')->latest()->get();
+        $multiYear = LoanPlan::where('loan_duration','multiyearly')->paginate(15);
+        $Year = LoanPlan::where('loan_duration','yearly')->paginate(15);
+        $month = LoanPlan::where('loan_duration','monthly')->paginate(15);
         return view('employee.LoanPlan.loanPlanList',compact('multiYear','Year','month'));
     } // End Mehtod 
 
@@ -211,14 +211,14 @@ class EmployeeController extends Controller
 
     public function EmployeeMessages(){
         $user = Auth::user()->user_id;
-        $sendMessage = Message::where('sender_id',$user)->latest()->get();
-        $receiveMessage = Message::where('receiver_id',$user)->latest()->get();
+        $sendMessage = Message::where('sender_id',$user)->paginate(15);
+        $receiveMessage = Message::where('receiver_id',$user)->paginate(15);
 
         return view('employee.Message.messages',compact('sendMessage','receiveMessage'));
     } // End Mehtod 
 
     public function EmployeeSendMessage($id){
-        $message = DB::table('messages')->where('id', $id)->first();
+        $message = Message::where('id', $id)->paginate(15);
 
         return view('employee.Message.new_message',compact('message'));
     } // End Mehtod 
@@ -277,4 +277,11 @@ class EmployeeController extends Controller
         return redirect()->back(); 
 
     }// End Method
+
+    public function EmployeeCustomerList(){
+        $customer = User::where('role', 'customer')->paginate(15);
+
+        return view('employee.Customers.all_customer',compact('customer'));
+    } // End Mehtod 
+
 }
