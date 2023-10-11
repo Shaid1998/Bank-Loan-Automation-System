@@ -95,4 +95,11 @@ class AdminController extends Controller
         $month = LoanPlan::where('loan_duration','monthly')->latest()->get();
         return view('admin.SystemData.loan_plan',compact('multiYear','Year','month'));
     } // End Mehtod 
+
+    public function AdminMessages(){
+        $multiYear = LoanPlan::where('loan_duration','multiyearly')->latest()->get();
+        $Year = LoanPlan::where('loan_duration','yearly')->latest()->get();
+        $month = LoanPlan::where('loan_duration','monthly')->latest()->get();
+        return view('admin.Message.messages',compact('multiYear','Year','month'));
+    } // End Mehtod 
 }

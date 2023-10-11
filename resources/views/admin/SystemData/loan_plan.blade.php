@@ -49,8 +49,7 @@
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->updated_at}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->uploader_id}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:24%">
-                                    <a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >MESSAGE UPLOADER</a>
-                                    
+                                    <a href='{{route('admin.send.message',$month->uploader_id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >MESSAGE UPLOADER</a>
                                 </td>
                             </tr>
                         </tbody>
