@@ -124,6 +124,7 @@ class AdminController extends Controller
         Message::insert([
             'sender_id' => $id,
             'receiver_id' => $request->receiver_id,
+            'message_for' => $request->message_for,
             'text' => $request->text,
             'message_id' => $unid,
         ]);
