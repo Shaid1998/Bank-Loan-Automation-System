@@ -20,9 +20,11 @@
                 <table class="table align-middle mb-0">
                     <thead class="table-light">
                         <tr>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sl</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sender</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:47%">Message</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:3%">Sl</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:6%">Sender</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:6%">Reason</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:6%">Reply for</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:44%">Message</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:7%">Date & Time</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:30%">Action</th> 
                         </tr>
@@ -32,6 +34,8 @@
                             <tr>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receiveMessage->id}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receiveMessage->sender_id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receiveMessage->message_for}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receiveMessage->parent_id}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:47%">{{$receiveMessage->text}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receiveMessage->created_at}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%">

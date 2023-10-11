@@ -59,7 +59,7 @@
 										<h6 class="mb-0">Reason</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<input type="text" name="message_for" class="form-control" value="{{$message->message_id}}" />
+										<input type="text" name="message_for" class="form-control" value="{{$message->message_for}}" />
 									</div>
 								</div>
                                 
