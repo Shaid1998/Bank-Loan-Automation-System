@@ -48,6 +48,8 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/messages', [AdminController::class, 'AdminMessages'])->name('admin.messages');
     Route::get('/admin/send/messages/{id}', [AdminController::class, 'AdminSendMessage'])->name('admin.send.message');
     Route::post('/admin/send/message/store', [AdminController::class, 'AdminSendMessageStore'])->name('admin.send.message.store');
+    Route::get('/admin/send/messages/reply/{id}', [AdminController::class, 'AdminSendMessageReply'])->name('admin.send.message.reply');
+    Route::post('/admin/send/message/reply/store', [AdminController::class, 'AdminSendMessageReplyStore'])->name('admin.send.message.reply.store');
 
 });
 

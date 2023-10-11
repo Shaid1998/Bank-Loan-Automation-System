@@ -129,9 +129,35 @@ class AdminController extends Controller
             'message_id' => $unid,
         ]);
 
-        Alert::success('Congrats','New Loan Plan Inserted Successfully.');
+        Alert::success('Congrats','New Message Send Successfully.');
 
         return redirect()->back();
 
     }// End Mehtod 
+
+    public function AdminSendMessageReply($id){
+        $message = DB::table('messages')->where('id', $id)->first();
+
+        return view('admin.Message.reply_message',compact('message'));
+    } // End Mehtod 
+
+    public function AdminSendMessageReplyStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
+
+        $id = Auth::user()->user_id;
+
+        Message::insert([
+            'sender_id' => $id,
+            'receiver_id' => $request->receiver_id,
+            'message_for' => $request->message_for,
+            'parent_id' => $request->parent_id,
+            'text' => $request->text,
+            'message_id' => $unid,
+        ]);
+
+        Alert::success('Congrats','Reply Send Successfully.');
+
+        return redirect()->back();
+
+    }// End Mehtod
 }

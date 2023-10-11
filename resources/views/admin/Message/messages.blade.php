@@ -39,7 +39,7 @@
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:47%">{{$receiveMessage->text}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receiveMessage->created_at}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%">
-                                    <a href='{{route('admin.send.message',$receiveMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >REPLY</a>
+                                    <a href='{{route('admin.send.message.reply',$receiveMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >REPLY</a>
                                     <a href='{{route('admin.send.message',$receiveMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
                                 </td>
                             </tr>

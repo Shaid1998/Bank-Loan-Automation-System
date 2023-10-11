@@ -23,7 +23,7 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{route('employee.send.message.reply.store')}}">
+                            <form id="myForm" method="post" action="{{route('admin.send.message.reply.store')}}">
                                 @csrf
                                 <input type="hidden" name="id"  >
                                         
@@ -32,16 +32,17 @@
                                         <h6 class="mb-0">Message</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <textarea type="text" name="text" id="myForm" class="form-control" placeholder="message....."></textarea>
+                                        <textarea type="text" name="text" id="myForm" class="form-control" placeholder="reply....."></textarea>
                                     </div>
                                 </div>
 
+                                
                                 <input type="hidden" name="receiver_id"  value="{{$message->sender_id}}" />
                         
                                 <input type="hidden" name="parent_id"  value="{{$message->message_id}}" />
 
                                 <input type="hidden" name="message_for" value="{{$message->message_for}}" />
-                                
+
                                 <div class="row">
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9 text-secondary">
