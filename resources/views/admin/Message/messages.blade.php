@@ -21,22 +21,22 @@
                     <thead class="table-light">
                         <tr>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sl</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Receiver</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sender</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:47%">Message</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:7%">Date & Time</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:30%">Action</th> 
                         </tr>
                     </thead>
-                        @foreach ($month as $month)
+                        @foreach ($receiveMessage as $receiveMessage)
                         <tbody>
                             <tr>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->id}}</td>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->Loan_id}}</td>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:47%">{{$month->Loan_type}}</td>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$month->branch_name}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receiveMessage->id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receiveMessage->sender_id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:47%">{{$receiveMessage->text}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receiveMessage->created_at}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%">
-                                    <a href='{{route('admin.send.message',$month->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >MESSAGE UPLOADER</a>
-                                    <a href='{{route('admin.send.message',$month->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >MESSAGE UPLOADER</a>
+                                    <a href='{{route('admin.send.message',$receiveMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >REPLY</a>
+                                    <a href='{{route('admin.send.message',$receiveMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -62,22 +62,21 @@
                     <thead class="table-light">
                         <tr>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sl</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sender</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Receiver</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:47%">Message</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:7%">Date & Time</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:30%">Action</th> 
                         </tr>
                     </thead>
-                        @foreach ($Year as $Year)
+                        @foreach ($sendMessage as $sendMessage)
                         <tbody>
                             <tr>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->id}}</td>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$month->Loan_id}}</td>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:47%">{{$month->Loan_type}}</td>
-                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$month->branch_name}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$sendMessage->id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$sendMessage->receiver_id}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:47%">{{$sendMessage->text}}</td>
+                                <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$sendMessage->created_at}}</td>
                                 <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%">
-                                    <a href='{{route('admin.send.message',$month->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >MESSAGE UPLOADER</a>
-                                    <a href='{{route('admin.send.message',$month->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >MESSAGE UPLOADER</a>
+                                    <a href='{{route('admin.send.message',$sendMessage->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
                                 </td>
                             </tr>
                         </tbody>
