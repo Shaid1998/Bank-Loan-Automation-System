@@ -245,7 +245,7 @@ class EmployeeController extends Controller
     }// End Mehtod 
 
     public function EmployeeSendMessageReply($id){
-        $message = DB::table('messages')->where('id', $id)->first();
+        $message = Message::where('id', $id)->first();
 
         return view('employee.Message.reply_message',compact('message'));
     } // End Mehtod 
@@ -285,5 +285,29 @@ class EmployeeController extends Controller
 
         return view('employee.Customers.all_customer',compact('customer'));
     } // End Mehtod 
+
+    public function EmployeeSendCustomerMessage($id){
+        $user = User::where('id', $id)->first();
+        return view('employee.Customers.user_message',compact('user'));
+    } // End Mehtod 
+
+
+    public function EmployeeSendMessageCustomerStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
+
+        $id = Auth::user()->user_id;
+
+        Message::insert([
+            'sender_id' => $id,
+            'receiver_id' => $request->receiver_id,
+            'text' => $request->text,
+            'message_id' => $unid,
+        ]);
+
+        Alert::success('Congrats','Message Send Successfully.');
+
+        return redirect()->back();
+
+    }// End Mehtod 
 
 }

@@ -42,7 +42,7 @@
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:8%;">{{$accData->user_id}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:8%;">{{$accData->created_at}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:33%;">
-								<a href='{{ route ('employee.account.request.review',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="review" class="btn btn-primary" >MESSAGE</a>
+								<a href='{{ route ('employee.send.customer.message',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="review" class="btn btn-primary" >MESSAGE</a>
 								<a href='{{ route ('employee.account.request.delete',$accData->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
 							</td>
 						</tr>
