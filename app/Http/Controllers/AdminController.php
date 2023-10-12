@@ -96,22 +96,22 @@ class AdminController extends Controller
     } // End Mehtod 
 
     public function AdminLoanPlanVisit(){
-        $multiYear = LoanPlan::where('loan_duration','multiyearly')->latest()->get();
-        $Year = LoanPlan::where('loan_duration','yearly')->latest()->get();
-        $month = LoanPlan::where('loan_duration','monthly')->latest()->get();
+        $multiYear = LoanPlan::where('loan_duration','multiyearly')->paginate(15);
+        $Year = LoanPlan::where('loan_duration','yearly')->paginate(15);
+        $month = LoanPlan::where('loan_duration','monthly')->paginate(15);
         return view('admin.SystemData.loan_plan',compact('multiYear','Year','month'));
     } // End Mehtod 
 
     public function AdminMessages(){
         $user = Auth::user()->user_id;
-        $sendMessage = Message::where('sender_id',$user)->latest()->get();
-        $receiveMessage = Message::where('receiver_id',$user)->latest()->get();
+        $sendMessage = Message::where('sender_id',$user)->paginate(15);
+        $receiveMessage = Message::where('receiver_id',$user)->paginate(15);
 
         return view('admin.Message.messages',compact('sendMessage','receiveMessage'));
     } // End Mehtod 
 
     public function AdminSendMessage($id){
-        $message = DB::table('loan_plans')->where('id', $id)->first();
+        $message = LoanPlan::where('id', $id)->first();
 
         return view('admin.Message.new_message',compact('message'));
     } // End Mehtod 
@@ -136,7 +136,7 @@ class AdminController extends Controller
     }// End Mehtod 
 
     public function AdminSendMessageReply($id){
-        $message = DB::table('messages')->where('id', $id)->first();
+        $message = Message::where('id', $id)->first();
 
         return view('admin.Message.reply_message',compact('message'));
     } // End Mehtod 
