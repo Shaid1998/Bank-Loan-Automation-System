@@ -25,7 +25,7 @@
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:10%;">Password</th>
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%;">Phone</th>
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:10%;">Address</th> 
-						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%;">User ID</th> 
+						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%;">Request ID</th> 
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%;">REQ Time</th> 
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:33%;">Action</th> 
 					</tr>

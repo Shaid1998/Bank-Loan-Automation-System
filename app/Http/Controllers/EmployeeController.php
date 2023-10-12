@@ -106,6 +106,8 @@ class EmployeeController extends Controller
     } // End Mehtod 
 
     public function EmployeeAcceptAccount(Request $request){
+        $unid = IdGenerator::generate(['table' => 'users','field'=>'user_id', 'length' => 10, 'prefix' => 'C']);
+
         $remember = Str::random(9);
 
         $user = new User();
@@ -116,7 +118,7 @@ class EmployeeController extends Controller
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->photo = $request->photo;
-        $user->user_id = $request->user_id;
+        $user->user_id = $unid;
         $user->password = $request->password;
         $user->role = 'customer';
         $user->status = 'active';

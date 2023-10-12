@@ -31,7 +31,7 @@ class visitorController extends Controller
         Image::make($image)->resize(300,300)->save('upload/customer_images/uploaded/'.$name_gen);
         $save_url = 'upload/customer_images/uploaded/'.$name_gen;
 
-        $unid = IdGenerator::generate(['table' => 'regreqs','field'=>'req_user_id', 'length' => 10, 'prefix' => 'C00']);
+        $unid = IdGenerator::generate(['table' => 'regreqs','field'=>'req_user_id', 'length' => 10, 'prefix' => 'R']);
 
         regreq::insert([
             'req_full_name' => $request->name,
