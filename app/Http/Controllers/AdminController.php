@@ -177,4 +177,34 @@ class AdminController extends Controller
 
         return view('admin.Branch.branches',compact('branch'));
     }//End Method
+
+    public function AdminAddBranch(){
+        return view('admin.Branch.add_branch');
+    }//End Method
+
+    public function AdminAddBranchStore(Request $request){
+
+        $image = $request->file('branch_photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/branch_images/'.$name_gen);
+        $save_url = 'upload/branch_images/'.$name_gen;
+
+        $unid = IdGenerator::generate(['table' => 'branches','field'=>'branch_id', 'length' => 10, 'prefix' => 'B']);
+
+        Branch::insert([
+            'branch_id' => $unid,
+            'branch_name' =>$request->branch_name,
+            'branch_address' => $request->branch_address,
+            'branch_contact' => $request->branch_contact,
+            'branch_email' =>$request->branch_email,
+            'branch_text' =>$request->branch_text,
+            'branch_funded_year' => $request->select,
+            'branch_head' => $request->branch_head,
+            'branch_photo' => $save_url
+        ]);
+
+       Alert::success('Congrats','Branch Added Successfully .');
+
+        return redirect()->back();
+    }//End Method
 }

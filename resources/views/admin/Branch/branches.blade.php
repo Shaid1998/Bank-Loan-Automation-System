@@ -11,7 +11,8 @@
             <div class="card-body">
                 <div class=" align-items-center">
                     <div class="row">
-                        <div style="width: 50%;padding-top:.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">All Incoming Message</h5></div>
+                        <div style="width: 50%;padding-top:.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">All Branches</h5></div>
+                        <div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='{{route('admin.add.branch')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW BRANCH</a></div>
                     </div>
                 </div>
             </div>
@@ -28,21 +29,27 @@
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:5%">Founded</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Contact</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Email</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:10%">Head IN Charge</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:30%">Action</th> 
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Total Employee</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:5%">Head IN Charge</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:27%">Action</th> 
                         </tr>
                     </thead>
                     @foreach ($branch as $receive)
                     <tbody>
                         <tr>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$loop->iteration}}</td>
-                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receive->sender_id}}</td>
-                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receive->message_for}}</td>
-                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receive->parent_id}}</td>
-                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:47%">{{$receive->text}}</td>
-                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receive->created_at}}</td>
+							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:5%;"><img src="{{ asset($receive->branch_photo)}}" height="70px" width="70px" /></td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receive->branch_id}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receive->branch_name}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receive->branch_address}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:47%">{{$receive->branch_funded_year}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receive->branch_contact}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receive->branch_email}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receive->branch_contact}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receive->branch_head}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%">
-                                <a href='{{route('admin.send.message.reply',$receive->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >REPLY</a>
+                                <a href='{{route('admin.send.message.reply',$receive->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >HEAD</a>
+                                <a href='{{route('admin.send.message.reply',$receive->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ALL</a>
                                 <a href='{{route('admin.send.message.delete',$receive->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
                             </td>
                         </tr>

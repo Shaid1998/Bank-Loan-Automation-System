@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('branch_photo')->nullable();
             $table->string('branch_head')->nullable();
             $table->string('branch_funded_year')->nullable();
+            $table->text('branch_text')->nullable();
             $table->timestamps();
         });
     }
