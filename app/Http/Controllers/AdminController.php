@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Image;
 use Alert;
+use App\Models\Branch;
 use App\Models\Message;
 
 class AdminController extends Controller
@@ -170,4 +171,10 @@ class AdminController extends Controller
         return redirect()->back(); 
 
     }// End Method
+
+    public function AdminBankBranches(){
+        $branch = Branch::paginate(15);
+
+        return view('admin.Branch.branches',compact('branch'));
+    }//End Method
 }
