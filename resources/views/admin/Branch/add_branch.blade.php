@@ -7,11 +7,11 @@
     @include('sweetalert::alert')
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">ADD NEW LOAN PLAN</div>
+        <div class="breadcrumb-title pe-3">ADD NEW BRANCH</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item active" aria-current="page">NEW PLAN</li>
+                    <li class="breadcrumb-item active" aria-current="page">NEW BRANCH</li>
                 </ol>
             </nav>
         </div>

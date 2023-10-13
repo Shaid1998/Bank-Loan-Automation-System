@@ -210,4 +210,13 @@ class AdminController extends Controller
 
         return redirect()->back();
     }//End Method
+
+    public function AdminBranchHead($bid){
+        // $user = Branch::where('id', $bid)->branch_head;
+        $user = DB::table('branches')->where('id', $bid)->first()->branch_head;
+        $head_id = DB::table('users')->where('user_id', $user)->first()->id;
+        $head = DB::table('users')->where('id',$head_id)->first();
+
+        return view('admin.Branch.head_details',compact('head'));
+    } // End Mehtod 
 }
