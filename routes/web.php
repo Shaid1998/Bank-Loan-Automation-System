@@ -100,5 +100,6 @@ Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/change/password', [CustomerController::class, 'CustomerChangePassword'])->name('customer.change.password');
     Route::post('/customer/update/password', [CustomerController::class, 'CustomerUpdatePassword'])->name('ucustomer.password');
     Route::get('/customer/message/list', [CustomerController::class, 'CustomerMessageList'])->name('customer.message.list');
+    Route::get('/customer/message/reply/{id}', [CustomerController::class, 'CustomerSendMessageReply'])->name('customer.send.message.reply');
 
 });

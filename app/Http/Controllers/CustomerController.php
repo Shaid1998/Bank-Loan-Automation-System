@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Image;
+use Alert;
 
 class CustomerController extends Controller
 {
@@ -103,6 +104,31 @@ class CustomerController extends Controller
         return view('customer.Message.messages',compact('sendMessage','receiveMessage'));
     }//End Method
 
+    public function CustomerSendMessageReply($id){
+        $message = Message::where('id', $id)->first();
+
+        return view('customer.Message.reply_message',compact('message'));
+    } // End Mehtod 
+
+    public function EmployeeSendMessageReplyStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
+
+        $id = Auth::user()->user_id;
+
+        Message::insert([
+            'sender_id' => $id,
+            'receiver_id' => $request->receiver_id,
+            'message_for' => $request->message_for,
+            'parent_id' => $request->parent_id,
+            'text' => $request->text,
+            'message_id' => $unid,
+        ]);
+
+        Alert::success('Congrats','Reply Send Successfully.');
+
+        return redirect()->route('customer.message.list');
+
+    }// End Mehtod
     
     
 }
