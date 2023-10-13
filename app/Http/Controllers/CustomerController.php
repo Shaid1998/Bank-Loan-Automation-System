@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use App\Models\User;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\Request;
@@ -94,7 +95,13 @@ class CustomerController extends Controller
         return view('visitor.visitor_register');
     }//end method
 
-    
+    public function CustomerMessageList(){
+        $user = Auth::user()->user_id;
+        $sendMessage = Message::where('sender_id',$user)->paginate(15);
+        $receiveMessage = Message::where('receiver_id',$user)->paginate(15);
+
+        return view('customer.Message.messages',compact('sendMessage','receiveMessage'));
+    }//End Method
 
     
     

@@ -85,8 +85,6 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::get('/employee/send/customer/message/{id}', [EmployeeController::class, 'EmployeeSendCustomerMessage'])->name('employee.send.customer.message');
     Route::post('/employee/send/message/customer/store', [EmployeeController::class, 'EmployeeSendMessageCustomerStore'])->name('employee.send.message.customer.store');
 
-
-
 });
 
 /// Customer
@@ -101,4 +99,6 @@ Route::middleware(['auth','role:customer'])->group(function() {
     Route::post('/customer/profile/store', [CustomerController::class, 'CustomerProfileStore'])->name('customer.profile.store');
     Route::get('/customer/change/password', [CustomerController::class, 'CustomerChangePassword'])->name('customer.change.password');
     Route::post('/customer/update/password', [CustomerController::class, 'CustomerUpdatePassword'])->name('ucustomer.password');
+    Route::get('/customer/message/list', [CustomerController::class, 'CustomerMessageList'])->name('customer.message.list');
+
 });
