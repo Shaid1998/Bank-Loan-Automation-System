@@ -174,7 +174,10 @@ class AdminController extends Controller
 
     public function AdminBankBranches(){
         $branch = Branch::paginate(15);
-
+        // $dhaka = User::where('branch','dhaka')->where('role','employee')->count();
+        // $khulna = User::where('branch','khulna')->where('role','employee')->count();
+        // $rajshahi = User::where('branch','rajshahi')->where('role','employee')->count();
+        // $chittagang = User::where('branch','chittagang')->where('role','employee')->count();
         return view('admin.Branch.branches',compact('branch'));
     }//End Method
 
