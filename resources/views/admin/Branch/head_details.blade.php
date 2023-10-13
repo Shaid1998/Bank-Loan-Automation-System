@@ -7,11 +7,11 @@
     @include('sweetalert::alert')
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">ADD NEW LOAN PLAN</div>
+        <div class="breadcrumb-title pe-3">BRANCH HEAD</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item active" aria-current="page">NEW PLAN</li>
+                    <a href="#" class="btn btn-primary" aria-current="page">Message</a>
                 </ol>
             </nav>
         </div>
@@ -23,75 +23,79 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
+                            <div>
+                                <img style="width:100px;height:100px;" src="{{ asset($head->photo)}}"/>    
+                            </div>
+                            
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Name :</h6>
+                                    <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;" class="mb-0">Name :</h6>
                                 </div>
                                 <div class="form-group col-sm-9 text-secondary">
-                                    <h1>{{$head->name}}</h1>
+                                    <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;color:blue;">{{$head->name}}</h1>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">User Id :</h6>
+                                    <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;" class="mb-0">User Id :</h6>
                                 </div>
                                 <div class="form-group col-sm-9 text-secondary">
-                                    <h1>{{$head->user_id}}</h1>
+                                    <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;color:blue;">{{$head->user_id}}</h1>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Username :</h6>
+                                    <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;" class="mb-0">Username :</h6>
                                 </div>
                                 <div class="form-group col-sm-9 text-secondary">
-                                    <h1>{{$head->username}}</h1>
+                                    <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;color:blue;">{{$head->username}}</h1>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Email :</h6>
+                                    <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;" class="mb-0">Email :</h6>
                                 </div>
                                 <div class="form-group col-sm-9 text-secondary">
-                                    <h1>{{$head->email}}</h1>
+                                    <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;color:blue;">{{$head->email}}</h1>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Phone :</h6>
+                                    <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;" class="mb-0">Phone :</h6>
                                 </div>
                                 <div class="form-group col-sm-9 text-secondary">
-                                    <h1>{{$head->phone}}</h1>
+                                    <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;color:blue;">{{$head->phone}}</h1>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Address :</h6>
+                                    <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;" class="mb-0">Address :</h6>
                                 </div>
                                 <div class="form-group col-sm-9 text-secondary">
-                                    <h1>{{$head->address}}</h1>
+                                    <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;color:blue;">{{$head->address}}</h1>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Designation :</h6>
+                                    <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;" class="mb-0">Designation :</h6>
                                 </div>
                                 <div class="form-group col-sm-9 text-secondary">
-                                    <h1>{{$head->role}}</h1>
+                                    <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;color:blue;">{{$head->role}}</h1>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Branch :</h6>
+                                    <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;" class="mb-0">Branch :</h6>
                                 </div>
                                 <div class="form-group col-sm-9 text-secondary">
-                                    <h1>{{$head->branch}}</h1>
+                                    <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-style:italic;font-size:20px;color:blue;">{{$head->branch}}</h1>
                                 </div>
                             </div>
                         </div>
