@@ -23,7 +23,7 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="d-flex flex-column align-items-center text-center">
- 								<img src="{{ (!empty($adminData->photo)) ? url('upload/admin_images/'.$adminData->photo):url('upload/no_image.jpg') }}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+ 								<img src="{{ (!empty($employeeData->photo)) ? url('upload/employee_images/'.$employeeData->photo):url('upload/no_image.jpg') }}" alt="Employee" class="rounded-circle p-1 bg-primary" width="110">
 								<div class="mt-3">
 									<h4>{{ $employeeData->name }}</h4>
 									<p class="text-secondary mb-1">{{ $employeeData->email }}</p>
