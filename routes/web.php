@@ -101,5 +101,7 @@ Route::middleware(['auth','role:customer'])->group(function() {
     Route::post('/customer/update/password', [CustomerController::class, 'CustomerUpdatePassword'])->name('ucustomer.password');
     Route::get('/customer/message/list', [CustomerController::class, 'CustomerMessageList'])->name('customer.message.list');
     Route::get('/customer/message/reply/{id}', [CustomerController::class, 'CustomerSendMessageReply'])->name('customer.send.message.reply');
+    Route::get('/customer/message/delete/{id}', [CustomerController::class, 'CustomerSendMessageDelete'])->name('customer.send.message.delete');
+    Route::post('/customer/message/reply/store', [CustomerController::class, 'CustomerSendMessageReplyStore'])->name('customer.send.message.reply.store');
 
 });

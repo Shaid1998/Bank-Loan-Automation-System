@@ -110,7 +110,7 @@ class CustomerController extends Controller
         return view('customer.Message.reply_message',compact('message'));
     } // End Mehtod 
 
-    public function EmployeeSendMessageReplyStore(Request $request){
+    public function CustomerSendMessageReplyStore(Request $request){
         $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
 
         $id = Auth::user()->user_id;
@@ -130,5 +130,13 @@ class CustomerController extends Controller
 
     }// End Mehtod
     
-    
+    public function CustomerDeleteMessage($id){
+
+        Message::findOrFail($id)->delete();
+
+        Alert::success('Congrats','Message Deleted Successfully.');
+        
+        return redirect()->back(); 
+
+    }// End Method
 }
