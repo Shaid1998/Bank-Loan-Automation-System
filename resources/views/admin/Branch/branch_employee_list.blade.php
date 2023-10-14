@@ -48,7 +48,8 @@
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:5%;">{{$accData->created_at}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:6%;">{{$accData->branch}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:33%;">
-								<a href='{{route('admin.branch.employee.message.send',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="review" class="btn btn-primary" >MESSAGE</a>
+								<a href='{{route('admin.branch.employee.message.send',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="message" class="btn btn-primary" >MESSAGE</a>
+								<a href='{{route('admin.branch.employee.view',$b->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="view" class="btn btn-success" >VIEW</a>
 								<a href='{{ route ('admin.employee.delete',$accData->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
 							</td>
 						</tr>

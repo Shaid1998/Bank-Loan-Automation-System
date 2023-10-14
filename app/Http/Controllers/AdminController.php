@@ -211,13 +211,13 @@ class AdminController extends Controller
         return redirect()->back();
     }//End Method
 
-    public function AdminBranchHead($bid){
+    public function AdminBranchEmployeeView($bid){
         // $user = Branch::where('id', $bid)->branch_head;
         $user = DB::table('branches')->where('id', $bid)->first()->branch_head;
-        $head_id = DB::table('users')->where('user_id', $user)->first()->id;
-        $head = DB::table('users')->where('id',$head_id)->first();
+        $emp_id = DB::table('users')->where('user_id', $user)->first()->id;
+        $emp = DB::table('users')->where('id',$emp_id)->first();
 
-        return view('admin.Branch.head_details',compact('head'));
+        return view('admin.Branch.employee_details',compact('emp'));
     } // End Mehtod 
 
     public function AdminBranchEmployeeSendMessage($bid){
@@ -292,8 +292,8 @@ class AdminController extends Controller
     public function AdminEmployeeAddStore(Request $request){
         $image = $request->file('photo');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(300,300)->save('upload/customer_images/uploaded/'.$name_gen);
-        $save_url = 'upload/customer_images/uploaded/'.$name_gen;
+        Image::make($image)->resize(300,300)->save('upload/employee_images/uploaded/'.$name_gen);
+        $save_url = 'upload/employee_images/uploaded/'.$name_gen;
 
         $unid = IdGenerator::generate(['table' => 'users','field'=>'user_id', 'length' => 10, 'prefix' => 'E']);
 
