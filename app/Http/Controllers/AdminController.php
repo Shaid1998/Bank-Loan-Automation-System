@@ -262,7 +262,7 @@ class AdminController extends Controller
         $branchn = Branch::where('id',$id)->first()->branch_name;
         $nemp = User::where('role','employee')->where('branch',$branchn)->paginate(8);
 
-        return view('admin.Branch.branch_employee_list',compact('nemp'));
+        return view('admin.Branch.branch_employee_list',compact('nemp','branchn'));
     }//end method
 
     public function AdminBranchDelete($id){
@@ -270,6 +270,16 @@ class AdminController extends Controller
         Branch::findOrFail($id)->delete();
 
         Alert::success('Congrats','Branch Deleted Successfully.');
+        
+        return redirect()->back(); 
+
+    }// End Method
+
+    public function AdminEmployeeDelete($id){
+
+        User::findOrFail($id)->delete();
+
+        Alert::success('Congrats','Employee Deleted Successfully.');
         
         return redirect()->back(); 
 
