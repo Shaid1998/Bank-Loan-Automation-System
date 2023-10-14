@@ -23,7 +23,7 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{route('admin.branch.head.message.send.store')}}">
+                            <form id="myForm" method="post" action="{{route('admin.branch.employee.message.send.store')}}">
                                 @csrf
                                 <input type="hidden" name="id"  >
                                         
@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
 
-                                <input type="hidden" name="receiver_id" value="{{$head->user_id}}" />
+                                <input type="hidden" name="receiver_id" value="{{$emp->user_id}}" />
 
                                 <div class="row">
                                     <div class="col-sm-3"></div>

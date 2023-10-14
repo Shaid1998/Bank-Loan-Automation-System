@@ -220,13 +220,13 @@ class AdminController extends Controller
         return view('admin.Branch.head_details',compact('head'));
     } // End Mehtod 
 
-    public function AdminBranchHeadSendMessage($bid){
-        $head = DB::table('users')->where('id', $bid)->first();
+    public function AdminBranchEmployeeSendMessage($bid){
+        $emp = DB::table('users')->where('id', $bid)->first();
 
-        return view('admin.Branch.new_message',compact('head'));
+        return view('admin.Branch.new_message',compact('emp'));
     } // End Mehtod 
 
-    public function AdminBranchHeadSendMessageStore(Request $request){
+    public function AdminBranchEmployeeSendMessageStore(Request $request){
         $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
 
         $id = Auth::user()->user_id;
@@ -264,4 +264,5 @@ class AdminController extends Controller
 
         return view('admin.Branch.branch_employee_list',compact('nemp'));
     }//end method
+
 }

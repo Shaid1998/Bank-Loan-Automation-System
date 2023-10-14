@@ -11,7 +11,7 @@
 		<div class="card-body">
 			<div class=" align-items-center">
 				<div class="row">
-					<div style="width: 50%;padding-top:1.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">ALL CUSTOMER</h5></div>
+					<div style="width: 50%;padding-top:1.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">Branch Employee</h5></div>
 				</div>
 			</div>
 		</div>
@@ -45,7 +45,7 @@
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:8%;">{{$accData->user_id}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:8%;">{{$accData->created_at}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:33%;">
-								<a href='{{ route ('employee.send.customer.message',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="review" class="btn btn-primary" >MESSAGE</a>
+								<a href='{{route('admin.branch.employee.message.send',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="review" class="btn btn-primary" >MESSAGE</a>
 								<a href='{{ route ('employee.account.request.delete',$accData->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
 							</td>
 						</tr>

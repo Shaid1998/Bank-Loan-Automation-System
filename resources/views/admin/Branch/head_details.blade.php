@@ -11,7 +11,7 @@
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
-                    <a href="{{route('admin.branch.head.message.send',$head->id)}}" class="btn btn-primary" aria-current="page">Message</a>
+                    <a href="{{route('admin.branch.employee.message.send',$head->id)}}" class="btn btn-primary" aria-current="page">Message</a>
                 </ol>
             </nav>
         </div>
