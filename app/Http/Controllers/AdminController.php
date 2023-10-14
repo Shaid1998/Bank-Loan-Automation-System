@@ -284,4 +284,41 @@ class AdminController extends Controller
         return redirect()->back(); 
 
     }// End Method
+
+    public function AdminAddEmployee(){
+        return view('admin.Employee.add_employee');
+    }//End Method
+
+    public function AdminEmployeeAddStore(Request $request){
+        $image = $request->file('photo');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/customer_images/uploaded/'.$name_gen);
+        $save_url = 'upload/customer_images/uploaded/'.$name_gen;
+
+        $unid = IdGenerator::generate(['table' => 'users','field'=>'user_id', 'length' => 10, 'prefix' => 'E']);
+
+        $remember = Str::random(9);
+
+        User::insert([
+            'username' => $request->username,
+            'user_id' =>$unid,
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' =>Hash::make($request->password),
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'role' => $request->role,
+            'status' => $request->status,
+            'branch' => $request->branch,
+            'remember_token' => $remember,
+            'photo' => $save_url
+        ]);
+
+        Alert::success('Congrats','New Employee Inserted Successfully.');
+
+
+
+        return redirect()->back();
+
+    }// End Mehtod 
 }
