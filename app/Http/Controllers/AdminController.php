@@ -247,9 +247,14 @@ class AdminController extends Controller
     public function AdminBranchDetails($id){
         $branch = Branch::where('id',$id)->first();
         $branchn = Branch::where('id',$id)->first()->branch_name;
-        $nemp = User::where('role','employee')->count();
+        $nemp = User::where('role','employee')->where('branch',$branchn)->count();
         $cust = User::where('role','customer')->where('branch',$branchn)->count();
         $loan = LoanPlan::where('branch_name',$branchn)->count();
-        return view('admin.Branch.view_branch',compact('branch','nemp','cust','loan'));
+
+        $user = DB::table('branches')->where('id', $id)->first()->branch_head;
+        $head_id = DB::table('users')->where('user_id', $user)->first()->id;
+        $head = DB::table('users')->where('id',$head_id)->first();
+
+        return view('admin.Branch.view_branch',compact('branch','nemp','cust','loan','head'));
     }//end method
 }
