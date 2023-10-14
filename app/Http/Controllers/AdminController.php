@@ -243,4 +243,13 @@ class AdminController extends Controller
         return redirect()->back();
 
     }// End Mehtod 
+
+    public function AdminBranchDetails($id){
+        $branch = Branch::where('id',$id)->first();
+        $branchn = Branch::where('id',$id)->first()->branch_name;
+        $nemp = User::where('role','employee')->count();
+        $cust = User::where('role','customer')->where('branch',$branchn)->count();
+        $loan = LoanPlan::where('branch_name',$branchn)->count();
+        return view('admin.Branch.view_branch',compact('branch','nemp','cust','loan'));
+    }//end method
 }
