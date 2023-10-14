@@ -48,7 +48,7 @@
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%">
                                 <a href='{{route('admin.branch.head',$b->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >HEAD</a>
                                 <a href='{{route('admin.branch.details',$b->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ALL</a>
-                                <a href='{{route('admin.send.message.delete',$b->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
+                                <a href='{{route('admin.branch.delete',$b->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
                             </td>
                         </tr>
                     </tbody>

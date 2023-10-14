@@ -265,4 +265,13 @@ class AdminController extends Controller
         return view('admin.Branch.branch_employee_list',compact('nemp'));
     }//end method
 
+    public function AdminBranchDelete($id){
+
+        Branch::findOrFail($id)->delete();
+
+        Alert::success('Congrats','Branch Deleted Successfully.');
+        
+        return redirect()->back(); 
+
+    }// End Method
 }
