@@ -219,4 +219,28 @@ class AdminController extends Controller
 
         return view('admin.Branch.head_details',compact('head'));
     } // End Mehtod 
+
+    public function AdminBranchHeadSendMessage($bid){
+        $head = DB::table('users')->where('id', $bid)->first();
+
+        return view('admin.Branch.new_message',compact('head'));
+    } // End Mehtod 
+
+    public function AdminBranchHeadSendMessageStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
+
+        $id = Auth::user()->user_id;
+
+        Message::insert([
+            'sender_id' => $id,
+            'receiver_id' => $request->receiver_id,
+            'text' => $request->text,
+            'message_id' => $unid,
+        ]);
+
+        Alert::success('Congrats','Message Send Successfully.');
+
+        return redirect()->back();
+
+    }// End Mehtod 
 }
