@@ -6,7 +6,7 @@
         <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-size:50px;color:aliceblue">{{$branch->branch_name}}</h1>
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
-        <a href="{{route('admin.branch.employee.list')}}">
+        <a href="{{route('admin.branch.employee.list',$branch->id)}}">
             <div class="col">
                 <div class="card radius-10 bg-gradient-deepblue">
                     <div class="card-body">

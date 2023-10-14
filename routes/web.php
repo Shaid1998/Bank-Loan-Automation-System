@@ -58,7 +58,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/branch/head/message/send/{id}', [AdminController::class, 'AdminBranchHeadSendMessage'])->name('admin.branch.head.message.send');
     Route::post('/admin/branch/head/message/send/store', [AdminController::class, 'AdminBranchHeadSendMessageStore'])->name('admin.branch.head.message.send.store');
     Route::get('/admin/branch/details/{id}', [AdminController::class, 'AdminBranchDetails'])->name('admin.branch.details');
-    Route::get('/admin/branch/employee/list', [AdminController::class, 'AdminBranchEmployee'])->name('admin.branch.employee.list');
+    Route::get('/admin/branch/employee/list/{id}', [AdminController::class, 'AdminBranchEmployee'])->name('admin.branch.employee.list');
 
 });
 
