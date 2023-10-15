@@ -3,7 +3,7 @@
 
 <div style="background-image: linear-gradient(to bottom right, rgb(68, 0, 255), rgb(0, 255, 26))" class="page-content">
     <div class="row text-center">
-        <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-size:50px;color:aliceblue">{{$branch->branch_name}}</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-size:50px;color:aliceblue"><span style="font-family: Arial, Helvetica, sans-serif;font-size:50px;text-transform:uppercase;color:rgb(242, 79, 19)">{{$branch->branch_name}}</h1>
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-2">
         <a href="{{route('customer.branch.employee.list',$branch->id)}}">

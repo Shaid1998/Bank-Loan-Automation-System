@@ -124,5 +124,6 @@ Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/message/send/{id}', [CustomerController::class, 'CustomerSendMessage'])->name('customer.message.send');
     Route::post('/customer/message/store', [CustomerController::class, 'CustomerMessageStore'])->name('customer.message.store');
     Route::get('/customer/branch/active/loan/plan/{id}', [CustomerController::class, 'CustomerBranchActiveLoanPlan'])->name('customer.branch.active.loan.list');
+    Route::get('/customer/branch/active/loan/plan/info/{id}', [CustomerController::class, 'CustomerBranchLoanPlanInfo'])->name('customer.active.loan.plan.info');
 
 });

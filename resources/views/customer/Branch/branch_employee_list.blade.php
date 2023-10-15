@@ -7,7 +7,7 @@
 		<div class="card-body">
 			<div class=" align-items-center">
 				<div class="row">
-					<div style="width: 50%;padding-top:1.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">{{$branchn}} &nbsp; Branch Employee</h5></div>
+					<div style="width: 100%;padding-top:1.5rem;" class="column"><h5 style="font-family: Arial, Helvetica, sans-serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0"><span style="font-family: Arial, Helvetica, sans-serif;text-transform:uppercase;font-weight:900">{{$branchn}} &nbsp; Branch Employee</h5></div>
                 </div>
 			</div>
 		</div>

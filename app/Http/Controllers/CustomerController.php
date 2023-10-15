@@ -196,4 +196,10 @@ class CustomerController extends Controller
 
         return view('customer.Branch.branch_active_loan_plan',compact('lplan','branchn'));
     }//end method
+
+    public function CustomerBranchLoanPlanInfo($id){
+        $lplan = LoanPlan::where('id',$id)->first();
+
+        return view('customer.Branch.view_loan_plan',compact('lplan'));
+    }//end method
 }
