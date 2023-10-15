@@ -189,4 +189,11 @@ class CustomerController extends Controller
         return redirect()->back();
 
     }// End Mehtod 
+
+    public function CustomerBranchActiveLoanPlan($id){
+        $branchn = Branch::where('id',$id)->first()->branch_name;
+        $lplan = LoanPlan::where('branch_name',$branchn)->paginate(8);
+
+        return view('customer.Branch.branch_active_loan_plan',compact('lplan','branchn'));
+    }//end method
 }
