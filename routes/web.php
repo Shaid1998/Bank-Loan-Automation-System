@@ -132,5 +132,6 @@ Route::middleware(['auth','role:customer'])->group(function() {
     Route::post('/customer/apply/loan/store', [CustomerController::class, 'CustomerApplyLoanStore'])->name('customer.loan.apply.store');
     Route::get('/customer/loan/inquiry/{id}', [CustomerController::class, 'CustomerApplyInquiry'])->name('customer.loan.inquiery');
     Route::post('/customer/loan/inquiry', [CustomerController::class, 'CustomerApplyInquiryStore'])->name('customer.inquiery.store');
+    Route::get('/customer/loan', [LoanController::class, 'CustomerLoan'])->name('customer.loan');
 
 });

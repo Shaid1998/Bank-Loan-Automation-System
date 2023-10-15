@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Image;
 use Alert;
+use App\Models\LoanRequest;
 
 class LoanController extends Controller
 {
@@ -82,4 +83,11 @@ class LoanController extends Controller
         return redirect()->back(); 
 
     }// End Method
+
+    public function CustomerLoan(){
+        $user = Auth::user()->user_id;
+        $applied = LoanRequest::where('user_id',$user)->paginate(10);
+
+        return view('customer.Loan.loan_home',compact('applied'));
+    }//End Method
 }

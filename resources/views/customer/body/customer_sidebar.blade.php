@@ -25,7 +25,13 @@
 			<li style="padding-top: 1rem">
 				<a href="{{ route('customer.branch') }}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-bank'></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">BRANCHS</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">BRANCH</div>
+				</a>
+			</li>
+			<li style="padding-top: 1rem">
+				<a href="{{ route('customer.loan') }}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-chart-line'></i></div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">LOAN</div>
 				</a>
 			</li>
 			<li style="padding-top: 1rem">
