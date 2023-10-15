@@ -33,7 +33,7 @@
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:17%;text-align:center;">{{$accData->email}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:12%;text-align:center;">{{$accData->phone}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:23%;text-align:center;">
-								<a href='{{route('admin.branch.employee.message.send',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="message" class="btn btn-primary" >MESSAGE</a>
+								<a href='{{route('customer.message.send',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="message" class="btn btn-primary" >MESSAGE</a>
 							</td>
 						</tr>
 					</tbody>

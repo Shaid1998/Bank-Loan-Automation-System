@@ -165,4 +165,28 @@ class CustomerController extends Controller
 
         return view('customer.Branch.branch_employee_list',compact('nemp','branchn'));
     }//end method
+
+    public function CustomerSendMessage($bid){
+        $emp = DB::table('users')->where('id', $bid)->first();
+
+        return view('customer.Branch.new_message',compact('emp'));
+    } // End Mehtod 
+
+    public function CustomerMessageStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
+
+        $id = Auth::user()->user_id;
+
+        Message::insert([
+            'sender_id' => $id,
+            'receiver_id' => $request->receiver_id,
+            'text' => $request->text,
+            'message_id' => $unid,
+        ]);
+
+        Alert::success('Congrats','Message Send Successfully.');
+
+        return redirect()->back();
+
+    }// End Mehtod 
 }
