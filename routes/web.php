@@ -63,6 +63,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/employee/delete/{id}', [AdminController::class, 'AdminEmployeeDelete'])->name('admin.employee.delete');
     Route::get('/admin/add/employee', [AdminController::class, 'AdminAddEmployee'])->name('admin.add.employee');
     Route::post('/admin/employee/add/store', [AdminController::class, 'AdminEmployeeAddStore'])->name('admin.employee.add.store');
+    Route::get('/admin/branch/customer/list/{id}', [AdminController::class, 'AdminBranchCustomer'])->name('admin.branch.customer.list');
 
 });
 

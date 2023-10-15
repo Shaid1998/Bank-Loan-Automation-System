@@ -321,4 +321,11 @@ class AdminController extends Controller
         return redirect()->back();
 
     }// End Mehtod 
+
+    public function AdminBranchCustomer($id){
+        $branchn = Branch::where('id',$id)->first()->branch_name;
+        $ncus = User::where('role','customer')->where('branch',$branchn)->paginate(8);
+
+        return view('admin.Branch.branch_customer_list',compact('ncus','branchn'));
+    }//end method
 }

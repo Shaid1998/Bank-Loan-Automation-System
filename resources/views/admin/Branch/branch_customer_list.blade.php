@@ -1,6 +1,8 @@
 @extends('admin.admin_dashboard')
 @section('admin')
 
+ 
+
 <div class="page-content">
     @include('sweetalert::alert')
 	<div class="card radius-10">
@@ -8,7 +10,6 @@
 			<div class=" align-items-center">
 				<div class="row">
 					<div style="width: 50%;padding-top:1.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">{{$branchn}} &nbsp; Branch Employee</h5></div>
-                    <div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='{{route('admin.add.employee')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW EMPLOYEE</a></div>
                 </div>
 			</div>
 		</div>
@@ -30,7 +31,7 @@
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:33%;">Action</th> 
 					</tr>
 				</thead>
-					@foreach ($nemp as $accData)
+					@foreach ($ncus as $accData)
 					<tbody>
 						<tr>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:3%;">{{$loop->iteration}}</td>
@@ -45,8 +46,6 @@
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:6%;">{{$accData->branch}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:33%;">
 								<a href='{{route('admin.branch.employee.message.send',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="message" class="btn btn-primary" >MESSAGE</a>
-								<a href='{{route('admin.branch.employee.view',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="view" class="btn btn-success" >VIEW</a>
-								<a href='{{ route ('admin.employee.delete',$accData->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
 							</td>
 						</tr>
 					</tbody>
@@ -55,9 +54,10 @@
 			</div>
 		</div>
         <div class="row">
-            {{$nemp->links('pagination::bootstrap-5') }}
+            {{$ncus->links('pagination::bootstrap-5') }}
         </div>
 	</div>
 </div>
+
 
 @endsection
