@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('loan_requests', function (Blueprint $table) {
             $table->id();
             $table->String('loan_request_id')->unique();
+            $table->String('chosen_loan');
             $table->String('user_id');
             $table->String('Amount');
             $table->text('Commitment');

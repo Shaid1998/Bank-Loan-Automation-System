@@ -34,6 +34,9 @@
                                     </div>
                                 </div>
 
+                                <input type="hidden" name="chosen_loan" value="{{$loan->Loan_id}}"/>
+
+
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Commitment</h6>

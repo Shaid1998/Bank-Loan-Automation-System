@@ -113,6 +113,7 @@ class CustomerController extends Controller
         LoanRequest::insert([
             'loan_request_id' => $unid,
             'Amount' => $request->Amount,
+            'chosen_loan' => $request->chosen_loan,
             'Commitment' => $request->Commitment,
             'branch' => $request->branch,
             'user_id' => $id,
