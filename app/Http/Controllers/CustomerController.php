@@ -158,4 +158,11 @@ class CustomerController extends Controller
 
         return view('customer.Branch.branch_all',compact('branch','nemp','cust','loan','head'));
     }//end method
+
+    public function CustomerBranchEmployee($id){
+        $branchn = Branch::where('id',$id)->first()->branch_name;
+        $nemp = User::where('role','employee')->where('branch',$branchn)->paginate(8);
+
+        return view('customer.Branch.branch_employee_list',compact('nemp','branchn'));
+    }//end method
 }

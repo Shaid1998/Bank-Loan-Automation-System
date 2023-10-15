@@ -120,5 +120,6 @@ Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/message/delete/{id}', [CustomerController::class, 'CustomerSendMessageDelete'])->name('customer.send.message.delete');
     Route::post('/customer/message/reply/store', [CustomerController::class, 'CustomerSendMessageReplyStore'])->name('customer.send.message.reply.store');
     Route::get('/customer/branch', [CustomerController::class, 'CustomerBranch'])->name('customer.branch');
+    Route::get('/customer/branch/employee/list/{id}', [CustomerController::class, 'CustomerBranchEmployee'])->name('customer.branch.employee.list');
 
 });
