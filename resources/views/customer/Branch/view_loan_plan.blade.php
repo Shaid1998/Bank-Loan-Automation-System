@@ -16,7 +16,7 @@
         <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:35px;padding-left:5rem;color:rgb(241, 249, 87)">EMI : <input style="font-family: 'Times New Roman', Times, serif;font-weight:400;font-size:25px;padding-left:1rem;color:rgb(13, 13, 224);border:0;border-radius:25px" value="{{$lplan->emi}}" readonly /></h6>
         <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:600;font-size:35px;padding-left:5rem;color:rgb(241, 249, 87)">Interest Rate: <input style="font-family: 'Times New Roman', Times, serif;font-weight:400;font-size:25px;padding-left:1rem;color:rgb(13, 13, 224);border:0;border-radius:25px" value="{{$lplan->interest_rate}}" readonly /></h6>
         <div style="padding-left: 2rem;padding-right:1rem;padding-top:2rem;padding-bottom:3rem" class="row">
-            <div style="width: 50%;padding-left: 1rem;padding-right:1rem" class="column"><a href="#" style="width: 95%;font-size:40px;border:0;border-radius:55px;" class="btn btn-primary">APPLY</a></div>
+            <div style="width: 50%;padding-left: 1rem;padding-right:1rem" class="column"><a href="{{route('customer.apply.loan',$lplan->id)}}" style="width: 95%;font-size:40px;border:0;border-radius:55px;" class="btn btn-primary">APPLY</a></div>
             <div style="width: 50%;padding-left: 1rem;padding-right:1rem" class="column"><a href="#" style="width: 95%;font-size:40px;border:0;border-radius:55px;"  class="btn btn-warning">INQUIRY</a></div>
         </div>
     </div>

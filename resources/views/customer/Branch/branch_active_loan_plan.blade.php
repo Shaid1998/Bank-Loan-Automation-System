@@ -43,7 +43,7 @@
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%;text-align:center;">{{$m->interest_rate}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:4%;text-align:center;">{{$m->loan_duration}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%;text-align:center;">
-                                <a href='#' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >INFO</a>
+                                <a href='{{route('customer.active.loan.plan.info',$m->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >INFO</a>
                                 <a href='{{route('admin.send.message',$m->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >APPLY</a>
                             </td>
                         </tr>

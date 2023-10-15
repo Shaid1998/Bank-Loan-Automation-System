@@ -13,6 +13,7 @@ use Image;
 use Alert;
 use App\Models\Branch;
 use App\Models\LoanPlan;
+use App\Models\LoanRequest;
 use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
@@ -98,6 +99,30 @@ class CustomerController extends Controller
     public function CustomerRegisterForm(){
         return view('visitor.visitor_register');
     }//end method
+
+    public function CustomerApplyLoan($id){
+        $loan = LoanPlan::where('id',$id)->first();
+
+        return view('customer.Loan.apply_loan',compact('loan'));
+    }//End Method
+
+    public function CustomerApplyLoanStore(Request $request){
+        $id = Auth::user()->user_id;
+        $unid = IdGenerator::generate(['table' => 'loan_requests','field'=>'loan_request_id', 'length' => 10, 'prefix' => 'LR']);
+
+        LoanRequest::insert([
+            'loan_request_id' => $unid,
+            'Amount' => $request->Amount,
+            'Commitment' => $request->Commitment,
+            'branch' => $request->branch,
+            'user_id' => $id,
+        ]);
+
+        Alert::success('Congrats','Loan Apply Successfully. You Receive Reaction From Our Representative.');
+
+        return redirect()->back();
+        
+    }//End Method
 
     
     
