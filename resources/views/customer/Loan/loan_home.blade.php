@@ -41,7 +41,7 @@
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receive->created_at}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receive->updated_at}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:25%">
-                                <a href='{{route('customer.send.message.reply',$receive->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >Edit</a>
+                                <a href='{{route('customer.loan.application.edit',$receive->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-primary" >Edit</a>
                                 <a href='{{route('customer.send.message.delete',$receive->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
                             </td>
                         </tr>

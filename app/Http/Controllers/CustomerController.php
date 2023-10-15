@@ -149,5 +149,25 @@ class CustomerController extends Controller
         return redirect()->back();
 
     }// End Mehtod 
+
+    public function CustomerLoanApplicationEdit($id){
+        $loan = LoanRequest::where('id',$id)->first();
+
+        return view('customer.Loan.edit_loan_application',compact('loan'));
+    }//End Method
+
+    public function CustomerLoanApplicationEditStore(Request $request){
+        $id = $request->id;
+
+        LoanRequest::findOrFail($id)->update([
+            'Amount' => $request->Amount,
+            'Commitment' => $request->Commitment,
+            'branch' => $request->branch,
+        ]);
+
+        Alert::success('Congrats','Loan Application Updated Successfully.');
+
+        return redirect()->route('customer.loan');
+    }//End Method
     
 }
