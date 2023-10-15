@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Image;
 use Alert;
+use App\Models\Branch;
+use App\Models\LoanPlan;
+use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
@@ -139,4 +142,20 @@ class CustomerController extends Controller
         return redirect()->back(); 
 
     }// End Method
+
+    public function CustomerBranch(){
+        $user_branch = Auth::user()->branch;
+        $branch = Branch::where('branch_name',$user_branch)->first();
+        $branchid = Branch::where('branch_name',$user_branch)->first()->id;
+
+        $nemp = User::where('role','employee')->where('branch',$user_branch)->count();
+        $cust = User::where('role','customer')->where('branch',$user_branch)->count();
+        $loan = LoanPlan::where('branch_name',$user_branch)->count();
+
+        $user = DB::table('branches')->where('id', $branchid)->first()->branch_head;
+        $head_id = DB::table('users')->where('user_id', $user)->first()->id;
+        $head = DB::table('users')->where('id',$head_id)->first();
+
+        return view('customer.Branch.branch_all',compact('branch','nemp','cust','loan','head'));
+    }//end method
 }

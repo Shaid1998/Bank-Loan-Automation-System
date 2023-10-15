@@ -341,4 +341,6 @@ class AdminController extends Controller
 
         return view('admin.Branch.branch_active_loan_plan',compact('lplan','branchn'));
     }//end method
+
+    
 }

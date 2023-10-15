@@ -174,7 +174,7 @@
             </div>
         </div>
         <div class="row">
-            {{$multi->links('pagination::bootstrap-5') }}
+            {{$multiYear->links('pagination::bootstrap-5') }}
         </div>
     </div>
 </div>
