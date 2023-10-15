@@ -36,24 +36,9 @@
                                     </div>
                                 </div>
 
-                                <div class="row mb-3">
-									<div class="col-sm-3">
-										<h6 class="mb-0">Receiver</h6>
-									</div>
-									<div class="col-sm-9 text-secondary">
-										<input type="text" name="receiver_id" class="form-control" value="{{$message->uploader_id}}" />
-									</div>
-								</div>
+                                <input type="hidden" name="receiver_id" class="form-control" value="{{$message->uploader_id}}" />
+                                <input type="hidden" name="message_for" class="form-control" value="{{$message->Loan_id}}" />
 
-                                <div class="row mb-3">
-									<div class="col-sm-3">
-										<h6 class="mb-0">Message Reason</h6>
-									</div>
-									<div class="col-sm-9 text-secondary">
-										<input type="text" name="message_for" class="form-control" value="{{$message->Loan_id}}" />
-									</div>
-								</div>
-                                
                                 <div class="row">
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9 text-secondary">

@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Image;
 use Alert;
-use App\Models\LoanPlan;
-use App\Models\Message;
 use Illuminate\Support\Str;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Support\Facades\DB;
@@ -146,139 +144,9 @@ class EmployeeController extends Controller
 
     }// End Method
 
-    public function EmployeeAllLoanPlanList(){
-        $multiYear = LoanPlan::where('loan_duration','multiyearly')->paginate(15);
-        $Year = LoanPlan::where('loan_duration','yearly')->paginate(15);
-        $month = LoanPlan::where('loan_duration','monthly')->paginate(15);
-        return view('employee.LoanPlan.loanPlanList',compact('multiYear','Year','month'));
-    } // End Mehtod 
+    
 
-    public function EmployeeLoanPlanAdd(){
-        return view('employee.LoanPlan.add_loan_plan');
-    }//end method
-
-    public function EmployeeLoanPlanStore(Request $request){
-        $unid = IdGenerator::generate(['table' => 'loan_plans','field'=>'Loan_id', 'length' => 10, 'prefix' => 'L']);
-
-        $id = Auth::user()->user_id;
-
-        LoanPlan::insert([
-            'Loan_type' => $request->Loan_type,
-            'branch_name' => $request->branch_name,
-            'loan_duration' => $request->loan_duration,
-            'Loan_id' => $unid,
-            'loan_description' => $request->loan_description,
-            'emi' => $request->emi,
-            'interest_rate' => $request->interest_rate,
-            'uploader_id' => $id,
-        ]);
-
-        Alert::success('Congrats','New Loan Plan Inserted Successfully.');
-
-        return redirect()->route('employee.loan.plan');
-
-    }// End Mehtod 
-
-    public function EmployeeLoanPlanEdit($serial){
-        $loanData = LoanPlan::findOrFail($serial);
-        return view('employee.LoanPlan.edit_loan_plan',compact('loanData'));
-    } // End Mehtod 
-
-    public function EmployeeLoanPlanUpdate(Request $request){
-        $id = $request->id;
-
-        LoanPlan::findOrFail($id)->update([
-            'Loan_type' => $request->Loan_type,
-            'branch_name' => $request->branch_name,
-            'loan_duration' => $request->loan_duration,
-            'loan_description' => $request->loan_description,
-            'emi' => $request->emi,
-            'interest_rate' => $request->interest_rate,
-        ]);
-
-        Alert::success('Congrats','Loan Plan Updated Successfully.');
-
-        return redirect()->route('employee.loan.plan');
-    }//End Method
-
-    public function DeleteLoanPlan($id){
-
-        LoanPlan::findOrFail($id)->delete();
-
-        Alert::success('Congrats','Loan Plan Deleted Successfully.');
-        
-        return redirect()->back(); 
-
-    }// End Method
-
-    public function EmployeeMessages(){
-        $user = Auth::user()->user_id;
-        $sendMessage = Message::where('sender_id',$user)->paginate(15);
-        $receiveMessage = Message::where('receiver_id',$user)->paginate(15);
-
-        return view('employee.Message.messages',compact('sendMessage','receiveMessage'));
-    } // End Mehtod 
-
-    public function EmployeeSendMessage($id){
-        $message = Message::where('id', $id)->paginate(15);
-
-        return view('employee.Message.new_message',compact('message'));
-    } // End Mehtod 
-
-    public function EmployeeSendMessageStore(Request $request){
-        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
-
-        $id = Auth::user()->user_id;
-
-        Message::insert([
-            'sender_id' => $id,
-            'receiver_id' => $request->receiver_id,
-            'message_for' => $request->message_for,
-            'text' => $request->text,
-            'message_id' => $unid,
-        ]);
-
-        Alert::success('Congrats','New Message Send Successfully.');
-
-        return redirect()->back();
-
-    }// End Mehtod 
-
-    public function EmployeeSendMessageReply($id){
-        $message = Message::where('id', $id)->first();
-
-        return view('employee.Message.reply_message',compact('message'));
-    } // End Mehtod 
-
-    public function EmployeeSendMessageReplyStore(Request $request){
-        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
-
-        $id = Auth::user()->user_id;
-
-        Message::insert([
-            'sender_id' => $id,
-            'receiver_id' => $request->receiver_id,
-            'message_for' => $request->message_for,
-            'parent_id' => $request->parent_id,
-            'text' => $request->text,
-            'message_id' => $unid,
-        ]);
-
-        Alert::success('Congrats','Reply Send Successfully.');
-
-        return redirect()->back();
-
-    }// End Mehtod
-
-    public function EmployeeDeleteMessage($id){
-
-        Message::findOrFail($id)->delete();
-
-        Alert::success('Congrats','Message Deleted Successfully.');
-        
-        return redirect()->back(); 
-
-    }// End Method
+    
 
     public function EmployeeCustomerList(){
         $customer = User::where('role', 'customer')->paginate(15);
@@ -286,28 +154,6 @@ class EmployeeController extends Controller
         return view('employee.Customers.all_customer',compact('customer'));
     } // End Mehtod 
 
-    public function EmployeeSendCustomerMessage($id){
-        $user = User::where('id', $id)->first();
-        return view('employee.Customers.user_message',compact('user'));
-    } // End Mehtod 
-
-
-    public function EmployeeSendMessageCustomerStore(Request $request){
-        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
-
-        $id = Auth::user()->user_id;
-
-        Message::insert([
-            'sender_id' => $id,
-            'receiver_id' => $request->receiver_id,
-            'text' => $request->text,
-            'message_id' => $unid,
-        ]);
-
-        Alert::success('Congrats','Message Send Successfully.');
-
-        return redirect()->back();
-
-    }// End Mehtod 
+    
 
 }
