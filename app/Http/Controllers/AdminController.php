@@ -334,4 +334,11 @@ class AdminController extends Controller
 
         return view('admin.Branch.new_message',compact('emp'));
     } // End Mehtod 
+
+    public function AdminBranchActiveLoanPlan($id){
+        $branchn = Branch::where('id',$id)->first()->branch_name;
+        $lplan = LoanPlan::where('branch_name',$branchn)->paginate(8);
+
+        return view('admin.Branch.branch_active_loan_plan',compact('lplan','branchn'));
+    }//end method
 }

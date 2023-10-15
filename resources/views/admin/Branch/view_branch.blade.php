@@ -48,25 +48,27 @@
                 </div>
             </div>
         </a>
-		<div class="col">
-			<div class="card radius-10 bg-gradient-ohhappiness">
-				<div class="card-body">
-					<div class="d-flex align-items-center">
-						<h5 class="mb-0 text-white">{{$loan}}</h5>
-						<div class="ms-auto">
-							<i class='fas fa-hand-holding-usd fs-3 text-white'></i>
-						</div>
-					</div>
-					<div class="progress my-3 bg-light-transparent" style="height:3px;">
-						<div class="progress-bar bg-white" role="progressbar" style="width: 23%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-					</div>
-					<div class="d-flex align-items-center text-white">
-						<p class="mb-0">Active Loan Plan</p>
-						<p class="mb-0 ms-auto">--<span><i style="color:red" class='bx bx-down-arrow-alt'></i></span></p>
-					</div>
-				</div>
-			</div>
-		</div>
+        <a href="{{route('admin.branch.active.loan.list',$branch->id)}}">
+            <div class="col">
+                <div class="card radius-10 bg-gradient-ohhappiness">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <h5 class="mb-0 text-white">{{$loan}}</h5>
+                            <div class="ms-auto">
+                                <i class='fas fa-hand-holding-usd fs-3 text-white'></i>
+                            </div>
+                        </div>
+                        <div class="progress my-3 bg-light-transparent" style="height:3px;">
+                            <div class="progress-bar bg-white" role="progressbar" style="width: 23%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="d-flex align-items-center text-white">
+                            <p class="mb-0">Active Loan Plan</p>
+                            <p class="mb-0 ms-auto">--<span><i style="color:red" class='bx bx-down-arrow-alt'></i></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
 	</div><!--end row-->
     <div class="row">
         <h1 style="font-family: Arial, Helvetica, sans-serif;font-weight:900;font-size:40px;padding:2rem;text-align:center;text-decoration:underline;color:aliceblue">CONTACT</h1>
