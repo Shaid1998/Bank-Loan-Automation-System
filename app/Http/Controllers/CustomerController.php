@@ -125,6 +125,29 @@ class CustomerController extends Controller
         
     }//End Method
 
-    
+    public function CustomerApplyInquiry($id){
+        $loan = LoanPlan::where('id',$id)->first();
+
+        return view('customer.Loan.inquery',compact('loan'));
+    }//End Method
+
+    public function CustomerApplyInquiryStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
+
+        $id = Auth::user()->user_id;
+
+        Message::insert([
+            'sender_id' => $id,
+            'branch' => $request->branch,
+            'message_for' => $request->message_for,
+            'text' => $request->text,
+            'message_id' => $unid,
+        ]);
+
+        Alert::success('Congrats','Inquiery Topic Send Successfully.');
+
+        return redirect()->back();
+
+    }// End Mehtod 
     
 }

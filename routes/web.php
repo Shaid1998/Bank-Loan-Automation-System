@@ -130,5 +130,7 @@ Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/branch/active/loan/plan/info/{id}', [BranchController::class, 'CustomerBranchLoanPlanInfo'])->name('customer.active.loan.plan.info');
     Route::get('/customer/apply/loan/{id}', [CustomerController::class, 'CustomerApplyLoan'])->name('customer.apply.loan');
     Route::post('/customer/apply/loan/store', [CustomerController::class, 'CustomerApplyLoanStore'])->name('customer.loan.apply.store');
+    Route::get('/customer/loan/inquiry/{id}', [CustomerController::class, 'CustomerApplyInquiry'])->name('customer.loan.inquiery');
+    Route::post('/customer/loan/inquiry', [CustomerController::class, 'CustomerApplyInquiryStore'])->name('customer.inquiery.store');
 
 });
