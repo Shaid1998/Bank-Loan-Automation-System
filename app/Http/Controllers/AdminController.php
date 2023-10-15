@@ -226,7 +226,7 @@ class AdminController extends Controller
         return view('admin.Branch.new_message',compact('emp'));
     } // End Mehtod 
 
-    public function AdminBranchEmployeeSendMessageStore(Request $request){
+    public function AdminMessageStore(Request $request){
         $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
 
         $id = Auth::user()->user_id;
@@ -328,4 +328,10 @@ class AdminController extends Controller
 
         return view('admin.Branch.branch_customer_list',compact('ncus','branchn'));
     }//end method
+
+    public function AdminBranchCustomerSendMessage($bid){
+        $emp = DB::table('users')->where('id', $bid)->first();
+
+        return view('admin.Branch.new_message',compact('emp'));
+    } // End Mehtod 
 }
