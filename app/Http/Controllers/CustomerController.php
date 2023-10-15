@@ -169,5 +169,15 @@ class CustomerController extends Controller
 
         return redirect()->route('customer.loan');
     }//End Method
+
+    public function DeleteLoanRequest($id){
+
+        LoanRequest::findOrFail($id)->delete();
+
+        Alert::success('Congrats','Loan Request Deleted Successfully.');
+        
+        return redirect()->back(); 
+
+    }// End Method
     
 }
