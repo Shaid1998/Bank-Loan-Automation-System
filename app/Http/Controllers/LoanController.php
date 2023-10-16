@@ -150,4 +150,10 @@ class LoanController extends Controller
 
         return redirect()->route('employee.all.loan.requests');
     }//End Method
+
+    public function EmployeeAllActiveLoan(){
+        $active =Loan::paginate(15);
+
+        return view('employee.LoanPlan.active_loan',compact('active'));
+    }//End Method
 }
