@@ -108,4 +108,14 @@ class LoanController extends Controller
 
         return view('employee.LoanPlan.loan_request_review',compact('user','loan','loanbranch'));
     }//End Method
+
+    public function EmployeeLoanRequestAccept($id){
+        $user_id = DB::table('loan_requests')->where('id', $id)->first()->user_id;
+        $loanreq = DB::table('loan_requests')->where('id', $id)->first();
+        $loanc = DB::table('loan_requests')->where('id', $id)->first()->chosen_loan;
+        $loan = LoanPlan::where('Loan_id',$loanc)->first();
+        $user = User::where('user_id',$user_id)->first();
+
+        return view('employee.LoanPlan.loan_request_accept',compact('user','loan','loanreq'));
+    }//End Method
 }

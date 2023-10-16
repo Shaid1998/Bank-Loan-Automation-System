@@ -105,6 +105,7 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::post('/employee/send/message/customer/store', [MessageController::class, 'EmployeeSendMessageCustomerStore'])->name('employee.send.message.customer.store');
     Route::get('/employee/all/loan/request', [LoanController::class, 'EmployeeLoanRequest'])->name('employee.all.loan.requests');
     Route::get('/employee/loan/request/review/{id}', [LoanController::class, 'EmployeeLoanRequestRewview'])->name('employee.loan.request.review');
+    Route::get('/employee/loan/request/accept/{id}', [LoanController::class, 'EmployeeLoanRequestAccept'])->name('employee.loan.request.accept');
 
 });
 
