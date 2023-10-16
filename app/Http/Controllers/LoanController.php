@@ -157,6 +157,12 @@ class LoanController extends Controller
         return view('employee.LoanPlan.active_loan',compact('active'));
     }//End Method
 
+    public function AdminActiveLoanView(){
+        $active =Loan::paginate(15);
+
+        return view('admin.SystemData.active_loan',compact('active'));
+    }//End Method
+
     public function EmployeeDeleteMessage($id){
 
         Message::findOrFail($id)->delete();

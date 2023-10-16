@@ -69,6 +69,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/branch/customer/list/{id}', [BranchController::class, 'AdminBranchCustomer'])->name('admin.branch.customer.list');
     Route::get('/admin/branch/customer/message/send/{id}', [MessageController::class, 'AdminBranchCustomerSendMessage'])->name('admin.branch.customer.message.send');
     Route::get('/admin/branch/active/loan/plan/{id}', [BranchController::class, 'AdminBranchActiveLoanPlan'])->name('admin.branch.active.loan.list');
+    Route::get('/admin/active/loan/view', [loanController::class, 'AdminActiveLoanView'])->name('admin.active.loan.view');
 
 
 });

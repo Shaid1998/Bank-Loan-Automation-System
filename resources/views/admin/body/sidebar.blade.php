@@ -29,6 +29,12 @@
 				</a>
 			</li>
 			<li style="padding-top: 1rem">
+				<a href="{{ route('admin.active.loan.view') }}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-thumbs-up'></i></div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">ACTIVE LOAN</div>
+				</a>
+			</li>
+			<li style="padding-top: 1rem">
 				<a href="{{ route('admin.messages') }}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-message'></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">MESSAGES</div>
