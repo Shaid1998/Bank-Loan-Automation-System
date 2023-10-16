@@ -70,6 +70,8 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/branch/customer/message/send/{id}', [MessageController::class, 'AdminBranchCustomerSendMessage'])->name('admin.branch.customer.message.send');
     Route::get('/admin/branch/active/loan/plan/{id}', [BranchController::class, 'AdminBranchActiveLoanPlan'])->name('admin.branch.active.loan.list');
     Route::get('/admin/active/loan/view', [loanController::class, 'AdminActiveLoanView'])->name('admin.active.loan.view');
+    Route::get('/admin/loan/inquire/{id}', [MessageController::class, 'AdminLoanInquire'])->name('admin.loan.inquire');
+    Route::post('/admin/loan/inquire/store', [MessageController::class, 'AdminLoanInquireStore'])->name('admin.loan.inquire.store');
 
 
 });
