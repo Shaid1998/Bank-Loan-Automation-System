@@ -90,4 +90,10 @@ class LoanController extends Controller
 
         return view('customer.Loan.loan_home',compact('applied'));
     }//End Method
+
+    public function EmployeeLoanRequest(){
+        $req = LoanRequest::paginate(10);
+
+        return view('employee.LoanPlan.loan_request',compact('req'));
+    }//End Method
 }

@@ -103,6 +103,7 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::get('/employee/customer/list', [EmployeeController::class, 'EmployeeCustomerList'])->name('employee.customer.list');
     Route::get('/employee/send/customer/message/{id}', [MessageController::class, 'EmployeeSendCustomerMessage'])->name('employee.send.customer.message');
     Route::post('/employee/send/message/customer/store', [MessageController::class, 'EmployeeSendMessageCustomerStore'])->name('employee.send.message.customer.store');
+    Route::get('/employee/all/loan/request', [LoanController::class, 'EmployeeLoanRequest'])->name('employee.all.loan.requests');
 
 });
 
