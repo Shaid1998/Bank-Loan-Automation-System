@@ -4,8 +4,8 @@
 
 <div class="page-content">
     @include('sweetalert::alert')
-	<div class="card radius-10">
-		<div class="card-body">
+	<div >
+		<div >
 			<div class=" align-items-center">
 				<div class="row">
 					<div style="width: 50%;padding-top:1.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">ALL CUSTOMER</h5></div>

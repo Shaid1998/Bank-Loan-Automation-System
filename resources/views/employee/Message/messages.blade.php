@@ -68,7 +68,7 @@
                     <thead class="table-light">
                         <tr>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sl</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sender</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Receiver</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:7%">Reason</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:45%">Message</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:7%">Date & Time</th>

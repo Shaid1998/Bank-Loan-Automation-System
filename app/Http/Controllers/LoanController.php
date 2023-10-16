@@ -156,4 +156,14 @@ class LoanController extends Controller
 
         return view('employee.LoanPlan.active_loan',compact('active'));
     }//End Method
+
+    public function EmployeeDeleteMessage($id){
+
+        Message::findOrFail($id)->delete();
+
+        Alert::success('Congrats','Message Deleted Successfully.');
+        
+        return redirect()->back(); 
+
+    }// End Method
 }
