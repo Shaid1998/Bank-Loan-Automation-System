@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Alert;
+use App\Models\Loan;
 use App\Models\User;
 use Illuminate\Support\Str;
 
@@ -273,5 +274,10 @@ class MessageController extends Controller
         return redirect()->back();
 
     }// End Mehtod 
+
+    public function EmployeeCustomerSendMessage($id){
+        $loan = Loan::where('id', $id)->first();
+        return view('employee.Customers.user_message',compact('user'));
+    } // End Mehtod 
 
 }

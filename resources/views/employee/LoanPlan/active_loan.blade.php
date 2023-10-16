@@ -54,7 +54,7 @@
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:5%;text-align:center;">{{$request->user_commitment}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:5%;text-align:center;">{{$request->distribution_branch}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:25%;text-align:center;">
-								<a href='{{ route ('employee.loan.request.review',$request->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:15px;cursor:pointer;" id="review" class="btn btn-primary" >REVIEW</a>
+								<a href='{{ route ('employee.send.customer.message',$request->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:15px;cursor:pointer;" id="review" class="btn btn-primary" >MESSAGE</a>
 								<a href='{{ route ('employee.account.request.delete',$request->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:15px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
 							</td>
 						</tr>
