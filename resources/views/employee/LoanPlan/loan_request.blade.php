@@ -40,7 +40,7 @@
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:10%;text-align:center;">{{$request->branch}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:8%;text-align:center;">{{$request->created_at}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:20%;text-align:center;">
-								<a href='{{ route ('employee.account.request.review',$request->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="review" class="btn btn-primary" >REVIEW</a>
+								<a href='{{ route ('employee.loan.request.review',$request->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="review" class="btn btn-primary" >REVIEW</a>
 								<a href='{{ route ('employee.account.request.delete',$request->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
 							</td>
 						</tr>

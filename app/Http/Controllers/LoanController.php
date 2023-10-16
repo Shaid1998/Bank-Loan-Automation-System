@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Image;
 use Alert;
 use App\Models\LoanRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class LoanController extends Controller
 {
@@ -95,5 +97,15 @@ class LoanController extends Controller
         $req = LoanRequest::paginate(10);
 
         return view('employee.LoanPlan.loan_request',compact('req'));
+    }//End Method
+
+    public function EmployeeLoanRequestRewview($id){
+        $user_id = DB::table('loan_requests')->where('id', $id)->first()->user_id;
+        $loanbranch = DB::table('loan_requests')->where('id', $id)->first();
+        $loanc = DB::table('loan_requests')->where('id', $id)->first()->chosen_loan;
+        $loan = LoanPlan::where('Loan_id',$loanc)->first();
+        $user = User::where('user_id',$user_id)->first();
+
+        return view('employee.LoanPlan.loan_request_review',compact('user','loan','loanbranch'));
     }//End Method
 }
