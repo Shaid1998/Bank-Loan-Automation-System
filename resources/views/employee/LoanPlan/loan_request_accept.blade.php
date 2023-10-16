@@ -17,7 +17,7 @@
     </div>
     <!--end breadcrumb-->
     <div class="container">
-        <form id="myForm" method="post" action="{{route('employee.accept.account')}}">
+        <form id="myForm" method="post" action="{{route('employee.accept.loan.store')}}">
             @csrf
             <input type="hidden" name="id" value="{{$loanreq->id}}" >
                     
@@ -54,6 +54,15 @@
                 </div>
                 <div class="form-group col-sm-9 text-secondary">
                     <input type="text" name="plan_interest_rate" class="form-control" value="{{$loan->interest_rate}}"/>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Amount</h6>
+                </div>
+                <div class="form-group col-sm-9 text-secondary">
+                    <input type="text" name="loan_amount" class="form-control" value="{{$loanreq->Amount}}"/>
                 </div>
             </div>
 
@@ -158,7 +167,7 @@
 
             <div class="row">
                 <div class="col-sm-3"></div>
-                <div class="col-sm-9 text-secondary">
+                <div style="padding: 1rem;" class="col-sm-9 text-secondary">
                     <input type="submit" class="btn btn-primary px-4" value="Accept" />
                 </div>
             </div>

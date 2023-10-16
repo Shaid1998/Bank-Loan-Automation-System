@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Image;
 use Alert;
+use App\Models\Loan;
 use App\Models\LoanRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -117,5 +118,36 @@ class LoanController extends Controller
         $user = User::where('user_id',$user_id)->first();
 
         return view('employee.LoanPlan.loan_request_accept',compact('user','loan','loanreq'));
+    }//End Method
+
+    public function EmployeeLoanRequestAcceptStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'loans','field'=>'loan_distribution_id', 'length' => 10, 'prefix' => 'LD']);
+
+        $emp=Auth::user()->user_id;
+
+        Loan::insert([
+            'loan_distribution_id' => $unid,
+            'user_id' => $request->user_id,
+            'plan_id' => $request->plan_id,
+            'plan_type' => $request->plan_type,
+            'plan_interest_rate' => $request->plan_interest_rate,
+            'plan_emi' => $request->plan_emi,
+            'plan_branch' => $request->plan_branch,
+            'distribution_branch' => $request->distribution_branch,
+            'loan_amount' => $request->loan_amount,
+            'user_name' => $request->user_name,
+            'user_email' => $request->user_email,
+            'user_phone' => $request->user_phone,
+            'user_address' => $request->user_address,
+            'user_commitment' => $request->user_commitment,
+            'user_branch' => $request->user_branch,
+            'issue_date' => $request->issue_date,
+            'expire_date' => $request->expire_date,
+            'issued_by' => $emp,
+        ]);
+
+        Alert::success('Congrats','Loan Accepted.');
+
+        return redirect()->route('employee.all.loan.requests');
     }//End Method
 }
