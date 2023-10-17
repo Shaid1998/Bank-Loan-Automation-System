@@ -78,6 +78,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/blog/view', [BlogController::class, 'AdminBlogView'])->name('admin.blog.view');
     Route::get('/admin/blog/add', [BlogController::class, 'BlogAdd'])->name('admin.blog.add');
     Route::post('/admin/blog/add/store', [BlogController::class, 'BlogStore'])->name('admin.blog.store');
+    Route::get('/admin/blog/delete', [BlogController::class, 'BlogDelete'])->name('admin.blog.delete');
 
 
 });

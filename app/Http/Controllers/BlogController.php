@@ -48,4 +48,14 @@ class BlogController extends Controller
 
         return redirect()->back();
     }//End Method
+
+    public function BlogDelete($id){
+
+        Blog::findOrFail($id)->delete();
+
+        Alert::success('Congrats','Blog Deleted Successfully.');
+        
+        return redirect()->back(); 
+
+    }// End Method
 }
