@@ -7,5 +7,9 @@ use App\Models\Blog;
 
 class BlogController extends Controller
 {
-    
+    public function AdminBlogView(){
+        $blog = Blog::paginate(15);
+
+        return view('admin.Blog.all_blog',compact('blog'));
+    }//End Method
 }

@@ -52,6 +52,12 @@
 					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">REVIEW</div>
 				</a>
 			</li>
+			<li style="padding-top: 1rem">
+				<a href="{{ route('admin.blog.view') }}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-blog'></i></div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">BLOG</div>
+				</a>
+			</li>
 		</ul>
 	</div>
 	<!--end navigation-->

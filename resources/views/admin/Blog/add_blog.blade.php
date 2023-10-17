@@ -1,6 +1,5 @@
 @extends('admin.admin_dashboard')
 @section('admin')
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <div class="page-content"> 
@@ -23,69 +22,102 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm" method="post" action="{{route('admin.new.branch.store')}}" enctype="multipart/form-data">
+                            <form id="myForm" method="post" action="{{route('admin.employee.add.store')}}" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Branch Name</h6>
+                                        <h6 class="mb-0">Blog Title</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="branch_name" class="form-control" placeholder="New Branch Name .."/>
+                                        <input type="text" name="name" class="form-control" placeholder="Employee Name .."/>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Branch Address</h6>
+                                        <h6 class="mb-0">Username</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="branch_address" class="form-control" placeholder="New Branch Address .."/>
+                                        <input type="text" name="username" class="form-control" placeholder="username .."/>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Branch Contact</h6>
+                                        <h6 class="mb-0">Email</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="phone" name="branch_contact" class="form-control" placeholder="New Branch Contact .."/>
+                                        <input type="email" name="email" class="form-control" placeholder="email .."/>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Branch Email</h6>
+                                        <h6 class="mb-0">Password</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="email" name="branch_email" class="form-control" placeholder="New Branch email .."/>
+                                        <input type="password" name="password" class="form-control" placeholder="password .."/>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Branch Foundation Year</h6>
+                                        <h6 class="mb-0">Phone</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <select name="select" class="form-control" id="dropdownYear"style="width: 120px;" onchange="getProjectReportFunc()"></select>
+                                        <input type="phone" name="phone" class="form-control" placeholder="Phone Number .."/>
                                     </div>
                                 </div>
-                                        
+ 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Description</h6>
+                                        <h6 class="mb-0">Address</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <textarea type="text" name="branch_text" id="myForm" class="form-control" placeholder="Branch Description...."></textarea>
+                                        <textarea type="text" name="address" id="myForm" class="form-control" placeholder="Branch Description...."></textarea>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Branch Head</h6>
+                                        <h6 class="mb-0">Role</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="branch_head" class="form-control" placeholder="Branch Head Name"/>
+                                        <select name='role' required>
+                                            <option value="">Select One</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="employee">Employee</option>
+                                            <option value="customer">Customer</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Status</h6>
+                                    </div>
+                                    <div class="form-group col-sm-9 text-secondary">
+                                        <select name='status' required>
+                                            <option value="">Select One</option>
+                                            <option value="active">Active</option>
+                                            <option value="inactive">Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Branch</h6>
+                                    </div>
+                                    <div class="form-group col-sm-9 text-secondary">
+                                        <select name='branch' required>
+                                            <option value="">Select One</option>
+                                            <option value="dhaka">Dhaka</option>
+                                            <option value="khulna">Khulna</option>
+                                            <option value="rajshahi">rajshahi</option>
+                                            <option value="chittagang">chittagang</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -94,7 +126,7 @@
                                         <h6 class="mb-0">Photo</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="file" name="branch_photo" class="form-control"  id="image"  />
+                                        <input type="file" name="photo" class="form-control"  id="image"  />
                                     </div>
                                 </div>
 
@@ -103,7 +135,7 @@
                                         <h6 class="mb-0"> </h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <img id="showImage"  alt="branch photo" style="width:100px; height: 100px;"  >
+                                        <img id="showImage"  alt="photo" style="width:100px; height: 100px;"  >
                                     </div>
                                 </div>
 
@@ -121,23 +153,7 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-    var i, currentYear, startYear, endYear, newOption, dropdownYear;
-    dropdownYear = document.getElementById("dropdownYear");
-    currentYear = (new Date()).getFullYear();
-    startYear = currentYear - 100;
-    endYear = currentYear ;
 
-    for (i=startYear;i<=endYear;i++) {
-    newOption = document.createElement("option");
-    newOption.value = i;
-    newOption.label = i;
-        if (i == currentYear) {
-            newOption.selected = true;
-        }
-    dropdownYear.appendChild(newOption);
-    }
-</script>
 
 <script type="text/javascript">
     $(document).ready(function (){
