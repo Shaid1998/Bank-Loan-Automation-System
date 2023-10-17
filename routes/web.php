@@ -9,6 +9,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\BlogController;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $blog = Blog::all();
+
+    return view('welcome',compact('blog'));
 })->name('welcome');
 
 Route::get('/dashboard', function () {
@@ -78,7 +81,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/blog/view', [BlogController::class, 'AdminBlogView'])->name('admin.blog.view');
     Route::get('/admin/blog/add', [BlogController::class, 'BlogAdd'])->name('admin.blog.add');
     Route::post('/admin/blog/add/store', [BlogController::class, 'BlogStore'])->name('admin.blog.store');
-    Route::get('/admin/blog/delete', [BlogController::class, 'BlogDelete'])->name('admin.blog.delete');
+    Route::get('/admin/blog/delete/{id}', [BlogController::class, 'BlogDelete'])->name('admin.blog.delete');
 
 
 });
@@ -129,6 +132,7 @@ Route::middleware(['auth','role:employee'])->group(function() {
 Route::get('/customer/login', [CustomerController::class, 'CustomerLogin'])->name('customer.login');
 Route::get('/customer/register/form', [CustomerController::class, 'CustomerRegisterForm'])->name('customer.register.form');
 Route::post('/customer/register/form/store', [visitorController::class, 'CustomerRegisterDataStore'])->name('cus.data.to.employee');
+Route::get('/City-Bank/blog', [visitorController::class, 'BlogView'])->name('visitor.blog.view');
 
 Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/dashboard', [CustomerController::class, 'CustomerDashboard'])->name('customer.dashobard');

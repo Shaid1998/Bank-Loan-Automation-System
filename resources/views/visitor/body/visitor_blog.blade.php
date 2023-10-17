@@ -1,4 +1,6 @@
-<section id="blog" class="blog" >
+
+
+<div id="blog" class="blog" >
     <div class="container">
         <div class="section-header">
             <h2>news and articles</h2>
@@ -52,4 +54,4 @@
         </div>
     </div>
     
-</section>
+</div>

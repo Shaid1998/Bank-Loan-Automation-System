@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Image;
 use Alert;
+use App\Models\Blog;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Support\Facades\Hash;
 
@@ -47,5 +48,11 @@ class visitorController extends Controller
        Alert::success('Congrats','Submitted form. After confirmation you receive email notification.');
 
         return redirect()->back();
+    }//End Method
+
+    public function BlogView(){
+        $blog = Blog::all();
+
+        return view('visitor.body.visitor_blog',compact('blog'));
     }//End Method
 }
