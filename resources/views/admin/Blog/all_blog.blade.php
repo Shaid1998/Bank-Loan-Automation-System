@@ -11,7 +11,7 @@
                 <div class=" align-items-center">
                     <div class="row">
                         <div style="width: 50%;padding-top:.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">All Blog</h5></div>
-                        <div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='{{route('admin.add.branch')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW BLOG</a></div>
+                        <div style="width: 50%;padding-top:2rem;padding-left:22rem;" class="column"><a href='{{route('admin.blog.add')}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-success" >ADD NEW BLOG</a></div>
                     </div>
                 </div>
             </div>

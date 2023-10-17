@@ -6,11 +6,11 @@
     @include('sweetalert::alert')
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">ADD NEW BRANCH</div>
+        <div class="breadcrumb-title pe-3">ADD NEW BLOG</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item active" aria-current="page">NEW BRANCH</li>
+                    <li class="breadcrumb-item active" aria-current="page">NEW BLOG</li>
                 </ol>
             </nav>
         </div>
@@ -19,141 +19,66 @@
     <div class="container">
         <div class="main-body">
             <div class="row">		 
-                <div class="col-lg-10">
-                    <div class="card">
-                        <div class="card-body">
-                            <form id="myForm" method="post" action="{{route('admin.employee.add.store')}}" enctype="multipart/form-data">
-                                @csrf
+                <form id="myForm" method="post" action="{{route('admin.employee.add.store')}}" enctype="multipart/form-data">
+                    @csrf
 
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Blog Title</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="name" class="form-control" placeholder="Employee Name .."/>
-                                    </div>
-                                </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Blog Title</h6>
+                        </div>
+                        <div class="form-group col-sm-9 text-secondary">
+                            <input type="text" name="blog_title" class="form-control" placeholder="Blog Title .."/>
+                        </div>
+                    </div>
 
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Username</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="username" class="form-control" placeholder="username .."/>
-                                    </div>
-                                </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Blog Details</h6>
+                        </div>
+                        <div class="form-group col-sm-9 text-secondary">
+                            <textarea type="text" name="blog_details" id="myForm" class="form-control" placeholder="detailed blog"...."></textarea>
+                        </div>
+                    </div>
 
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Email</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <input type="email" name="email" class="form-control" placeholder="email .."/>
-                                    </div>
-                                </div>
+                    <input type="hidden" name="blog_post_date" id="Date" value=""/>
 
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Password</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <input type="password" name="password" class="form-control" placeholder="password .."/>
-                                    </div>
-                                </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Photo</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="file" name="blog_image" class="form-control"  id="image"  />
+                        </div>
+                    </div>
 
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Phone</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <input type="phone" name="phone" class="form-control" placeholder="Phone Number .."/>
-                                    </div>
-                                </div>
- 
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Address</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <textarea type="text" name="address" id="myForm" class="form-control" placeholder="Branch Description...."></textarea>
-                                    </div>
-                                </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0"> </h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <img id="showImage"  alt="photo" style="width:100px; height: 100px;"  >
+                        </div>
+                    </div>
 
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Role</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <select name='role' required>
-                                            <option value="">Select One</option>
-                                            <option value="admin">Admin</option>
-                                            <option value="employee">Employee</option>
-                                            <option value="customer">Customer</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Status</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <select name='status' required>
-                                            <option value="">Select One</option>
-                                            <option value="active">Active</option>
-                                            <option value="inactive">Inactive</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Branch</h6>
-                                    </div>
-                                    <div class="form-group col-sm-9 text-secondary">
-                                        <select name='branch' required>
-                                            <option value="">Select One</option>
-                                            <option value="dhaka">Dhaka</option>
-                                            <option value="khulna">Khulna</option>
-                                            <option value="rajshahi">rajshahi</option>
-                                            <option value="chittagang">chittagang</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Photo</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="file" name="photo" class="form-control"  id="image"  />
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0"> </h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <img id="showImage"  alt="photo" style="width:100px; height: 100px;"  >
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-3"></div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="submit" class="btn btn-primary px-4" value="ADD" />
-                                    </div>
-                                </div>
-                            </div>
-		                </form>
-	                </div>
-		        </div>
-			</div>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="submit" class="btn btn-primary px-4" value="UPLOAD" />
+                        </div>
+                    </div>
+                </div>
+            </form>
 		</div>
 	</div>
 </div>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+      var today = moment().format('YYYY-MM-DD');
+      $('#Date').val(today);
+     // alert($('#DateTime').val());
+    });
+</script>
 
 <script type="text/javascript">
     $(document).ready(function (){

@@ -12,4 +12,8 @@ class BlogController extends Controller
 
         return view('admin.Blog.all_blog',compact('blog'));
     }//End Method
+
+    public function BlogAdd(){
+        return view('admin.Blog.add_blog');
+    }//End Method
 }
