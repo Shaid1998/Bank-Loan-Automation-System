@@ -19,8 +19,9 @@
     <div class="container">
         <div class="main-body">
             <div class="row">		 
-                <form id="myForm" method="post" action="{{route('admin.employee.add.store')}}" enctype="multipart/form-data">
+                <form id="myForm" method="post" action="{{route('admin.blog.store')}}" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="id"  >
 
                     <div class="row mb-3">
                         <div class="col-sm-3">
@@ -39,8 +40,6 @@
                             <textarea type="text" name="blog_details" id="myForm" class="form-control" placeholder="detailed blog"...."></textarea>
                         </div>
                     </div>
-
-                    <input type="hidden" name="blog_post_date" id="Date" value=""/>
 
                     <div class="row mb-3">
                         <div class="col-sm-3">
@@ -72,13 +71,6 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-      var today = moment().format('YYYY-MM-DD');
-      $('#Date').val(today);
-     // alert($('#DateTime').val());
-    });
-</script>
 
 <script type="text/javascript">
     $(document).ready(function (){

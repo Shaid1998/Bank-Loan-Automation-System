@@ -77,6 +77,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/customer/review/delete/{id}', [AdminController::class, 'AdminCustomerReviewDelete'])->name('admin.customer.review.delete');
     Route::get('/admin/blog/view', [BlogController::class, 'AdminBlogView'])->name('admin.blog.view');
     Route::get('/admin/blog/add', [BlogController::class, 'BlogAdd'])->name('admin.blog.add');
+    Route::post('/admin/blog/add/store', [BlogController::class, 'BlogStore'])->name('admin.blog.store');
 
 
 });

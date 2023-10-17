@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('blog_title');
             $table->text('blog_details');
             $table->string('blog_posted_by');
+            $table->string('blog_uploader_id');
             $table->string('blog_post_date');
             $table->string('blog_image');
             $table->timestamps();
