@@ -147,5 +147,7 @@ Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/loan/application/edit/{id}', [CustomerController::class, 'CustomerLoanApplicationEdit'])->name('customer.loan.application.edit');
     Route::post('/customer/loan/application/edit/store', [CustomerController::class, 'CustomerLoanApplicationEditStore'])->name('customer.loan.application.edit.store');
     Route::get('/customer/loan/application/delete/{id}', [CustomerController::class, 'DeleteLoanRequest'])->name('customer.loan.application.delete');
+    Route::get('/customer/contact/bank/{id}', [CustomerController::class, 'CustomerContactBank'])->name('customer.contact.bank');
+    Route::post('/customer/contact/bank/store', [MessageController::class, 'CustomerContactBankStore'])->name('customer.contact.bank.store');
 
 });

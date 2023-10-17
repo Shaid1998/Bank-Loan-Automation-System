@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use Image;
 use Alert;
 use App\Models\Branch;
+use App\Models\Loan;
 use App\Models\LoanPlan;
 use App\Models\LoanRequest;
 use Illuminate\Support\Facades\DB;
@@ -179,5 +180,12 @@ class CustomerController extends Controller
         return redirect()->back(); 
 
     }// End Method
+
+    public function CustomerContactBank($id){
+        $loan = Loan::where('id',$id)->first();
+
+        return view('customer.Loan.contact',compact('loan'));
+
+    }//End Method
     
 }

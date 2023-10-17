@@ -11,6 +11,7 @@ use Alert;
 use App\Models\Loan;
 use App\Models\LoanRequest;
 use App\Models\User;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 
 class LoanController extends Controller
@@ -89,8 +90,10 @@ class LoanController extends Controller
 
     public function CustomerLoan(){
         $user = Auth::user()->user_id;
-        $applied = LoanRequest::where('user_id',$user)->paginate(10);
-        $active =Loan::where('user_id',$user)->paginate(10);
+
+        $applied = LoanRequest::where('user_id',$user)->orderBy('id', 'ASC')->paginate(10, ['*'], 'applied');
+
+        $active =Loan::where('user_id',$user)->paginate(10, ['*'], 'active');
 
         return view('customer.Loan.loan_home',compact('applied','active'));
     }//End Method

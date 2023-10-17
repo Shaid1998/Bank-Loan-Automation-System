@@ -51,18 +51,18 @@
             </div>
         </div>
         <div class="row">
-            {{$applied->links('pagination::bootstrap-5') }}
+            {{$applied->appends(['active' => $active->currentPage()])->links('pagination::bootstrap-5') }}
         </div>
     </div>
     <div class="row">
         <div class="row text-center">
-            <div class="column"><h1 style="font-family: 'Times New Roman', Times, serif;background-color:rgb(39, 12, 210);font-size:50px;height:100px;width:100%;text-align:center;padding-top:1rem;color:aliceblue;border:0;border-radius:25px;">MESSAGES FROM ME</h1></div>						
+            <div class="column"><h1 style="font-family: 'Times New Roman', Times, serif;background-color:rgb(39, 12, 210);font-size:50px;height:100px;width:100%;text-align:center;padding-top:1rem;color:aliceblue;border:0;border-radius:25px;">ALL ACTIVE LOAN</h1></div>						
         </div>
         <div class="card radius-10">
             <div class="card-body">
                 <div class=" align-items-center">
                     <div class="row">
-                        <div style="width: 50%;padding-top:.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">All Outgoing Message</h5></div>
+                        <div style="width: 50%;padding-top:.5rem;" class="column"><h5 style="font-family: 'Times New Roman', Times, serif;font-style:italic;font-size:40px;color:rgb(6, 38, 249);text-align:center;" class="mb-0">All Active Loan</h5></div>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$ac->expire_date}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$ac->issued_by}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:30%">
-                                <a href='{{route('customer.send.message.delete',$ac->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-danger" >DELETE</a>
+                                <a href='{{route('customer.contact.bank',$ac->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" class="btn btn-info" >CONTACT</a>
                             </td>
                         </tr>
                     </tbody>
@@ -101,7 +101,7 @@
             </div>
         </div>
         <div class="row">
-            {{$active->links('pagination::bootstrap-5') }}
+            {{$active->appends(['applied' => $applied->currentPage()])->links('pagination::bootstrap-5') }}
         </div>
     </div>
 </div>

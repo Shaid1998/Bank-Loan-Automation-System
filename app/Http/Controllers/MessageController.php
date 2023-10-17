@@ -324,4 +324,24 @@ class MessageController extends Controller
 
     }// End Mehtod 
 
+    public function CustomerContactBankStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
+
+        $id = Auth::user()->user_id;
+
+        Message::insert([
+            'sender_id' => $id,
+            'receiver_id' => $request->receiver_id,
+            'message_for' => $request->message_for,
+            'text' => $request->text,
+            'branch' => $request->branch,
+            'message_id' => $unid,
+        ]);
+
+        Alert::success('Congrats','Send Successfully.');
+
+        return redirect()->back();
+
+    }// End Mehtod 
+
 }
