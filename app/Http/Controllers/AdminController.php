@@ -13,7 +13,7 @@ use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Image;
 use Alert;
 use App\Models\Branch;
-
+use App\Models\Review;
 
 class AdminController extends Controller
 {
@@ -149,7 +149,19 @@ class AdminController extends Controller
 
     }// End Mehtod 
 
-    
+    public function AdminCustomerReview(){
+        $review = Review::paginate(10);
 
-    
+        return view('admin.SystemData.review',compact('review'));
+    }//End Method
+
+    public function AdminCustomerReviewDelete($id){
+
+        Review::findOrFail($id)->delete();
+
+        Alert::success('Congrats','Employee Deleted Successfully.');
+        
+        return redirect()->back(); 
+
+    }// End Method
 }

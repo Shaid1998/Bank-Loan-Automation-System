@@ -73,6 +73,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/loan/inquire/{id}', [MessageController::class, 'AdminLoanInquire'])->name('admin.loan.inquire');
     Route::post('/admin/loan/inquire/store', [MessageController::class, 'AdminLoanInquireStore'])->name('admin.loan.inquire.store');
     Route::get('/admin/customer/review', [AdminController::class, 'AdminCustomerReview'])->name('admin.customer.review');
+    Route::get('/admin/customer/review/delete/{id}', [AdminController::class, 'AdminCustomerReviewDelete'])->name('admin.customer.review.delete');
 
 
 });

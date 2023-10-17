@@ -23,6 +23,12 @@
 				</a>
 			</li>
 			<li style="padding-top: 1rem">
+				<a href="{{ route('admin.bank.branches') }}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-bank'></i></div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">BRANCHES</div>
+				</a>
+			</li>
+			<li style="padding-top: 1rem">
 				<a href="{{ route('admin.loan.plan.visit') }}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-hand-holding-usd'></i></div>
 					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">LOAN PLAN</div>
@@ -41,9 +47,9 @@
 				</a>
 			</li>
 			<li style="padding-top: 1rem">
-				<a href="{{ route('admin.bank.branches') }}">
-					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-bank'></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">BRANCHES</div>
+				<a href="{{ route('admin.customer.review') }}">
+					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-comment-dots'></i></div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">REVIEW</div>
 				</a>
 			</li>
 		</ul>
