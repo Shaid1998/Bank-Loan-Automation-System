@@ -90,8 +90,9 @@ class LoanController extends Controller
     public function CustomerLoan(){
         $user = Auth::user()->user_id;
         $applied = LoanRequest::where('user_id',$user)->paginate(10);
+        $active =Loan::where('user_id',$user)->paginate(10);
 
-        return view('customer.Loan.loan_home',compact('applied'));
+        return view('customer.Loan.loan_home',compact('applied','active'));
     }//End Method
 
     public function EmployeeLoanRequest(){
@@ -163,11 +164,11 @@ class LoanController extends Controller
         return view('admin.SystemData.active_loan',compact('active'));
     }//End Method
 
-    public function EmployeeDeleteMessage($id){
+    public function EmployeeActiveLoanDelete($id){
 
-        Message::findOrFail($id)->delete();
+        Loan::findOrFail($id)->delete();
 
-        Alert::success('Congrats','Message Deleted Successfully.');
+        Alert::success('Congrats','Active Loan Deleted Successfully.');
         
         return redirect()->back(); 
 
