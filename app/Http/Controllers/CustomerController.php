@@ -15,6 +15,7 @@ use App\Models\Branch;
 use App\Models\Loan;
 use App\Models\LoanPlan;
 use App\Models\LoanRequest;
+use App\Models\Review;
 use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
@@ -188,4 +189,28 @@ class CustomerController extends Controller
 
     }//End Method
     
+    public function CustomerSendReview(){
+
+        return view('customer.Review.send_review');
+
+    }//End Method
+
+    public function CustomerSendReviewstore(Request $request){
+        $user_name = Auth::user()->name;
+        $user_id = Auth::user()->user_id;
+
+        $unid = IdGenerator::generate(['table' => 'reviews','field'=>'review_id', 'length' => 10, 'prefix' => 'RE']);
+
+        Review::insert([
+            'review_id' => $unid,
+            'reviewer_id' => $user_id,
+            'reviewer_name' => $user_name,
+            'review' => $request->review,
+            'date' => $request->date,
+        ]);
+
+        Alert::success('Congrats','Send Successfully.');
+
+        return redirect()->back();
+    }//End Method
 }

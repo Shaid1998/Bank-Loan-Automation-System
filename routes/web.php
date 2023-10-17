@@ -72,6 +72,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/active/loan/view', [loanController::class, 'AdminActiveLoanView'])->name('admin.active.loan.view');
     Route::get('/admin/loan/inquire/{id}', [MessageController::class, 'AdminLoanInquire'])->name('admin.loan.inquire');
     Route::post('/admin/loan/inquire/store', [MessageController::class, 'AdminLoanInquireStore'])->name('admin.loan.inquire.store');
+    Route::get('/admin/customer/review', [AdminController::class, 'AdminCustomerReview'])->name('admin.customer.review');
 
 
 });
@@ -150,5 +151,7 @@ Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/loan/application/delete/{id}', [CustomerController::class, 'DeleteLoanRequest'])->name('customer.loan.application.delete');
     Route::get('/customer/contact/bank/{id}', [CustomerController::class, 'CustomerContactBank'])->name('customer.contact.bank');
     Route::post('/customer/contact/bank/store', [MessageController::class, 'CustomerContactBankStore'])->name('customer.contact.bank.store');
+    Route::get('/customer/send/review', [CustomerController::class, 'CustomerSendReview'])->name('customer.send.review');
+    Route::post('/customer/send/review/store', [CustomerController::class, 'CustomerSendReviewstore'])->name('customer.review.store');
 
 });

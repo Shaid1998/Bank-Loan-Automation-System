@@ -145,10 +145,6 @@ class EmployeeController extends Controller
 
     }// End Method
 
-    
-
-    
-
     public function EmployeeCustomerList(){
         $customer = User::where('role', 'customer')->paginate(15);
 
