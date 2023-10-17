@@ -8,6 +8,7 @@ use App\Http\Controllers\visitorController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 /*
