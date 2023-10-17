@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Image;
 use Alert;
+use App\Models\Message;
 use Illuminate\Support\Str;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Support\Facades\DB;
@@ -154,6 +155,11 @@ class EmployeeController extends Controller
         return view('employee.Customers.all_customer',compact('customer'));
     } // End Mehtod 
 
-    
+    public function EmployeeCustomerQustion(){
+        $user =Auth::user()->branch;
+        $qus = Message::where('branch',$user)->paginate(10);
+
+        return view('employee.Message.qus',compact('qus'));
+    }//End Method
 
 }

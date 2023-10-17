@@ -22,11 +22,12 @@
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:10%;">Full Name</th>
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:10%;">Email</th>
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:5%;">Username</th>
+						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:5%;">Branch</th>
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%;">Phone</th>
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:10%;">Address</th> 
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%;">User ID</th> 
 						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%;">REQ Time</th> 
-						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:33%;">Action</th> 
+						<th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:28%;">Action</th> 
 					</tr>
 				</thead>
 					@foreach ($customer as $accData)
@@ -37,11 +38,12 @@
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:10%;">{{$accData->name}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:10%;">{{$accData->email}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:5%;">{{$accData->username}}</td>
+							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:5%;">{{$accData->branch}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:8%;">{{$accData->phone}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:10%;">{{$accData->address}}</td>
 							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:8%;">{{$accData->user_id}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:8%;">{{$accData->created_at}}</td>
-							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:33%;">
+							<td style="font-family: 'Times New Roman', Times, serif;font-size:15px;font-weight:300;width:28%;">
 								<a href='{{ route ('employee.send.customer.message',$accData->id)}}' style="font-family: 'Times New Roman', Times, serif;font-style:bold;color:white;font-size:20px;cursor:pointer;" id="review" class="btn btn-primary" >MESSAGE</a>
 								<a href='{{ route ('employee.account.request.delete',$accData->id)}}'style="font-family: 'Times New Roman', Times, serif;font-style:bold;font-size:20px;cursor:pointer;color:white;" id="delete" class="btn btn-danger" >DELETE</a>
 							</td>

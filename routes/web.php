@@ -114,6 +114,7 @@ Route::middleware(['auth','role:employee'])->group(function() {
     Route::get('/employee/send/customer/message/{id}', [MessageController::class, 'EmployeeCustomerSendMessage'])->name('employee.send.customer.message');
     Route::post('/employee/send/customer/message/store', [MessageController::class, 'EmployeeMessageSendCustomerStore'])->name('employee.customer.send.message.store');
     Route::get('/employee/active/loan/delete/{id}', [MessageController::class, 'EmployeeActiveLoanDelete'])->name('employee.active.loan.delete');
+    Route::get('/employee/customer/inquire/view', [EmployeeController::class, 'EmployeeCustomerQustion'])->name('employee.customer.inquire.view');
 
 });
 
