@@ -27,7 +27,7 @@
                         <a href="{{route('visitor.howitworks')}}">how it works</a>
                     </li>
                     <li class="header-top-contact">
-                        <a href="#explore">loan Plan</a>
+                        <a href="{{route('visitor.loan.plan.view')}}">loan Plan</a>
                     </li>
                     <li class="header-top-contact">
                         <a href="{{route('visitor.view.customer.review')}}">review</a>

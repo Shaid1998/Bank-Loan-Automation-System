@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Image;
 use Alert;
 use App\Models\Blog;
+use App\Models\LoanPlan;
 use App\Models\Review;
 use App\Models\siteExt;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
@@ -77,7 +78,13 @@ class visitorController extends Controller
 
     public function VisitorGuide(){
         $site = siteExt::all();
-        
+
         return view('visitor.visitor_how_it_works',compact('site'));
+    }//End Method
+
+    public function VisitorPlan(){
+        $plan = LoanPlan::all();
+
+        return view('visitor.visitor_loan_plan',compact('plan'));
     }//End Method
 }
