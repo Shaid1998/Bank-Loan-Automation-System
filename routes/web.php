@@ -24,9 +24,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $blog = Blog::all();
 
-    return view('welcome',compact('blog'));
+
+    return view('visitor.visitor_index');
 })->name('welcome');
 
 Route::get('/dashboard', function () {

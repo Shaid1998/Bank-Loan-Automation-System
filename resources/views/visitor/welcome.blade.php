@@ -54,35 +54,7 @@
 		@include('visitor.body.visitor_header')
 		<!-- top-area End -->
 
-		<!--welcome-hero start -->
-		@include('visitor.body.visitor_welcome');
-		<!--/.welcome-hero-->
-		<!--welcome-hero end -->
-
-		<!--list-topics start -->
-
-		@include('visitor.body.visitor_topic')
-		<!--list-topics end-->
-
-		<!--works start -->
-		@include('visitor.body.visitor_how_it_works')
-		<!--works end -->
-
-		<!--explore start -->
-		@include('visitor.body.visitor_explore')
-		<!--explore end -->
-
-		<!--reviews start -->
-		@include('visitor.body.visitor_review')
-		<!--reviews end -->
-
-		<!-- statistics strat -->
-		@include('visitor.body.visitor_statistic')	
-		<!-- statistics end -->
-
-		<!--blog start -->
-		@include('visitor.body.visitor_blog')
-		<!--blog end -->
+		@yield('visitor')
 
 		<!--footer start-->
 		@include('visitor.body.visitor_footer')
