@@ -13,8 +13,8 @@
                         <li class="scroll"><a href="#explore">explore</a></li>
                         <li class="scroll"><a href="#reviews">review</a></li>
                         <li class="scroll"><a href="{{route('visitor.blog.view')}}">blog</a></li>
-                        <li class="scroll"><a href="#contact">contact</a></li>
-                        <li class=" scroll"><a href="#contact">my account</a></li>
+                        <li class="scroll"><a href="{{route('visitor.view.contact')}}">contact</a></li>
+                        <li class=" scroll"><a href="{{route('customer.login')}}">my account</a></li>
                     </ul><!--/.nav -->
                    </div>
            </div>
