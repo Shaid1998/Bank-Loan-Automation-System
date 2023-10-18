@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Image;
 use Alert;
 use App\Models\Blog;
+use App\Models\Review;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Support\Facades\Hash;
 
@@ -65,5 +66,15 @@ class visitorController extends Controller
     public function VisitorContact(){
 
         return view('visitor.Contact');
+    }//End Method
+
+    public function VisitorCustomerReview(){
+        $review = Review::all();
+
+        return view('visitor.visitor_review',compact('review'));
+    }//End Method
+
+    public function VisitorGuide(){
+        return view('visitor.visitor_how_it_works');
     }//End Method
 }

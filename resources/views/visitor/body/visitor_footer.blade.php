@@ -9,9 +9,9 @@
                    </div>
                    <div class="col-sm-9">
                        <ul class="footer-menu-item">
-                        <li class="scroll"><a href="#works">how it works</a></li>
+                        <li class="scroll"><a href="{{route('visitor.howitworks')}}">how it works</a></li>
                         <li class="scroll"><a href="#explore">explore</a></li>
-                        <li class="scroll"><a href="#reviews">review</a></li>
+                        <li class="scroll"><a href="{{route('visitor.view.customer.review')}}">review</a></li>
                         <li class="scroll"><a href="{{route('visitor.blog.view')}}">blog</a></li>
                         <li class="scroll"><a href="{{route('visitor.view.contact')}}">contact</a></li>
                         <li class=" scroll"><a href="{{route('customer.login')}}">my account</a></li>

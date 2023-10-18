@@ -24,13 +24,13 @@
                         <a href="{{route('welcome')}}">home</a>
                     </li>
                     <li class="header-top-contact">
-                        <a href="#">how it works</a>
+                        <a href="{{route('visitor.howitworks')}}">how it works</a>
                     </li>
                     <li class="header-top-contact">
                         <a href="#explore">loan Plan</a>
                     </li>
                     <li class="header-top-contact">
-                        <a href="#reviews">review</a>
+                        <a href="{{route('visitor.view.customer.review')}}">review</a>
                     </li>
                     <li class="header-top-contact">
                         <a href="{{route('visitor.blog.view')}}">blog</a>

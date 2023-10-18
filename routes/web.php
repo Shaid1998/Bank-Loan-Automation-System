@@ -135,6 +135,8 @@ Route::post('/customer/register/form/store', [visitorController::class, 'Custome
 Route::get('/City-Bank/blog', [visitorController::class, 'BlogView'])->name('visitor.blog.view');
 Route::get('/City-Bank/blog/view/{id}', [visitorController::class, 'BlogViewDetails'])->name('visitor.blog.view.details');
 Route::get('/City-Bank/contact', [visitorController::class, 'VisitorContact'])->name('visitor.view.contact');
+Route::get('/City-Bank/customer/review', [visitorController::class, 'VisitorCustomerReview'])->name('visitor.view.customer.review');
+Route::get('/City-Bank/visitor/guide', [visitorController::class, 'VisitorGuide'])->name('visitor.howitworks');
 
 Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/dashboard', [CustomerController::class, 'CustomerDashboard'])->name('customer.dashobard');
