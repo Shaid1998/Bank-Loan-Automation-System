@@ -85,6 +85,12 @@ class visitorController extends Controller
     public function VisitorPlan(){
         $plan = LoanPlan::all();
 
-        return view('visitor.visitor_loan_plan',compact('plan'));
+        return view('visitor.plan.visitor_loan_plan',compact('plan'));
+    }//End Method
+
+    public function PlanViewDetails($id){
+        $plan = LoanPlan::where('id',$id)->first();
+
+        return view('visitor.plan.plan_view',compact('plan'));
     }//End Method
 }

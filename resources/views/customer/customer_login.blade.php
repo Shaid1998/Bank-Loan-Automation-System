@@ -55,8 +55,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-check form-switch">
-                                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                                                    <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
+                                                   <a href="{{route('customer.register.form')}}">Now Registration</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 text-end"> <a href="authentication-forgot-password.html">Forgot Password ?</a>

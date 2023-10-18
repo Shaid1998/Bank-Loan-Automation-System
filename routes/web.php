@@ -138,6 +138,8 @@ Route::get('/City-Bank/contact', [visitorController::class, 'VisitorContact'])->
 Route::get('/City-Bank/customer/review', [visitorController::class, 'VisitorCustomerReview'])->name('visitor.view.customer.review');
 Route::get('/City-Bank/visitor/guide', [visitorController::class, 'VisitorGuide'])->name('visitor.howitworks');
 Route::get('/City-Bank/visitor/plan', [visitorController::class, 'VisitorPlan'])->name('visitor.loan.plan.view');
+Route::get('/City-Bank/plan/view/{id}', [visitorController::class, 'PlanViewDetails'])->name('visitor.plan.view.details');
+
 
 Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/dashboard', [CustomerController::class, 'CustomerDashboard'])->name('customer.dashobard');

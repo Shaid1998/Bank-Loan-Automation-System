@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/icon" href="{{ asset('assets/logo/favicon.png')}}"/>
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/main.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Customer Register Form</title>
@@ -77,11 +78,22 @@
                                                     <img id="showImage"  alt="my photo" style="width:100px; height: 100px;"  >
                                                 </div>
                                             </div>
-                                            <div class="form-group mb-30">
-                                                <button type="submit" class="btn btn-fill-out btn-block hover-up font-weight-bold">Submit</button>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6">
+                                                    <button type="submit" class="btn btn-fill-out btn-block hover-up font-weight-bold">Submit</button>
+                                                </div>
                                             </div>
                                             <p class="font-xs text-muted"><strong>Note:</strong>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy</p>
                                         </form>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6">
+                                                <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-size:20px;text-align:right;padding-top:1rem;color:rgb(242, 248, 89);">Do you have already account?</h6>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6">
+                                                <a href="{{route('customer.login')}}" class="btn btn-success">Login</a>
+                                            </div>
+                                            
+                                        </div>
                                     </div>
                                 </div>
                             </div>

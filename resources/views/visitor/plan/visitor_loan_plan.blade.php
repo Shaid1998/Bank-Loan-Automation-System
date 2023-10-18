@@ -10,15 +10,15 @@
             </div><!--/.section-header-->
             <div class="blog-content">
                 <div class="row">
-                    @foreach ($plan as $blog)
-                    <a href="{{route('visitor.blog.view.details',$blog->id)}}">
+                    @foreach ($plan as $plan)
+                    <a href="{{route('visitor.plan.view.details',$plan->id)}}">
                         <div class="col-md-4 col-sm-6">
                             <div class="single-blog-item">
                                 <div class="single-blog-item-txt">
-                                    <h2>Loan Id: {{$blog->Loan_id}}</h2>
-                                    <h2><a>Branch: {{$blog->branch_name}}</a></h2>
-                                    <h2><a>Duration: {{$blog->interest_rate}}</a></h2>
-                                    <p>{{$blog->loan_description}}</p>
+                                    <h2>Loan Id: {{$plan->Loan_id}}</h2>
+                                    <h2><a>Branch: {{$plan->branch_name}}</a></h2>
+                                    <h2><a>Duration: {{$plan->interest_rate}}</a></h2>
+                                    <p>{{$plan->loan_description}}</p>
                                 </div>
                             </div>
                         </div> 
