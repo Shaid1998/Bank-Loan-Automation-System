@@ -1,6 +1,8 @@
+@extends('visitor.visitor_dashboard')
+@section('visitor')
 
-
-    <div id="blog" class="blog" >
+<div class="page-content">
+    <div  class="blog" >
         <div class="container">
             <div class="section-header">
                 <h2>news and articles</h2>
@@ -11,7 +13,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="single-blog-item">
                             <div class="single-blog-item-img">
-                                <img src="assets/images/blog/b1.jpg" alt="blog image">
+                                <img src="{{ asset('assets/images/blog/b1.jpg')}}" alt="blog image">
                             </div>
                             <div class="single-blog-item-txt">
                                 <h2><a href="#">How to find your Desired Place more quickly</a></h2>
@@ -25,7 +27,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="single-blog-item">
                             <div class="single-blog-item-img">
-                                <img src="assets/images/blog/b2.jpg" alt="blog image">
+                                <img src="{{ asset('assets/images/blog/b2.jpg')}}" alt="blog image">
                             </div>
                             <div class="single-blog-item-txt">
                                 <h2><a href="#">How to find your Desired Place more quickly</a></h2>
@@ -39,7 +41,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="single-blog-item">
                             <div class="single-blog-item-img">
-                                <img src="assets/images/blog/b3.jpg" alt="blog image">
+                                <img src="{{ asset('assets/images/blog/b3.jpg')}}" alt="blog image">
                             </div>
                             <div class="single-blog-item-txt">
                                 <h2><a href="#">How to find your Desired Place more quickly</a></h2>
@@ -54,3 +56,6 @@
             </div>
         </div>
     </div>
+</div>
+
+    @endsection

@@ -52,7 +52,7 @@ class visitorController extends Controller
 
     public function BlogView(){
         $blog = Blog::all();
-
-        return view('visitor.body.visitor_blog',compact('blog'));
+        
+        return view('visitor.blog.visitor_blog',compact('blog'));
     }//End Method
 }

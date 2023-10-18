@@ -21,22 +21,13 @@
             <div class="header-top-right">
                 <ul>
                     <li class="header-top-contact">
-                        +1 222 333 4444
-                    </li>
-                    <li class="header-top-contact">
-                        <a href="{{route('customer.login')}}">sign in</a>
-                    </li>
-                    <li class="header-top-contact">
-                        <a href="{{route('customer.register.form')}}">register</a>
-                    </li>
-                    <li class="header-top-contact">
-                        <a href="#home">home</a>
+                        <a href="{{route('welcome')}}">home</a>
                     </li>
                     <li class="header-top-contact">
                         <a href="#works">how it works</a>
                     </li>
                     <li class="header-top-contact">
-                        <a href="#explore">loan skim</a>
+                        <a href="#explore">loan Plan</a>
                     </li>
                     <li class="header-top-contact">
                         <a href="#reviews">review</a>
@@ -46,6 +37,12 @@
                     </li>
                     <li class="header-top-contact">
                         <a href="#contact">contact</a>
+                    </li>
+                    <li class="header-top-contact">
+                        <a href="{{route('customer.login')}}">sign in</a>
+                    </li>
+                    <li class="header-top-contact">
+                        <a href="{{route('customer.register.form')}}">register</a>
                     </li>
                 </ul>
             </div>
