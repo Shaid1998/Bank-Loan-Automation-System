@@ -10,6 +10,7 @@ use Image;
 use Alert;
 use App\Models\Blog;
 use App\Models\Review;
+use App\Models\siteExt;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Support\Facades\Hash;
 
@@ -75,6 +76,8 @@ class visitorController extends Controller
     }//End Method
 
     public function VisitorGuide(){
-        return view('visitor.visitor_how_it_works');
+        $site = siteExt::all();
+        
+        return view('visitor.visitor_how_it_works',compact('site'));
     }//End Method
 }

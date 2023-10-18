@@ -9,48 +9,39 @@
         </div><!--/.section-header-->
         <div class="works-content">
             <div class="row">
+                @foreach ($site as $site)
+                 <div class="col-md-4 col-sm-6">
+                    <div class="single-how-works">
+                        <div class="single-how-works-icon">
+                            <i class="flaticon-lightbulb-idea"></i>
+                        </div>
+                        <h2><a href="#"> <span>{{$site->chose_title}} </span></a></h2>
+                        <p>{{$site->chose_text}}</p>
+
+                    </div>
+                </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="single-how-works">
                         <div class="single-how-works-icon">
                             <i class="flaticon-lightbulb-idea"></i>
                         </div>
-                        <h2><a href="#">choose <span> Login or Registration </span></a></h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt ut laboremagna aliqua. 
-                        </p>
-                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-                            read more
-                        </button>
+                        <h2><a href="#"> <span>{{$site->find_title}} </span></a></h2>
+                        <p>{{$site->find_text}}</p>
+
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="single-how-works">
                         <div class="single-how-works-icon">
-                            <i class="flaticon-networking"></i>
+                            <i class="flaticon-lightbulb-idea"></i>
                         </div>
-                        <h2><a href="#">find <span> what you want</span></a></h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt ut laboremagna aliqua. 
-                        </p>
-                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-                            read more
-                        </button>
+                        <h2><a href="#"> <span>{{$site->explore_title}} </span></a></h2>
+                        <p>{{$site->explore_text}}</p>
+
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-how-works">
-                        <div class="single-how-works-icon">
-                            <i class="flaticon-location-on-road"></i>
-                        </div>
-                        <h2><a href="#">explore <span> amazing</span> Plan</a></h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt ut laboremagna aliqua. 
-                        </p>
-                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-                            read more
-                        </button>
-                    </div>
-                </div>
+                </div>   
+                @endforeach
+                
             </div>
         </div>
     </div><!--/.container-->
