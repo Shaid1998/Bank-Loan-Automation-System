@@ -134,6 +134,7 @@ Route::get('/customer/register/form', [CustomerController::class, 'CustomerRegis
 Route::post('/customer/register/form/store', [visitorController::class, 'CustomerRegisterDataStore'])->name('cus.data.to.employee');
 Route::get('/City-Bank/blog', [visitorController::class, 'BlogView'])->name('visitor.blog.view');
 Route::get('/City-Bank/blog/view/{id}', [visitorController::class, 'BlogViewDetails'])->name('visitor.blog.view.details');
+Route::get('/City-Bank/contact', [visitorController::class, 'VisitorContact'])->name('visitor.view.contact');
 
 Route::middleware(['auth','role:customer'])->group(function() {
     Route::get('/customer/dashboard', [CustomerController::class, 'CustomerDashboard'])->name('customer.dashobard');

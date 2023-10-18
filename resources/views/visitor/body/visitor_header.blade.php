@@ -24,7 +24,7 @@
                         <a href="{{route('welcome')}}">home</a>
                     </li>
                     <li class="header-top-contact">
-                        <a href="#works">how it works</a>
+                        <a href="#">how it works</a>
                     </li>
                     <li class="header-top-contact">
                         <a href="#explore">loan Plan</a>
@@ -36,7 +36,7 @@
                         <a href="{{route('visitor.blog.view')}}">blog</a>
                     </li>
                     <li class="header-top-contact">
-                        <a href="#contact">contact</a>
+                        <a href="{{route('visitor.view.contact')}}">contact</a>
                     </li>
                     <li class="header-top-contact">
                         <a href="{{route('customer.login')}}">sign in</a>

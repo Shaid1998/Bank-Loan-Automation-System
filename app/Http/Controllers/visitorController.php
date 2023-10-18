@@ -61,4 +61,9 @@ class visitorController extends Controller
 
         return view('visitor.blog.blog_view',compact('blog'));
     }//End Method
+
+    public function VisitorContact(){
+
+        return view('visitor.Contact');
+    }//End Method
 }

@@ -1,5 +1,6 @@
 @extends('visitor.visitor_dashboard')
 @section('visitor')
+
 <div style="background-image: linear-gradient(to bottom right, rgb(68, 0, 255), rgb(0, 255, 26))" class="page-content">
     <div class="row text-center">
         <h1 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-size:50px;color:aliceblue;padding-top:3rem">Title: <span style="color: red">{{$blog->blog_title}}</span></h1>
