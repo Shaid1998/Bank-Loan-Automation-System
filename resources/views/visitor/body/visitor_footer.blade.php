@@ -12,7 +12,7 @@
                         <li class="scroll"><a href="#works">how it works</a></li>
                         <li class="scroll"><a href="#explore">explore</a></li>
                         <li class="scroll"><a href="#reviews">review</a></li>
-                        <li class="scroll"><a href="#blog">blog</a></li>
+                        <li class="scroll"><a href="{{route('visitor.blog.view')}}">blog</a></li>
                         <li class="scroll"><a href="#contact">contact</a></li>
                         <li class=" scroll"><a href="#contact">my account</a></li>
                     </ul><!--/.nav -->

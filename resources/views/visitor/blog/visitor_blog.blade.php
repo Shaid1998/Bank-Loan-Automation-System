@@ -5,53 +5,25 @@
     <div  class="blog" >
         <div class="container">
             <div class="section-header">
-                <h2>news and articles</h2>
-                <p>Always upto date with our latest News and Articles </p>
+                <h2>blogs and articles</h2>
+                <p>Always upto date with our latest Blogs and Articles </p>
             </div><!--/.section-header-->
             <div class="blog-content">
                 <div class="row">
+                    @foreach ($blog as $blog)
                     <div class="col-md-4 col-sm-6">
                         <div class="single-blog-item">
                             <div class="single-blog-item-img">
-                                <img src="{{ asset('assets/images/blog/b1.jpg')}}" alt="blog image">
+                                <img src="{{ $blog->blog_image}}" alt="blog image">
                             </div>
                             <div class="single-blog-item-txt">
-                                <h2><a href="#">How to find your Desired Place more quickly</a></h2>
-                                <h4>posted <span>by</span> <a href="#">admin</a> march 2018</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.
-                                </p>
+                                <h2><a href="{{route('visitor.blog.view.details',$blog->id)}}">{{$blog->blog_title}}</a></h2>
+                                <h4>posted <span>by</span> <a href="#">{{$blog->blog_posted_by}}</a> {{$blog->blog_post_date}}</h4>
+                                <p>{{$blog->blog_details}}</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-blog-item">
-                            <div class="single-blog-item-img">
-                                <img src="{{ asset('assets/images/blog/b2.jpg')}}" alt="blog image">
-                            </div>
-                            <div class="single-blog-item-txt">
-                                <h2><a href="#">How to find your Desired Place more quickly</a></h2>
-                                <h4>posted <span>by</span> <a href="#">admin</a> march 2018</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-blog-item">
-                            <div class="single-blog-item-img">
-                                <img src="{{ asset('assets/images/blog/b3.jpg')}}" alt="blog image">
-                            </div>
-                            <div class="single-blog-item-txt">
-                                <h2><a href="#">How to find your Desired Place more quickly</a></h2>
-                                <h4>posted <span>by</span> <a href="#">admin</a> march 2018</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
+                    @endforeach
                 </div>
             </div>
         </div>

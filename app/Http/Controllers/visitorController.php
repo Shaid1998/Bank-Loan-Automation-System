@@ -52,7 +52,13 @@ class visitorController extends Controller
 
     public function BlogView(){
         $blog = Blog::all();
-        
+
         return view('visitor.blog.visitor_blog',compact('blog'));
+    }//End Method
+
+    public function BlogViewDetails($id){
+        $blog = Blog::where('id',$id)->first();
+
+        return view('visitor.blog.blog_view',compact('blog'));
     }//End Method
 }
