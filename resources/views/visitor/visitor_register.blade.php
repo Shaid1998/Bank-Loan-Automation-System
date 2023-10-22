@@ -95,15 +95,6 @@
                                             </div>
                                             <p class="font-xs text-muted"><strong>Note:</strong>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy</p>
                                         </form>
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6">
-                                                <h6 style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-size:20px;text-align:right;padding-top:1rem;color:rgb(242, 248, 89);">Do you have already account?</h6>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <a href="{{route('customer.login')}}" class="btn btn-success">Login</a>
-                                            </div>
-                                            
-                                        </div>
                                     </div>
                                 </div>
                             </div>

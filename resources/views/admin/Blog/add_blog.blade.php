@@ -76,14 +76,14 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                photo_title: {required : true,}, 
-                photo_text: {required : true,}, 
-                photo: {required : true,}, 
+                blog_title: {required : true,}, 
+                blog_details: {required : true,}, 
+                blog_image: {required : true,}, 
             },
             messages :{
-                photo_title: {required : 'Please enter a photo title',}, 
-                photo_text: {required : 'Please enter a photo text',}, 
-                photo: {required : 'Please upload a photo',}, 
+                blog_title: {required : 'Blog Title Missing!',}, 
+                blog_details: {required : 'Blog Details Missing!',}, 
+                blog_image: {required : 'Blog Image Missing',}, 
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
