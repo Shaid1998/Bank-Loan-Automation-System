@@ -31,7 +31,7 @@
                                         <h6 class="mb-0">Description</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <textarea type="text" name="loan_description" id="myForm" class="form-control" placeholder="loan Description...."></textarea>
+                                        <textarea type="text" loan_description" id="myForm" class="form-control" placeholder="loan Description...."></textarea>
                                     </div>
                                 </div>
 
@@ -115,5 +115,41 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                loan_description: {required : true,}, 
+                Loan_type: {required : true,}, 
+                branch_name: {required : true,}, 
+                loan_duration: {required : true,}, 
+                emi: {required : true,}, 
+                interest_rate: {required : true,},  
+            },
+            messages :{
+                loan_description: {required : 'loan description missing!',}, 
+                Loan_type: {required : 'Loan type missing!',}, 
+                branch_name: {required : 'branch_name missing!',}, 
+                plan_type: {required : 'plan type missing!',}, 
+                loan_duration: {required : 'loan_duration missing!',},
+                emi: {required : 'emi missing!',}, 
+                interest_rate: {required : 'interest_rate missing!',}, 
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
 
 @endsection
