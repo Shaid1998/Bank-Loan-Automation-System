@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Hash;
 class visitorController extends Controller
 {
     public function CustomerRegisterDataStore(Request $request){
-        // $request->validate([
-        //     'name' => 'required|max:255',
-        //     'username' => 'required|max:8',
-        //     'email' => 'required|email|unique:regreq|max:255',
-        //     'password' => 'required|min:8',
-        //     'phone' => 'required|max:12|min:10',
-        //     'address' => 'required|max:255',
-        //     'photo' => 'required|max:255',
-        // ]);
+        $request->validate([
+            'name' => 'required|max:255',
+            'username' => 'required|max:8',
+            'email' => 'required|email|unique:regreqs|max:255',
+            'password' => 'required|min:8',
+            'phone' => 'required|max:12|min:10',
+            'address' => 'required|max:255',
+            'photo' => 'required|max:255',
+        ]);
 
 
 
