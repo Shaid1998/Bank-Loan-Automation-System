@@ -175,4 +175,58 @@
 	</div>
 </div>
 
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                user_id: {required : true,}, 
+                plan_id: {required : true,}, 
+                plan_type: {required : true,}, 
+                plan_interest_rate: {required : true,}, 
+                loan_amount: {required : true,}, 
+                plan_emi: {required : true,}, 
+                plan_branch: {required : true,}, 
+                distribution_branch: {required : true,},  
+                user_commitment: {required : true,},  
+                user_name: {required : true,},  
+                user_phone: {required : true,},  
+                user_email: {required : true,},  
+                user_address: {required : true,},  
+                user_branch: {required : true,},  
+                issue_date: {required : true,},  
+                expire_date: {required : true,},  
+            },
+            messages :{
+                user_id: {required : 'user id missing!',}, 
+                user_name: {required : 'user name missing!',}, 
+                plan_id: {required : 'plan id missing!',}, 
+                plan_type: {required : 'plan type missing!',}, 
+                plan_interest_rate: {required : 'plan interest rate missing!',},
+                loan_amount: {required : 'loan amount missing!',}, 
+                plan_emi: {required : 'plan emi missing!',}, 
+                plan_branch: {required : 'plan branch missing!',}, 
+                distribution_branch: {required : 'distribution branch missing!',}, 
+                user_phone: {required : 'user phone missing!',}, 
+                user_email: {required : 'user email missing!',}, 
+                user_address: {required : 'user address missing!',}, 
+                user_branch: {required : 'user branch missing!',}, 
+                issue_date: {required : 'issue date missing!',}, 
+                expire_date: {required : 'expire date missing!',}, 
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
+
 @endsection
