@@ -59,7 +59,17 @@
                                                 <input type="text" name="address" placeholder="Address" required/>
                                                 <span style="color: red;">@error('address'){{$message}}@enderror</span>
                                             </div>
-                                
+
+                                            <div style="padding: 1rem;" class="form-group">
+                                                <select name='branch' required>
+                                                    <option style="font-family: 'Times New Roman', Times, serif;color:black" value="">Select Branch</option>
+                                                    <option style="font-family: 'Times New Roman', Times, serif;color:black" value="dhaka">Dhaka</option>
+                                                    <option style="font-family: 'Times New Roman', Times, serif;color:black" value="khulna">Khulna</option>
+                                                    <option style="font-family: 'Times New Roman', Times, serif;color:black" value="rajshahi">rajshahi</option>
+                                                    <option style="font-family: 'Times New Roman', Times, serif;color:black" value="chittagang">chittagang</option>
+                                                </select>
+                                            </div>
+
                                             <div class="row mb-3">
                                                 <div class="col-sm-3">
                                                     <h6 class="mb-0">Photo</h6>
@@ -109,13 +119,23 @@
             $(document).ready(function (){
                 $('#myForm').validate({
                     rules: {
-                        photo_title: {required : true,}, 
-                        photo_text: {required : true,}, 
+                        name: {required : true,}, 
+                        username: {required : true,}, 
+                        email: {required : true,}, 
+                        password: {required : true,}, 
+                        phone: {required : true,}, 
+                        address: {required : true,}, 
                         photo: {required : true,}, 
+                        branch: {required : true,},  
                     },
                     messages :{
-                        photo_title: {required : 'Please enter a photo title',}, 
-                        photo_text: {required : 'Please enter a photo text',}, 
+                        name: {required : 'Please enter a name',}, 
+                        username: {required : 'Please enter a username',}, 
+                        email: {required : 'Please enter a email',}, 
+                        password: {required : 'Please enter a password',}, 
+                        phone: {required : 'Please enter a phone',},
+                        address: {required : 'Please enter a address',}, 
+                        branch: {required : 'Please enter a branch',}, 
                         photo: {required : 'Please upload a photo',}, 
                     },
                     errorElement : 'span', 

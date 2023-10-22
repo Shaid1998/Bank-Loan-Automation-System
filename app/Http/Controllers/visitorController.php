@@ -46,6 +46,7 @@ class visitorController extends Controller
             'req_password' =>Hash::make($request->password),
             'req_phone' => $request->phone,
             'req_address' => $request->address,
+            'req_branch' => $request->branch,
             'req_photo' => $save_url
         ]);
 

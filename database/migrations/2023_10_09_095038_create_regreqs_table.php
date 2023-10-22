@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('req_password');
             $table->string('req_phone');
             $table->string('req_address');
+            $table->string('req_branch')->nullable();
             $table->string('req_photo');
             $table->timestamps();
         });

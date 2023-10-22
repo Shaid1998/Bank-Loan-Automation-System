@@ -131,6 +131,7 @@ class EmployeeController extends Controller
         $user->photo = $request->photo;
         $user->user_id = $unid;
         $user->password = $request->password;
+        $user->branch = $request->branch;
         $user->role = 'customer';
         $user->status = 'active';
         $user->save();

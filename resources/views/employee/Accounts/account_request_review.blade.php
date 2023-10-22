@@ -77,6 +77,15 @@
 
             <div class="row mb-3">
                 <div class="col-sm-3">
+                    <h6 class="mb-0">Branch</h6>
+                </div>
+                <div class="form-group col-sm-9 text-secondary">
+                    <input type="text" name="branch" class="form-control" value="{{$accData->req_branch}}" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-3">
                     <h6 class="mb-0">Photo</h6>
                 </div>
                 <div class="form-group col-sm-9 text-secondary">
@@ -93,5 +102,44 @@
         </form>         
 	</div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                name: {required : true,}, 
+                username: {required : true,}, 
+                email: {required : true,}, 
+                password: {required : true,}, 
+                phone: {required : true,}, 
+                address: {required : true,}, 
+                photo: {required : true,}, 
+                branch: {required : true,},  
+            },
+            messages :{
+                name: {required : 'Please enter a name',}, 
+                username: {required : 'Please enter a username',}, 
+                email: {required : 'Please enter a email',}, 
+                password: {required : 'Please enter a password',}, 
+                phone: {required : 'Please enter a phone',},
+                address: {required : 'Please enter a address',}, 
+                branch: {required : 'Please enter a branch',}, 
+                photo: {required : 'Please add a photo address',}, 
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
 
 @endsection
