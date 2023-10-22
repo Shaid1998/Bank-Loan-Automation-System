@@ -21,7 +21,13 @@ use Illuminate\Support\Facades\DB;
 class CustomerController extends Controller
 {
     public function CustomerDashboard(){
-        return view('customer.customer_index');
+        $id = Auth::user()->id;
+        $user_id = Auth::user()->user_id;
+        $user = User::where('id',$id)->first();
+        $active = Loan::select('id')->where('user_id',$user_id)->groupBy(['id'])->get()->count();
+        $message = Message::select('id')->where('Receiver_id',$user_id)->groupBy(['id'])->get()->count();
+
+        return view('customer.customer_index',compact('user','active','message'));
     } // End Mehtod 
 
     public function CustomerLogin(){

@@ -20,11 +20,12 @@ class EmployeeController extends Controller
 {
     public function EmployeeDashboard(){
         $id = Auth::user()->id;
+        $userid = Auth::user()->user_id;
         $branch = Auth::user()->branch;
         $user = User::where('id',$id)->first();
         $plan = LoanPlan::count();
         $loan = Loan::count();
-        $message1 = Message::select('id')->where('id',$id)->groupBy(['id'])->get()->count();
+        $message1 = Message::select('id')->where('receiver_id',$userid)->groupBy(['id'])->get()->count();
         $message2 = Message::select('id')->where('branch',$branch)->groupBy(['id'])->get()->count();
         $message = $message1 + $message2;
 

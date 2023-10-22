@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('parent_id')->nullable();
             $table->string('message_for')->nullable();
             $table->string('sender_id');
+            $table->string('sender_email');
+            $table->string('branch');
             $table->string('receiver_id');
             $table->text('text');
             $table->timestamps();

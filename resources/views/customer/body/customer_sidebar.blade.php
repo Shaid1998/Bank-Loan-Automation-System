@@ -19,7 +19,7 @@
 			<li style="padding-top: 1rem">
 				<a href="{{ route('customer.dashobard') }}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-home'></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">DASHBOARD</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">HOME</div>
 				</a>
 			</li>
 			<li style="padding-top: 1rem">
