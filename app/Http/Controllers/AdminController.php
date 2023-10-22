@@ -13,12 +13,24 @@ use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Image;
 use Alert;
 use App\Models\Branch;
+use App\Models\Loan;
+use App\Models\Message;
 use App\Models\Review;
 
 class AdminController extends Controller
 {
     public function AdminDashboard(){
-        return view('admin.index');
+        $id = Auth::user()->id;
+        $user_id = Auth::user()->user_id;
+        $user = User::where('id',$id)->first();
+        $message = Message::select('id')->where('Receiver_id',$user_id)->groupBy(['id'])->get()->count();
+        $emp = User::select('id')->where('role','employee')->groupBy(['id'])->get()->count();
+        $cus = User::select('id')->where('role','customer')->groupBy(['id'])->get()->count();
+        $branch = Branch::count();
+        $plan = LoanPlan::count();
+        $loan = Loan::count();
+
+        return view('admin.index',compact('user','branch','message','emp','cus','plan','loan'));
     } // End Mehtod 
 
     public function AdminLogin(){
