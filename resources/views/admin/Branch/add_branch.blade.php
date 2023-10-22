@@ -143,14 +143,24 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                photo_title: {required : true,}, 
-                photo_text: {required : true,}, 
-                photo: {required : true,}, 
+                branch_name: {required : true,}, 
+                branch_address: {required : true,}, 
+                branch_contact: {required : true,}, 
+                branch_email: {required : true,}, 
+                select: {required : true,}, 
+                branch_text: {required : true,}, 
+                branch_head: {required : true,}, 
+                branch_photo: {required : true,}, 
             },
             messages :{
-                photo_title: {required : 'Please enter a photo title',}, 
-                photo_text: {required : 'Please enter a photo text',}, 
-                photo: {required : 'Please upload a photo',}, 
+                branch_name: {required : 'Branch Name Missing!',}, 
+                branch_address: {required : 'Branch Address Missing!',}, 
+                branch_contact: {required : 'Branch Contact Missing!',}, 
+                branch_email: {required : 'Branch Email Missing!',}, 
+                select: {required : 'Branch Fundation Year Missing!',}, 
+                branch_text: {required : 'Branch Details Missing!',}, 
+                branch_head: {required : 'Branch Head Missing!',}, 
+                branch_photo: {required : 'Branch Photo Missing!',}, 
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
