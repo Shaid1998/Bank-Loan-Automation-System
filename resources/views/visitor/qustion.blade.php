@@ -78,4 +78,33 @@
 	</div>
 </div>
 
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                sender_email: {required : true,}, 
+                text: {required : true,}, 
+                branch: {required : true,}, 
+            },
+            messages :{
+                sender_email: {required : 'Please enter a Email',}, 
+                text: {required : 'Please enter a Message Reply',}, 
+                branch: {required : 'Please enter a branch name',}, 
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
+
 @endsection
