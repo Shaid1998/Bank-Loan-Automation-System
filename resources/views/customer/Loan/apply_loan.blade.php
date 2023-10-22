@@ -81,14 +81,14 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                photo_title: {required : true,}, 
-                photo_text: {required : true,}, 
-                photo: {required : true,}, 
+                Amount: {required : true,}, 
+                Commitment: {required : true,}, 
+                branch: {required : true,}, 
             },
             messages :{
-                photo_title: {required : 'Please enter a photo title',}, 
-                photo_text: {required : 'Please enter a photo text',}, 
-                photo: {required : 'Please upload a photo',}, 
+                Amount: {required : 'Please enter a Amount',}, 
+                Commitment: {required : 'Please enter a Commitment',}, 
+                branch: {required : 'Please upload a branch Name',}, 
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
