@@ -6,7 +6,7 @@
 	@endphp	
 	<div class="user-profile text-center mt-3">
 		<div class="">
-			<img src="{{$adminData->photo}}"  class="avatar-md rounded-circle">
+			<img src="{{$adminData->photo}}" height="40px" width="40px" class="avatar-md rounded-circle">
 		</div>
 		<div class="mt-3">
 			<h4 style="color:rgb(0, 30, 255);font-size:40px;" class="font-size-16 mb-1">{{$adminData->username}}</h4>

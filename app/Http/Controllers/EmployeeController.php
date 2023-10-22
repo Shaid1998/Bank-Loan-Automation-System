@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Image;
 use Alert;
+use App\Models\Loan;
+use App\Models\LoanPlan;
 use App\Models\Message;
 use Illuminate\Support\Str;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
@@ -17,7 +19,16 @@ use Illuminate\Support\Facades\DB;
 class EmployeeController extends Controller
 {
     public function EmployeeDashboard(){
-        return view('employee.employee_index');
+        $id = Auth::user()->id;
+        $branch = Auth::user()->branch;
+        $user = User::where('id',$id)->first();
+        $plan = LoanPlan::count();
+        $loan = Loan::count();
+        $message1 = Message::select('id')->where('id',$id)->groupBy(['id'])->get()->count();
+        $message2 = Message::select('id')->where('branch',$branch)->groupBy(['id'])->get()->count();
+        $message = $message1 + $message2;
+
+        return view('employee.employee_index',compact('user','plan','loan','message'));
     } // End Mehtod 
 
     public function EmployeeLogin(){

@@ -27,7 +27,7 @@
 				<ul class="dropdown-menu dropdown-menu-end">
 					<li><a class="dropdown-item" href="{{ route('employee.profile') }}"><i class="bx bx-user"></i><span>Profile</span></a></li>
 					<li><a class="dropdown-item" href="{{ route('employee.change.password') }}"><i class="bx bx-cog"></i><span>Change Password</span></a></li>
-					<li><a class="dropdown-item" href="{{route('employee.dashobard')}}"><i class='bx bx-home-circle'></i><span>Dashboard</span></a></li>
+					<li><a class="dropdown-item" href="{{route('employee.dashobard')}}"><i class='bx bx-home-circle'></i><span>Home</span></a></li>
 					<li><a class="dropdown-item" href="{{ route('employee.logout') }}"><i class='bx bx-log-out-circle'></i><span>Logout</span></a></li>
 				</ul>
 			</div>

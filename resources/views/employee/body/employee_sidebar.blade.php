@@ -6,7 +6,7 @@
 	@endphp	
 	<div class="user-profile text-center mt-3">
 		<div class="">
-			<img src="{{$adminData->photo}}"  class="avatar-md rounded-circle">
+			<img src="{{$adminData->photo}}" height="40px" width="40px" class="avatar-md rounded-circle">
 		</div>
 		<div class="mt-3">
 			<h4 style="color:rgb(0, 30, 255);font-size:40px;" class="font-size-16 mb-1">{{$adminData->username}}</h4>
@@ -19,7 +19,7 @@
 			<li style="padding-top: 1rem">
 				<a href="{{ route('employee.dashobard') }}">
 					<div style="color:rgb(0, 30, 255);font-size:25px;" class="parent-icon"><i class='fa fa-home'></i></div>
-					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">DASHBOARD</div>
+					<div style="color:rgb(0, 30, 255);font-size:16px;font-weight:500;" class="menu-title">HOME</div>
 				</a>
 			</li>
 			<li style="padding-top: 1rem">
