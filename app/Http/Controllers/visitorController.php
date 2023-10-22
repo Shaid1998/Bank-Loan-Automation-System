@@ -10,6 +10,7 @@ use Image;
 use Alert;
 use App\Models\Blog;
 use App\Models\LoanPlan;
+use App\Models\Message;
 use App\Models\Review;
 use App\Models\siteExt;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
@@ -93,4 +94,28 @@ class visitorController extends Controller
 
         return view('visitor.plan.plan_view',compact('plan'));
     }//End Method
+
+    public function VisitorQustion($id){
+        $loan = LoanPlan::where('id',$id)->first();
+
+        return view('visitor.qustion',compact('loan'));
+    }//End Method
+
+    public function VisitorQustionStore(Request $request){
+        $unid = IdGenerator::generate(['table' => 'messages','field'=>'message_id', 'length' => 10, 'prefix' => 'M']);
+
+
+        Message::insert([
+            'sender_email' => $request->email,
+            'branch' => $request->branch,
+            'message_for' => $request->message_for,
+            'text' => $request->text,
+            'message_id' => $unid,
+        ]);
+
+        Alert::success('Congrats','Inquiery Topic Send Successfully.');
+
+        return redirect()->back();
+
+    }// End Mehtod 
 }

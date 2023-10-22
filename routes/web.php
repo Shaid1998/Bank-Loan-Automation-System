@@ -9,7 +9,6 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\BlogController;
-use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -139,6 +138,9 @@ Route::get('/City-Bank/customer/review', [visitorController::class, 'VisitorCust
 Route::get('/City-Bank/visitor/guide', [visitorController::class, 'VisitorGuide'])->name('visitor.howitworks');
 Route::get('/City-Bank/visitor/plan', [visitorController::class, 'VisitorPlan'])->name('visitor.loan.plan.view');
 Route::get('/City-Bank/plan/view/{id}', [visitorController::class, 'PlanViewDetails'])->name('visitor.plan.view.details');
+Route::get('/visitor/loan/inquiry/{id}', [visitorController::class, 'VisitorQustion'])->name('visitor.qustion');
+Route::post('/visitor/loan/inquiry/store', [VisitorController::class, 'VisitorQustionStore'])->name('visitor.qustion.store');
+
 
 
 Route::middleware(['auth','role:customer'])->group(function() {

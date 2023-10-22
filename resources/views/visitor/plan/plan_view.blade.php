@@ -19,7 +19,7 @@
             <a href="{{route('customer.login')}}" style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-size:25px;padding-left:10rem;padding-right:10rem;" class="btn btn-info">Login for apply</a>
         </div>
         <div style="width: 50%;padding-bottom:5rem;text-align:center;" class="col-md-6 col-sm-6">
-            <a style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-size:25px;padding-left:10rem;padding-right:10rem;" class="btn btn-primary"> inquire</a>
+            <a href="{{route('visitor.qustion',$plan->id)}}" style="font-family: 'Times New Roman', Times, serif;font-weight:900;font-size:25px;padding-left:10rem;padding-right:10rem;" class="btn btn-primary"> inquire</a>
         </div>
     </div>
 
