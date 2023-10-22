@@ -32,7 +32,7 @@
                                         <h6 class="mb-0">email</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="email" name="email" class="form-control" placeholder="Your email..." />
+                                        <input type="email" name="sender_email" class="form-control" placeholder="Your email..." />
                                     </div>
                                 </div>
                                         

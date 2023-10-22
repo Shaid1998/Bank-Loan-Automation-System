@@ -106,7 +106,7 @@ class visitorController extends Controller
 
 
         Message::insert([
-            'sender_email' => $request->email,
+            'sender_email' => $request->sender_email,
             'branch' => $request->branch,
             'message_for' => $request->message_for,
             'text' => $request->text,

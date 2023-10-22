@@ -20,8 +20,9 @@
                 <table class="table align-middle mb-0">
                     <thead class="table-light">
                         <tr>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sl</th>
-                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Sender</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:3%">Sl</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:5%">Sender</th>
+                            <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:8%">Email</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:7%">Reason</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:45%">Message</th>
                             <th style="font-family: 'Times New Roman', Times, serif;font-size:15px;text-align:center;width:7%">Date & Time</th>
@@ -31,8 +32,9 @@
                     @foreach ($qus as $receive)
                     <tbody>
                         <tr>
-                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$loop->iteration}}</td>
-                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receive->sender_id}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:3%">{{$loop->iteration}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:5%">{{$receive->sender_id}}</td>
+                            <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:8%">{{$receive->sender_email}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receive->message_for}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:45%">{{$receive->text}}</td>
                             <td style="font-family: 'Times New Roman', Times, serif;font-size:18px;width:7%">{{$receive->created_at}}</td>
